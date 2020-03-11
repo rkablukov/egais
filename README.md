@@ -1,0 +1,1 @@
+generateDS.py -o egais.py -s egaissubs.py --use-old-simpletype-validators --external-encoding='utf-8' --silence .\xsd\WB_DOC_SINGLE_01.xsd

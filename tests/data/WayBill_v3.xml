@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Documents Version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns=  "http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:wb=  "http://fsrar.ru/WEGAIS/TTNSingle_v3" xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3">
+	<ns:Owner>
+		<ns:FSRAR_ID>010000000435</ns:FSRAR_ID>
+	</ns:Owner>
+	<ns:Document>
+		<ns:WayBill_v3>
+			<wb:Identity>0000000123</wb:Identity>
+			<wb:Header>
+				<wb:NUMBER>1</wb:NUMBER>
+				<wb:Date>2014-12-16</wb:Date>
+				<wb:ShippingDate>2014-12-16</wb:ShippingDate>
+				<wb:Type>WBInvoiceFromMe</wb:Type>
+				<wb:Shipper>
+					103<oref:UL>
+						<oref:INN>1509002926</oref:INN>
+						<oref:KPP>151601001</oref:KPP>
+						<oref:ClientRegId>010000000435</oref:ClientRegId>
+						<oref:FullName>Общество с ограниченной ответственностью "ЮГ"</oref:FullName>
+						<oref:ShortName>"ЮГ"</oref:ShortName>
+						<oref:address>
+							<oref:Country>643</oref:Country>
+							<oref:RegionCode>15</oref:RegionCode>
+							<oref:description>РОССИЯ,363600,СЕВЕРНАЯ ОСЕТИЯ -АЛАНИЯ РЕСП,Кировский р-н,,Эльхотово с,Моряков ул,157,,</oref:description>
+						</oref:address>
+					</oref:UL>
+				</wb:Shipper>
+				<wb:Consignee>
+					<oref:FL>
+						<oref:INN>502771544828</oref:INN>
+						<oref:ClientRegId>030000009923</oref:ClientRegId>
+						<oref:FullName>ИПМАЛЫШЕВАОЛЬГААНАТОЛЬЕВНА</oref:FullName>
+						<oref:ShortName>ИПМАЛЫШЕВАОЛЬГААНАТОЛЬЕВНА</oref:ShortName>
+						<oref:address>
+							<oref:Country>643</oref:Country>
+							<oref:RegionCode>50</oref:RegionCode>
+							<oref:description>городЛыткарино, улицаНабережная, дом5, квартира50</oref:description>
+						</oref:address>
+					</oref:FL>
+				</wb:Consignee>
+				<wb:Transport>
+					<wb:TRAN_TYPE>413</wb:TRAN_TYPE>
+					<wb:TRAN_COMPANY>ООО"Азурит"</wb:TRAN_COMPANY>
+					<wb:TRAN_CAR>Рено</wb:TRAN_CAR>
+					<wb:TRAN_TRAILER/>
+					<wb:TRAN_CUSTOMER>ЗАО"Союз-Виктан"</wb:TRAN_CUSTOMER>
+					<wb:TRAN_DRIVER>ШайцансА.В.</wb:TRAN_DRIVER>
+					<wb:TRAN_LOADPOINT>П.Горбово</wb:TRAN_LOADPOINT>
+					<wb:TRAN_UNLOADPOINT>Лыткарино</wb:TRAN_UNLOADPOINT>
+					<wb:TRAN_REDIRECT/>
+					<wb:TRAN_FORWARDER>ШайцансА.В.</wb:TRAN_FORWARDER>
+				</wb:Transport>
+				<wb:Base>основание-текст</wb:Base>
+				<wb:Note>тестовая накладная версия 2</wb:Note>
+			</wb:Header>
+			<wb:Content>
+				<wb:Position>
+					<wb:Identity>1А</wb:Identity>
+					<wb:Product>
+						<pref:Type>АП</pref:Type>
+						<pref:FullName>Ликерка0.3500 л.</pref:FullName>
+						<pref:ShortName />
+						<pref:AlcCode>0017854000001189843</pref:AlcCode>
+						<pref:Capacity>0.350</pref:Capacity>
+						<pref:ProductVCode>1</pref:ProductVCode>
+						<pref:UnitType>Packed</pref:UnitType>
+						<pref:Producer>
+							<oref:UL>
+								<oref:ClientRegId>01149896</oref:ClientRegId>
+								<oref:FullName>ЗАКРЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СВАРОГ"</oref:FullName>
+								<oref:ShortName>ЗАО"СВАРОГ"</oref:ShortName>
+								<oref:INN>7803011250</oref:INN>
+								104<oref:KPP>784401001</oref:KPP>
+								<oref:address>
+									<oref:Country>643</oref:Country>
+									<oref:RegionCode>78</oref:RegionCode>
+									<oref:description>643,197110,С-ПЕТЕРБУРГ,,,,ПЕТРОВСКАЯКОСАУЛ,1,1,ЛИТ. А</oref:description>
+								</oref:address>
+							</oref:UL>
+						</pref:Producer>
+					</wb:Product>
+					<wb:Quantity>5</wb:Quantity>
+					<wb:Price>101.50</wb:Price>
+					<wb:Pack_ID>Паллета</wb:Pack_ID>
+					<wb:Party>партияNo 87</wb:Party>
+					<wb:FARegId>FA-00000111111</wb:FARegId>
+					<wb:InformF2>
+						<ce:F2RegId>FB-00012122</ce:F2RegId>
+						<ce:MarkInfo>
+							<ce:boxpos>
+								<ce:boxnumber>box-00112</ce:boxnumber>
+								<ce:amclist>
+									<ce:amc>22N000008XSG44YGEUT0P7T70424001006364JZKW012VT5XOLTCW4IJ9VGEOP44FTBX1</ce:amc>
+									<ce:amc>22N000008XSG44YGEUT0P7T70424001006364JZKW012VT5XOLTCW4IJ9VGEOP44FTBX2</ce:amc>
+								</ce:amclist>
+							</ce:boxpos>
+							<ce:boxpos>
+								<ce:boxnumber>box-00113</ce:boxnumber>
+								<ce:amclist>
+									<ce:amc>22N000008XSG44YGEUT0P7T70424001006364JZKW012VT5XOLTCW4IJ9VGEOP44FTBX3</ce:amc>
+									<ce:amc>22N000008XSG44YGEUT0P7T70424001006364JZKW012VT5XOLTCW4IJ9VGEOP44FTBX4</ce:amc>
+									<ce:amc>22N000008XSG44YGEUT0P7T70424001006364JZKW012VT5XOLTCW4IJ9VGEOP44FTBX5</ce:amc>
+								</ce:amclist>
+							</ce:boxpos>
+						</ce:MarkInfo>
+					</wb:InformF2>
+					<wb:boxInfo>
+						<wb:boxtree>
+							<ce:boxnum>box-01-001</ce:boxnum>
+							<ce:bl>
+								<ce:boxnum>box-00112</ce:boxnum>
+								<ce:boxnum>box-00113</ce:boxnum>
+							</ce:bl>
+						</wb:boxtree>
+					</wb:boxInfo>
+				</wb:Position>
+				<wb:Position>
+					<wb:Identity>2А</wb:Identity>
+					<wb:Product>
+						<pref:FullName>Виноматериал"бозан" 17% </pref:FullName>
+						<pref:AlcCode>01471000001189754</pref:AlcCode>
+						<pref:ProductVCode>2</pref:ProductVCode>
+						<pref:UnitType>Unpacked</pref:UnitType>
+						<pref:Producer>
+							<oref:UL>
+								<oref:ClientRegId>01149897</oref:ClientRegId>
+								105<oref:INN>4701000126</oref:INN>
+								<oref:KPP>470101002</oref:KPP>
+								<oref:FullName>ЗАКPЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "БОКСИТОГОPСКИЙ ЗАВОД НАПИТКОВ"</oref:FullName>
+								<oref:ShortName>З</oref:ShortName>
+								<oref:address>
+									<oref:Country>643</oref:Country>
+									<oref:RegionCode>47</oref:RegionCode>
+									<oref:description>643,187650,ЛЕНИНГРАДСКАЯОБЛ,БОКСИТОГОРСКИЙР-Н,БОКСИТОГОРСКГ,,ЖУКОВАУЛ,2,,</oref:description>
+								</oref:address>
+							</oref:UL>
+						</pref:Producer>
+					</wb:Product>
+					<wb:Quantity>15</wb:Quantity>
+					<wb:Price>2150.75</wb:Price>
+					<wb:FARegId>FA-00002222222</wb:FARegId>
+					<wb:InformF2>
+						<ce:F2RegId>FB-00000787654</ce:F2RegId>
+					</wb:InformF2>
+				</wb:Position>
+			</wb:Content>
+		</ns:WayBill_v3>
+	</ns:Document>
+</ns:Documents>
