@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from codecs
+import codecs
 
 with codecs.open("README.md", "r", 'utf_8_sig') as fh:
     long_description = fh.read()

@@ -1,3 +1,6 @@
 __pycache__
 .vscode
 Pipfile.lock
+dist
+*.egg-info
+build
