@@ -1,1 +1,1 @@
-from .egais import *
+from egais.egais import *
