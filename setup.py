@@ -12,8 +12,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/rkablukov/egais",
-    py_modules=['egais'],
-    packages=find_packages(),
+    packages=find_packages(include=['egais']),
     include_package_data=True,
     classifiers=(
         "Programming Language :: Python :: 3",
