@@ -141,10 +141,7 @@
           <xs:selector xpath="ns:Position"/>
           <xs:field xpath="ns:Identity"/>
         </xs:unique>
-        <xs:unique name="MarkUn">
-          <xs:selector xpath="ns:Position/ns:InformF2/ce:MarkInfo/ce:boxpos/ce:amclist/ce:amc"/>
-          <xs:field xpath="."/>
-        </xs:unique>
+        
       </xs:element>
     </xs:sequence>
   </xs:complexType>
@@ -234,19 +231,10 @@
       </xs:element>
 
       <!--добавлено 08.05.2018 по задаче 29676-->
-      <xs:element name="EAN13" nillable="false" minOccurs="0" maxOccurs="1">
+      <xs:element name="EAN13" type="c:EANType" nillable="false" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>необязательный реквизит EAN13</xs:documentation>
         </xs:annotation>
-        <xs:simpleType>
-          <xs:restriction>
-            <xs:simpleType>
-              <xs:restriction base="xs:string" />
-            </xs:simpleType>
-            <xs:length value="12" />
-            <xs:pattern value="[0-9]{12}" />
-          </xs:restriction>
-        </xs:simpleType>
       </xs:element>
       <!--добавлено 08.05.2018 по задаче 29676-->
 

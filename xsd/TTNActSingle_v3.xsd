@@ -74,10 +74,7 @@
           <xs:selector xpath="ns:Position"/>
           <xs:field xpath="ns:InformF2RegId"/>
         </xs:unique>
-        <xs:unique name="MarkUn">
-          <xs:selector xpath="ns:Position/ns:MarkInfo/ce:amc"/>
-          <xs:field xpath="."/>
-        </xs:unique>
+        
       </xs:element>
     </xs:sequence>
   </xs:complexType>

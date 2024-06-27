@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns="http://fsrar.ru/WEGAIS/ReplyPlaceOfBusiness"
+           targetNamespace="http://fsrar.ru/WEGAIS/ReplyPlaceOfBusiness"
+
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+         
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  
+  <xs:complexType name="ReplyPlaceOfBusiness">
+    <xs:annotation>
+      <xs:documentation>Ответ на запрос списка мест осуществления деятельности</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Clients"  minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Client" type="oref:ReplyPlaceOfBusinessType" minOccurs="0" maxOccurs="unbounded">
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+ </xs:schema>

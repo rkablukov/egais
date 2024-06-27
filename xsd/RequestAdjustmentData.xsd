@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/RequestAdjustmentData"
+           targetNamespace="http://fsrar.ru/WEGAIS/RequestAdjustmentData"
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"           
+           xmlns:cn="http://fsrar.ru/WEGAIS/CommonEnum"           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ttn4="http://fsrar.ru/WEGAIS/TTNSingle_v4"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNSingle_v4" schemaLocation="TTNSingle_v4.xsd"/>
+
+  <xs:complexType name="RequestAdjustmentData">
+    <xs:annotation>
+      <xs:documentation>Заявление на корректировку данных</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="ClientId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код клиента</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер заявления на корректировку данных</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestDate" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата заявления на корректировку данных</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProveDocs" type="xs:base64Binary" nillable="false" minOccurs="1" maxOccurs="1">
+         <xs:annotation>
+            <xs:documentation>Подтверждающие документы в pdf</xs:documentation>
+         </xs:annotation>
+      </xs:element>
+      <xs:element name="Content" type="ns:RequestAdjustmentPositionType" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Содержимое запроса должно содержать 1 позицию</xs:documentation>
+              </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="RequestAdjustmentPositionType">
+    <xs:annotation>
+      <xs:documentation>Тип документа</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="TTN" type="ns:TTNType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Товарно-транспортная накладная</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TTNPos" type="ns:TTNPosType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>позиция Товарно-транспортной накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportProduced" type="ns:ReportProducedType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Отчет о производстве</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReportImported" type="ns:ReportImportedType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Отчет об импорте</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActWO" type="ns:ActWOType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Акт списания</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActWOPos" type="ns:ActWOPosType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Позиция по акту списания</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActWOS" type="ns:ActWOSType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Акт списания из торгового зала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActWOSPos" type="ns:ActWOSPosType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Позиция по акту списания из торгового зала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActCO" type="ns:ActCOType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Акт постановки на баланс</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActTTN" type="ns:ActTTNType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Акт разногласий для ТТН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Route" type="ns:RouteType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Транспортная накладная</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="TTNType">
+    <xs:annotation>
+      <xs:documentation>Товарно-транспортная накладная</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="WBRegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер Товарно-транспортной накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер Товарно-транспортной накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата Товарно-транспортной на накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShippingDate" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата отгрузки продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Type" type="ns:WbType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип накладной: WBInvoiceFromMe - расход; WBInternal - внутреннее перемещение; WBReturnFromMe - возврат от меня;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Transport" type="ttn4:TransportType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Транспортный раздел</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="TTNPosType">
+    <xs:annotation>
+      <xs:documentation>Товарно-транспортная накладная</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="WBRegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер Товарно-транспортной накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Price" type="c:NoNegativeDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Цена за единицу товара</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EXCISE_NUMBER" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер извещения</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="c:NoEmptyString">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EXCISE_DATE" type="c:DateWTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата извещения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EXCISE_SUM" type="c:NoNegativeDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Сумма по извещению</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EXCISE_BS" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем по извещению</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ReportProducedType">
+    <xs:annotation>
+      <xs:documentation>Отчет о производстве</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="RegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер отчета о производстве</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер Отчета о производстве </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата Отчета о производстве</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProducedDate" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата производства</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ReportImportedType">
+    <xs:annotation>
+      <xs:documentation>Отчет об импорте</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="RegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер отчета об импорте</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер отчета об импорте</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата отчета об импорте</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ImportedDate" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата ввоза</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GTDNUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер ГТД</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="GTDDate" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата ГТД</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Country" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Страна, из которой производится импорт продукции</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9][0-9][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="supplierOwnerid" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код организации поставщика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ActWOType">
+    <xs:annotation>
+      <xs:documentation>Акт списания</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="AWORegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер акта списания</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActNumber" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер документа</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActDate" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата составления</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypeWriteOff" type="cn:TypeWriteOff" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Причина списания</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ActWOPosType">
+    <xs:annotation>
+      <xs:documentation>Позиция по акту списания</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="AWORegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер акта списания</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри акта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SumSale" type="c:NoNegativeDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Сумма продажи.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ActWOSType">
+    <xs:annotation>
+      <xs:documentation>Акт списания из торгового зала</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="AWOSRegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер акта списания из торгового зала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActNumber" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер документа</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActDate" type="c:DateNoTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата составления</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TypeWriteOff" type="cn:TypeWriteOff" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Причина списания</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ActWOSPosType">
+    <xs:annotation>
+      <xs:documentation>Позиция по акту списания из торгового зала</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="AWOSRegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер акта списания из торгового зала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри акта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SumSale" type="c:NoNegativeDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Сумма продажи</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ActCOType">
+    <xs:annotation>
+      <xs:documentation>Акт постановки на баланс</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="ACORegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер акта постановки на баланс</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Number" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер акта постановки на баланс</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActDate" type="c:DateNoTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата акта постановки на баланс</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ActTTNType">
+    <xs:annotation>
+      <xs:documentation>Акт разногласий для ТТН</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="WBRegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер Товарно-транспортной накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ACTNUMBER" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер акта разногласий</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ActDate" type="c:DateNoTime" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата акта разногласий</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="RouteType">
+    <xs:annotation>
+      <xs:documentation>Транспортная накладная</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="RegId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер транспортной накладной</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Date" type="c:DateNoTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_TYPE" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип перевозки</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="410">
+              <xs:annotation>
+                <xs:documentation>Воздушный транспорт</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="411">
+              <xs:annotation>
+                <xs:documentation>Водный транспорт</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="412">
+              <xs:annotation>
+                <xs:documentation>Железнодорожный транспорт</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="413">
+              <xs:annotation>
+                <xs:documentation>Автомобильный транспорт</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="419">
+              <xs:annotation>
+                <xs:documentation>Иные транспортные средства</xs:documentation>
+              </xs:annotation>
+            </xs:enumeration>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TRAN_COMPANY" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Название компании перевозчика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_CAR" type="ns:Field255" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Транспортное средство</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_TRAILER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Прицеп</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_CUSTOMER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Заказчики</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_DRIVER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Водитель</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_LOADPOINT" type="c:NoEmptyString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Место погрузки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_UNLOADPOINT" type="c:NoEmptyString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Место разгрузки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_REDIRECT" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Перенаправление</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_FORWARDER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Экспедитор</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:simpleType name="WbType">
+    <xs:annotation>
+      <xs:documentation>Типы накладных</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WBInvoiceFromMe"/>
+      <xs:enumeration value="WBReturnFromMe"/>
+      <xs:enumeration value="WBInternal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Field255">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

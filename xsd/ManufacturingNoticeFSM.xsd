@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/ManufacturingNoticeFSM"
+           targetNamespace="http://fsrar.ru/WEGAIS/ManufacturingNoticeFSM"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+
+  <xs:complexType name="ManufacturingNoticeFSM">
+    <xs:annotation>
+      <xs:documentation>
+        Уведомление об изготовлении ФСМ
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="NoticeNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер уведомления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="NoticeDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата уведомления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="DecisionNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер решения об изготовлении ФСМ</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="DecisionDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата решения об изготовлении ФСМ</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="RequestFSM" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Идентификатор заявления о выдаче ФСМ</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="NUMBERIssueFSM" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер заявления о выдаче марок</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="DateIssueFSM" type="c:DateNoTime" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата заявления о выдаче марок</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="TerrOrganRAR" type="oref:OrgInfoRus_ClaimIssue" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Территориальный орган РАР</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Declarer" type="oref:OrgInfoRus_ClaimIssue" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Заявитель</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

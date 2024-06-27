@@ -32,6 +32,8 @@
       <xs:enumeration value="WayBill"></xs:enumeration>
       <xs:enumeration value="WayBill_v2"></xs:enumeration>
       <xs:enumeration value="WayBill_v3"></xs:enumeration>
+      <xs:enumeration value="WayBill_v4"></xs:enumeration>
+      <xs:enumeration value="UniversalTransferDocument"></xs:enumeration>
     </xs:restriction>
   </xs:simpleType> 
 </xs:schema>

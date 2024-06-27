@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:ns="http://fsrar.ru/WEGAIS/ProductRef_v2"
@@ -33,7 +33,17 @@
       <xs:enumeration value="Unpacked"/>
     </xs:restriction>
   </xs:simpleType>
-  
+
+  <xs:simpleType name="WbIngredientType">
+    <xs:annotation>
+      <xs:documentation>Тип ингредиента. Принимает значения: основной, дополнительный</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="основной"/>
+      <xs:enumeration value="дополнительный"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ProductType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="АП"/>
@@ -41,6 +51,46 @@
       <xs:enumeration value="ССНП"/>
       <xs:enumeration value="Спирт"/>
       <xs:enumeration value="УБП"/>
+      <xs:enumeration value="ССПП"/>
+      <xs:enumeration value="СЛС"/>
+      <xs:enumeration value="ФАРМ"/>
+      <xs:enumeration value="ЭС"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="DocumentVidType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ГОСТ"/>
+      <xs:enumeration value="ТИ"/>
+      <xs:enumeration value="ТУ"/>
+      <xs:enumeration value="РЦ"/>
+      <xs:enumeration value="Другое"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="IdentifyingDocVidType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="технический регламент"/>
+      <xs:enumeration value="межгосударственный (национальный) стандарт"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="DeclarationVidType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Декларация"/>
+      <xs:enumeration value="Сертификат"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AdditionalDocumentsType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="технологическая инструкция"/>
+      <xs:enumeration value="рецептура"/>
+      <xs:enumeration value="стандарт организации"/>
+      <xs:enumeration value="международный стандарт страны происхождения"/>
+      <xs:enumeration value="национальный стандарт страны происхождения"/>
+      <xs:enumeration value="национальный регламент"/>
+      <xs:enumeration value="техническая документация"/>
     </xs:restriction>
   </xs:simpleType>
 
@@ -301,6 +351,94 @@
     </xs:all>
   </xs:complexType>
 
+  <xs:complexType name="ProductInfoReply_v3">
+    <xs:annotation>
+      <xs:documentation>Продукция </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="UnitType" type="ns:WbUnitType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Признак фасованной/нефасованной продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="ns:ProductType" name="Type" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип продукции (АП | ССП | ССНП | Спирт) Если не указано, то АП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FullName" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование продукции полное</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ShortName" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование продукции краткое</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AlcCode" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код продукции согласно ЕГАИС</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="c:NoEmptyString">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Capacity" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Емкость упаковки продукции согласно ЕГАИС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AlcVolume" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Содержание этилового спирта, %</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Producer" type="oref:OrgInfoReply_v2" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Производитель</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ProductVCode" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код вида продукции</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="c:NoEmptyString">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Package_Type_Code" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код  вида тары</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="c:NoEmptyString">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
 
 
 
@@ -446,12 +584,12 @@
       </xs:element>
       <xs:element name="Producer" type="oref:OrgInfoForeign_v2" nillable="false" minOccurs="1" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Производитель</xs:documentation>
+          <xs:documentation>Поставщик</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="Importer" type="oref:OrgInfoRus_v2" nillable="false" minOccurs="1" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Производитель</xs:documentation>
+          <xs:documentation>Импортер</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="ProductVCode" nillable="false" minOccurs="1" maxOccurs="1">

@@ -123,6 +123,16 @@
            <xs:documentation>Коде режима работы средства измерения</xs:documentation>
          </xs:annotation>
        </xs:element>
+        <xs:element name="Crotonaldehyd" type="xs:decimal" nillable="false" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Процент содержания кротонового альдегида</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Toluene" type="xs:decimal" nillable="false" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Процент содержания толуола</xs:documentation>
+          </xs:annotation>
+        </xs:element>
       </xs:all>
 </xs:complexType>
 

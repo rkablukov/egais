@@ -82,10 +82,7 @@
           <xs:field xpath="ns:Identity"/>
         </xs:unique>
 
-        <xs:unique name="MarkCodeUn">
-          <xs:selector xpath="ns:Position/ns:MarkCodeInfo/MarkCode"/>
-          <xs:field xpath="."/>
-        </xs:unique>
+        
 
       </xs:element>
     </xs:sequence>

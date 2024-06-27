@@ -36,24 +36,24 @@
               </xs:annotation>
             </xs:element>
 
-            <xs:element name="Shipper" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+            <xs:element name="Shipper" type="oref:OrgInfo_v2" minOccurs="1" maxOccurs="1">
               <xs:annotation>
-                <xs:documentation>Отправитель (ФСРАРИД)</xs:documentation>
+                <xs:documentation>Отправитель</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="Consignee" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+            <xs:element name="Consignee" type="oref:OrgInfo_v2" minOccurs="1" maxOccurs="1">
               <xs:annotation>
-                <xs:documentation>Получатель (ФСРАРИД)</xs:documentation>
+                <xs:documentation>Получатель</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="Carrier" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+            <xs:element name="Carrier" type="oref:OrgInfoRus_v2" minOccurs="1" maxOccurs="1">
               <xs:annotation>
-                <xs:documentation>Грузоперевозчик (ФСРАРИД)</xs:documentation>
+                <xs:documentation>Грузоперевозчик</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="ClientTransport" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+            <xs:element name="ClientTransport" type="oref:OrgInfoRus_v2" minOccurs="1" maxOccurs="1">
               <xs:annotation>
-                <xs:documentation>Транспортное средство (ФСРАРИД)</xs:documentation>
+                <xs:documentation>Транспортное средство</xs:documentation>
               </xs:annotation>
             </xs:element>
             <xs:element name="ShipmentOutDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
@@ -81,16 +81,6 @@
                 <xs:documentation>Дата составления</xs:documentation>
               </xs:annotation>
             </xs:element>
-            <xs:element name="NotifSupplierId" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1">
-              <xs:annotation>
-                <xs:documentation>Поставщик по уведомлению(ФСРАРИД)</xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element name="NotifCustomerId" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1">
-              <xs:annotation>
-                <xs:documentation>Покупатель по уведомлению (ФСРАРИД)</xs:documentation>
-              </xs:annotation>
-            </xs:element>
           </xs:all>
         </xs:complexType>
       </xs:element>
@@ -107,7 +97,7 @@
 
         <xs:unique name="PosUn">
           <xs:selector xpath="ns:Position"/>
-          <xs:field xpath="ns:Identity"/>
+          <xs:field xpath="ns:PosIdentity"/>
         </xs:unique>
       </xs:element>
       
@@ -119,9 +109,15 @@
       <xs:documentation>Позиция</xs:documentation>
     </xs:annotation>
     <xs:all>
-      <xs:element name="ProductCode" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+      <xs:element name="PosIdentity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Регистрационный код продукции</xs:documentation>
+          <xs:documentation>Идентификатор позиции внутри уведомления о перевозке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Product" type="pref:ProductInfo_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Продукция</xs:documentation>
         </xs:annotation>
       </xs:element>
 
@@ -134,11 +130,6 @@
       <xs:element name="AlcPerc20" type="c:AlcPercentType" nillable="false" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Содержание этилового спирта, % (при 20 градусах по Цельсию)</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="PosIdentity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Идентификатор позиции внутри уведомления о перевозке</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:all>

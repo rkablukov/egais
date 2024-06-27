@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--Схема документа-->
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -46,6 +46,7 @@
            xmlns:rs2="http://fsrar.ru/WEGAIS/ReplySpirit_v2"
            xmlns:rc2="http://fsrar.ru/WEGAIS/ReplyClient_v2"
            xmlns:rap2="http://fsrar.ru/WEGAIS/ReplyAP_v2"
+           xmlns:rap3="http://fsrar.ru/WEGAIS/ReplyAP_v3"
            xmlns:rst2="http://fsrar.ru/WEGAIS/ReplyRests_v2"
            xmlns:rfa2="http://fsrar.ru/WEGAIS/ReplyForm1"
            xmlns:rfb2="http://fsrar.ru/WEGAIS/ReplyForm2"
@@ -94,6 +95,56 @@
            xmlns:rrhb2="http://fsrar.ru/WEGAIS/ReplyParentHistForm2"
            xmlns:wbhr2="http://fsrar.ru/WEGAIS/TTNHistoryF2Reg"
            xmlns:wbhcn="http://fsrar.ru/WEGAIS/CarrierNotice"
+           xmlns:wbhcn4="http://fsrar.ru/WEGAIS/CarrierNotice_v4"
+
+           xmlns:cifsm="http://fsrar.ru/WEGAIS/ClaimIssueFSM"
+           xmlns:rmfsm="http://fsrar.ru/WEGAIS/RequestManufacturerFSM"
+           xmlns:ttnfsm="http://fsrar.ru/WEGAIS/TTNShipmentFSM"
+           xmlns:issuefsm="http://fsrar.ru/WEGAIS/TTNIssueFSM"
+           xmlns:rnfsm="http://fsrar.ru/WEGAIS/RejectionNoticeFSM"
+           xmlns:retfsm="http://fsrar.ru/WEGAIS/ReturnNoticeFSM"
+           xmlns:recfsm="http://fsrar.ru/WEGAIS/RecheckNotificationsFSM"
+           xmlns:rpb="http://fsrar.ru/WEGAIS/ReplyPlaceOfBusiness"
+           xmlns:qgok="http://fsrar.ru/WEGAIS/QueryGenerationOpenKey"
+           xmlns:rgok="http://fsrar.ru/WEGAIS/ReplyGenerationOpenKey"
+           xmlns:iiam="http://fsrar.ru/WEGAIS/InvoiceIssueAM"
+           xmlns:ieam="http://fsrar.ru/WEGAIS/InvoiceExportFSM"
+           xmlns:ipiap="http://fsrar.ru/WEGAIS/InvoicePlannedImport"
+           xmlns:nbtap="http://fsrar.ru/WEGAIS/NotificationsBeginningTurnover"
+           xmlns:chqv3="http://fsrar.ru/WEGAIS/ChequeV3"
+           xmlns:rpp4="http://fsrar.ru/WEGAIS/RepProducedProduct_v4"
+           xmlns:rpi4="http://fsrar.ru/WEGAIS/RepImportedProduct_v4"
+           xmlns:rdm="http://fsrar.ru/WEGAIS/ReportDestructionAMFSM"
+           xmlns:rripi="http://fsrar.ru/WEGAIS/RequestRepealIPI"
+           xmlns:rream="http://fsrar.ru/WEGAIS/RequestRepealEFSM"
+           xmlns:rriam="http://fsrar.ru/WEGAIS/RequestRepealIAM"
+           xmlns:ttnrfsm="http://fsrar.ru/WEGAIS/TTNShipmentReturnFSM"
+           xmlns:issuerfsm="http://fsrar.ru/WEGAIS/TTNIssueReturnFSM"
+           xmlns:rodfsm="http://fsrar.ru/WEGAIS/ReferenceOfDeficiencies"
+           xmlns:mnfsm="http://fsrar.ru/WEGAIS/ManufacturingNoticeFSM"
+           xmlns:wb4="http://fsrar.ru/WEGAIS/TTNSingle_v4"
+           xmlns:wa4="http://fsrar.ru/WEGAIS/ActTTNSingle_v4"
+           xmlns:mskr="http://fsrar.ru/WEGAIS/Route"
+           xmlns:mskcr="http://fsrar.ru/WEGAIS/CancelRoute"
+           xmlns:ish="http://fsrar.ru/WEGAIS/DebtAbsence"
+           xmlns:rad="http://fsrar.ru/WEGAIS/RequestAdjustmentData"
+           xmlns:aroo="http://fsrar.ru/WEGAIS/ActReceiptOnlineOrder"
+           xmlns:acoo="http://fsrar.ru/WEGAIS/ActConfirmOnlineOrder"
+           xmlns:acnoo="http://fsrar.ru/WEGAIS/ActCancelOnlineOrder"
+           xmlns:rbt="http://fsrar.ru/WEGAIS/RequestBalanceTransfer"
+           xmlns:rmfsmc="http://fsrar.ru/WEGAIS/RequestManufacturerFSMforCheck"
+           xmlns:tcrmc="http://fsrar.ru/WEGAIS/TicketRMCheck"
+           xmlns:frcl="http://fsrar.ru/WEGAIS/FrapClaims"
+           xmlns:frclc="http://fsrar.ru/WEGAIS/FrapClaimsCor"
+           xmlns:mfapl="http://fsrar.ru/WEGAIS/ApplicationLicenses"
+           xmlns:retfsm1="http://fsrar.ru/WEGAIS/ReturnNotificationsFSM"
+           xmlns:rpp5="http://fsrar.ru/WEGAIS/RepProducedProduct_v5"
+           xmlns:movefsm="http://fsrar.ru/WEGAIS/TTNInternalMoveFSM"
+           xmlns:awr4="http://fsrar.ru/WEGAIS/ActWriteOff_v4"
+           xmlns:chqv4="http://fsrar.ru/WEGAIS/ChequeV4"
+
+           xmlns:rpp6="http://fsrar.ru/WEGAIS/RepProducedProduct_v6"
+           xmlns:rpi5="http://fsrar.ru/WEGAIS/RepImportedProduct_v5"
            >
 
   <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
@@ -135,6 +186,7 @@
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplySpirit_v2" schemaLocation="ReplySpirit_v2.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyClient_v2" schemaLocation="ReplyClient_v2.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyAP_v2" schemaLocation="ReplyAP_v2.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyAP_v3" schemaLocation="ReplyAP_v3.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyRests_v2" schemaLocation="ReplyRests_v2.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyForm1" schemaLocation="ReplyForm1.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyForm2" schemaLocation="ReplyForm2.xsd"/>
@@ -184,6 +236,59 @@
   <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyParentHistForm2" schemaLocation="ReplyParentHistForm2.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/TTNHistoryF2Reg" schemaLocation="TTNHistoryF2Reg.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/CarrierNotice" schemaLocation="CarrierNotice.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CarrierNotice_v4" schemaLocation="CarrierNotice_v4.xsd"/>
+
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClaimIssueFSM" schemaLocation="ClaimIssueFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestManufacturerFSM" schemaLocation="RequestManufacturerFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNShipmentFSM" schemaLocation="TTNShipmentFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNIssueFSM" schemaLocation="TTNIssueFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RejectionNoticeFSM" schemaLocation="RejectionNoticeFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReturnNoticeFSM" schemaLocation="ReturnNoticeFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RecheckNotificationsFSM" schemaLocation="RecheckNotificationsFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyPlaceOfBusiness" schemaLocation="ReplyPlaceOfBusiness.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/QueryGenerationOpenKey" schemaLocation="QueryGenerationOpenKey.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReplyGenerationOpenKey" schemaLocation="ReplyGenerationOpenKey.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/InvoiceIssueAM" schemaLocation="InvoiceIssueAM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/InvoiceExportFSM" schemaLocation="InvoiceExportFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/InvoicePlannedImport" schemaLocation="InvoicePlannedImport.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/NotificationsBeginningTurnover" schemaLocation="NotificationsBeginningTurnover.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ChequeV3" schemaLocation="ChequeV3.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RepProducedProduct_v4" schemaLocation="RepProducedProduct_v4.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RepImportedProduct_v4" schemaLocation="RepImportedProduct_v4.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReportDestructionAMFSM" schemaLocation="ReportDestructionAMFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestRepealIPI" schemaLocation="RequestRepealIPI.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestRepealEFSM" schemaLocation="RequestRepealEFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestRepealIAM" schemaLocation="RequestRepealIAM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNShipmentReturnFSM" schemaLocation="TTNShipmentReturnFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNIssueReturnFSM" schemaLocation="TTNIssueReturnFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReferenceOfDeficiencies" schemaLocation="ReferenceOfDeficiencies.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ManufacturingNoticeFSM" schemaLocation="ManufacturingNoticeFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNSingle_v4" schemaLocation="TTNSingle_v4.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ActTTNSingle_v4" schemaLocation="TTNActSingle_v4.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Route" schemaLocation="Route.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CancelRoute" schemaLocation="CancelRoute.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/DebtAbsence" schemaLocation="DebtAbsence.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestAdjustmentData" schemaLocation="RequestAdjustmentData.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ActCancelOnlineOrder" schemaLocation="ActCancelOnlineOrder.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ActConfirmOnlineOrder" schemaLocation="ActConfirmOnlineOrder.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ActReceiptOnlineOrder" schemaLocation="ActReceiptOnlineOrder.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestBalanceTransfer" schemaLocation="RequestBalanceTransfer.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestManufacturerFSMforCheck" schemaLocation="RequestManufacturerFSMforCheck.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TicketRMCheck" schemaLocation="TicketRMCheck.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/FrapClaims" schemaLocation="FrapClaims.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/FrapClaimsCor" schemaLocation="FrapClaimsCor.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ApplicationLicenses" schemaLocation="ApplicationLicenses.xsd"/>
+<!--  <xs:import namespace="http://fsrar.ru/WEGAIS/RequestInfo" schemaLocation="RequestInfo.xsd"/> -->
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RepProducedProduct_v5" schemaLocation="RepProducedProduct_v5.xsd"/>
+<!--  <xs:import namespace="http://fsrar.ru/WEGAIS/NoticeClaimIssueFSM" schemaLocation="NoticeClaimIssueFSM.xsd"/> -->
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ReturnNotificationsFSM" schemaLocation="ReturnNotificationsFSM.xsd"/>
+<!--  <xs:import namespace="http://fsrar.ru/WEGAIS/LicenseActConfirm" schemaLocation="LicenseActConfirm.xsd"/> -->
+  <xs:import namespace="http://fsrar.ru/WEGAIS/TTNInternalMoveFSM" schemaLocation="TTNInternalMoveFSM.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ActWriteOff_v4" schemaLocation="ActWriteOff_v4.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ChequeV4" schemaLocation="ChequeV4.xsd"/>
+  <!--новые после 01.03.2024-->
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" schemaLocation="RepProducedProduct_v6.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/RepImportedProduct_v5" schemaLocation="RepImportedProduct_v5.xsd"/>
 
   <xs:element name="Documents">
     <xs:annotation>
@@ -208,7 +313,7 @@
 
   <xs:complexType name="DocBody">
     <xs:choice minOccurs="1" maxOccurs="1" id="name">
-      <xs:element name="WayBill" type="wb:WayBillType" minOccurs="1" maxOccurs="1"/>
+     <xs:element name="WayBill" type="wb:WayBillType" minOccurs="1" maxOccurs="1"/>
       <xs:element name="Ticket" type="tc:TicketType" minOccurs="1" maxOccurs="1"/>
       <xs:element name="WayBillAct" type="wa:WayBillActType" minOccurs="1" maxOccurs="1"/>
       <xs:element name="ConfirmTicket" type="ctc:ConfirmTicketType" minOccurs="1" maxOccurs="1"/>
@@ -225,7 +330,7 @@
       
       <xs:element name="QueryFormBHistory" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
       <xs:element name="QueryResendDoc" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
-      
+
       <xs:element name="QueryFormA" type="qf:QueryFormAB" minOccurs="1" maxOccurs="1"/>
       <xs:element name="QueryFormB" type="qf:QueryFormAB" minOccurs="1" maxOccurs="1"/>
       <xs:element name="ActWriteOff" type="awr:ActWriteOffType" minOccurs="1" maxOccurs="1"/>
@@ -250,6 +355,7 @@
       <xs:element name="ReplySpirit_v2" type="rs2:ReplySpirit_v2" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ReplyClient_v2" type="rc2:ReplyClient_v2" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ReplyAP_v2" type="rap2:ReplyAP_v2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ReplyAP_v3" type="rap3:ReplyAP_v3" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ReplyRests_v2" type="rst2:ReplyRests_v2" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ReplyForm1" type="rfa2:ReplyForm1" minOccurs="0" maxOccurs="1"/>
       <xs:element name="ReplyForm2" type="rfb2:ReplyForm2" minOccurs="0" maxOccurs="1"/>
@@ -260,6 +366,7 @@
       <xs:element name="ActInventoryInformF2Reg" type="aint2:ActInventoryInformF2Reg" minOccurs="1" maxOccurs="1"/>
       <xs:element name="TTNInformF2Reg" type="wbr2:WayBillInformF2RegType" minOccurs="1" maxOccurs="1"/>
       <xs:element name="QueryAP_v2" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryAP_v3" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
       <xs:element name="QuerySSP_v2" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
       <xs:element name="QuerySP_v2" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
       <xs:element name="QueryClients_v2" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
@@ -319,7 +426,62 @@
       <xs:element name="ReplyParentHistForm2" type="rrhb2:ReplyParentHistForm2" minOccurs="0" maxOccurs="1"/>
       <xs:element name="TTNHistoryF2Reg" type="wbhr2:TTNHistoryF2Reg" minOccurs="1" maxOccurs="1"/>
       <xs:element name="CarrierNotice" type="wbhcn:CarrierNotice" minOccurs="1" maxOccurs="1"/>
-    </xs:choice>
+      <xs:element name="CarrierNotice_v4" type="wbhcn4:CarrierNotice_v4" minOccurs="1" maxOccurs="1"/>
+
+      <xs:element name="ClaimIssueFSM" type="cifsm:ClaimIssueFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestManufacturerFSM" type="rmfsm:RequestManufacturerFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TTNShipmentFSM" type="ttnfsm:TTNShipmentFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TTNIssueFSM" type="issuefsm:TTNIssueFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RejectionNoticeFSM" type="rnfsm:RejectionNoticeFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReturnNoticeFSM" type="retfsm:ReturnNoticeFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RecheckNotificationsFSM" type="recfsm:RecheckNotificationsFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryPlaceOfBusiness" type="qp:QueryParameters" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReplyPlaceOfBusiness" type="rpb:ReplyPlaceOfBusiness" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryGenerationOpenKey" type="qgok:QueryGenerationOpenKeyType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReplyGenerationOpenKey" type="rgok:ReplyGenerationOpenKeyType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="InvoiceIssueAM" type="iiam:InvoiceIssueAMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="InvoiceExportFSM" type="ieam:InvoiceExportFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="InvoicePlannedImport" type="ipiap:InvoicePlannedImportType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="NotificationsBeginningTurnover" type="nbtap:NotificationsBeginningTurnoverType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ChequeV3" type="chqv3:ChequeV3Type" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RepProducedProduct_v4" type="rpp4:RepProducedType_v4" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RepImportedProduct_v4" type="rpi4:RepImportedType_v4" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReportDestructionAMFSM" type="rdm:ReportDestructionAMFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestRepealIPI" type="rripi:RequestRepealIPI" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestRepealEFSM" type="rream:RequestRepealEFSM" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestRepealIAM" type="rriam:RequestRepealIAM" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TTNShipmentReturnFSM" type="ttnrfsm:TTNShipmentReturnFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TTNIssueReturnFSM" type="issuerfsm:TTNIssueReturnFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReferenceOfDeficiencies" type="rodfsm:ReferenceOfDeficiencies" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ManufacturingNoticeFSM" type="mnfsm:ManufacturingNoticeFSM" minOccurs="1" maxOccurs="1"/>
+
+      <xs:element name="WayBill_v4" type="wb4:WayBillType_v4" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="WayBillAct_v4" type="wa4:WayBillActType_v4" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Route" type="mskr:Route" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CancelRoute" type="mskcr:CancelRoute" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DebtAbsence" type="ish:DebtAbsenceType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestAdjustmentData" type="rad:RequestAdjustmentData" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ActReceiptOnlineOrder" type="aroo:ActReceiptOnlineOrderType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ActConfirmOnlineOrder" type="acoo:ActConfirmOnlineOrderType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ActCancelOnlineOrder" type="acnoo:ActCancelOnlineOrderType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestBalanceTransfer" type="rbt:RequestBalanceTransfer" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RequestManufacturerFSMforCheck" type="rmfsmc:RequestManufacturerFSMforCheckType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="TicketRMCheck" type="tcrmc:TicketRMCheckType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="FrapClaims" type="frcl:FrapClaimsType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="FrapClaimsCor" type="frclc:FrapClaimsCorType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ApplicationLicenses" type="mfapl:ApplicationsType" minOccurs="1" maxOccurs="1"/>
+ <!--     <xs:element name="RequestInfo" type="rid:RequestInfoType" minOccurs="1" maxOccurs="1"/> -->
+      <xs:element name="RepProducedProduct_v5" type="rpp5:RepProducedType_v5" minOccurs="1" maxOccurs="1"/>
+ <!--     <xs:element name="NoticeClaimIssueFSM" type="ncif:NoticeClaimIssueFSMType" minOccurs="1" maxOccurs="1"/> -->
+      <xs:element name="ReturnNotificationsFSM" type="retfsm1:ReturnNotificationsFSMType" minOccurs="1" maxOccurs="1"/>
+ <!--     <xs:element name="LicenseActConfirm" type="licact:LicenseActConfirmType" minOccurs="1" maxOccurs="1"/> -->
+      <xs:element name="TTNInternalMoveFSM" type="movefsm:TTNInternalMoveFSMType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ActWriteOff_v4" type="awr4:ActWriteOffType_v4" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ChequeV4" type="chqv4:ChequeV4Type" minOccurs="1" maxOccurs="1"/> 
+      <!--новые после 01.03.2024-->
+      <xs:element name="RepProducedProduct_v6" type="rpp6:RepProducedType_v6" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RepImportedProduct_v5" type="rpi5:RepImportedType_v5" minOccurs="1" maxOccurs="1"/>
+    </xs:choice> 
   </xs:complexType>
 
   <xs:complexType name="SenderInfo">

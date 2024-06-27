@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/TTNIssueReturnFSM"
+           targetNamespace="http://fsrar.ru/WEGAIS/TTNIssueReturnFSM"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:cee="http://fsrar.ru/WEGAIS/CommonV3"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+           xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonV3" schemaLocation="EGCommonV3.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="TTNIssueReturnFSMType">
+    <xs:annotation>
+      <xs:documentation>накладная на возврат ФСМ заявителем</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор накладной (клиентский, к заполнению необязательный)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата накладной</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Sender" type="oref:OrgInfoRus_ClaimIssue" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Отправитель (составной параметр)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Consignee" type="oref:OrgInfoRus_ClaimIssue" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Получатель (составной параметр)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="RequestFSM" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Основание выдачи (идентификатор заявления)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ManufacturerShortName" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Краткое наименование производителя марок</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ActualShipmentDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата фактической отгрузки</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TotalQuantity" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Общее количество марок, шт.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Content">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionTTNIssueReturnFSMType" nillable="false" minOccurs="1" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Содержимое товарно-транспортная накладная на отгрузку ФСМ</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="PosUn">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:Identity"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PositionTTNIssueReturnFSMType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри ТТН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="SampleFSM" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип марки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="MarkType" type="c:MarkGZTypeString" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код типа марки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="RollNumber" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер рулона</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="RangeNumberInRoll" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер диапазона в рулоне</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Rank" type="pref:RankType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Серия марки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Start" type="pref:MarkNumberType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Начальный номер диапазона</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Last" type="pref:MarkNumberType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Конечный номер</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="QuantityRange" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество марок</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

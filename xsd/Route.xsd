@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/Route"
+           targetNamespace="http://fsrar.ru/WEGAIS/Route"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+
+  <xs:complexType name="Route">
+    <xs:annotation>
+      <xs:documentation>Транспортная Накладная</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="NUMBER" type="c:NoEmptyString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+		<xs:element name="Date" type="c:DateNoTime" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+		<xs:element name="Ownership"  minOccurs="1" maxOccurs="1">
+			<xs:annotation>
+				<xs:documentation>Признак перехода права собственности</xs:documentation>
+				<xs:documentation>Право собственности не перешло - 0</xs:documentation>
+				<xs:documentation>Право собственности перешло - 1</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="0"/>
+				<xs:enumeration value="1"/>
+			</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		<xs:element name="WBRegId" type="c:NoEmptyString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный номер ТТН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+		<xs:element name="ParentRoutes" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Перечень родительских транспортных накладных</xs:documentation>
+        </xs:annotation>
+  		<xs:complexType>
+		<xs:sequence>
+			<xs:element name="RouteId" type="c:NoEmptyString50" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		</xs:complexType>
+        <xs:unique name="RouteUnq">
+          <xs:selector xpath="ns:ParentRoutes/ns:RouteId"/>
+          <xs:field xpath="."/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="TRAN_TYPE" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип перевозки</xs:documentation>
+        </xs:annotation>
+		<xs:simpleType>
+		<xs:restriction base="xs:string">
+            <xs:enumeration value="410">
+	        <xs:annotation>
+    	      <xs:documentation>Воздушный транспорт</xs:documentation>
+        	</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="411">
+	        <xs:annotation>
+    	      <xs:documentation>Водный транспорт</xs:documentation>
+        	</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="412">
+	        <xs:annotation>
+    	      <xs:documentation>Железнодорожный транспорт</xs:documentation>
+        	</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="413">
+	        <xs:annotation>
+    	      <xs:documentation>Автомобильный транспорт</xs:documentation>
+        	</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="419">
+	        <xs:annotation>
+    	      <xs:documentation>Иные транспортные средства</xs:documentation>
+        	</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+		</xs:simpleType>
+      </xs:element>
+      <xs:element name="TRAN_COMPANY" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Название компании перевозчика</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_CAR" type="ns:Field255" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Транспортное средство</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_TRAILER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Прицеп</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_CUSTOMER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Заказчики</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_DRIVER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Водитель</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_LOADPOINT" type="c:NoEmptyString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Место погрузки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_UNLOADPOINT" type="c:NoEmptyString" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Место разгрузки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_REDIRECT" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Перенаправление</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TRAN_FORWARDER" type="ns:Field255" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Экспедитор</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Quantity" type="c:PositiveDecimalType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество продукции в ТН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+        <xs:simpleType name="Field255">
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+</xs:schema>

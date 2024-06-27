@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns="http://fsrar.ru/WEGAIS/ApplicationLicenses"
+           targetNamespace="http://fsrar.ru/WEGAIS/ApplicationLicenses"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+            >
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  
+  <xs:complexType name="ApplicationsType">
+    <xs:annotation>
+      <xs:documentation>Заявление на полученеие/продление лицензии</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Application">
+        <xs:annotation>
+          <xs:documentation>Заявление</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="ApplicationType" type="ce:LicenseApplicationType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Тип заявления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ActivityType" type="ce:LicenseActivityType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Вид деятельности</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="NameOrg" type="c:NoEmptyString255" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Наименование организации</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="INN" type="oref:INNType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ИНН</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="OGRN" type="c:OGRNType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ОГРН</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="KPP" type="oref:KPPType" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>КПП</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="LicenseNumber" type="c:NoEmptyString20" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Регистрационный номер лицензии</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="LicenseDate" type="xs:date" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата выдачи лицензии</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="LicenseValidityTime" type="c:StringOfNumbers1Type" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Срок действия лицензии. Содержит 1 символ, обозначающий срок, на который будет выдана лицензия</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="RegisteredAddress" type="c:NoEmptyString500" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Адрес организации. Юридический адрес по ФИАС</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="GovernmentFeeList" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Реквизиты документов, подтверждающих уплату государственной пошлины</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="GovernmentFee"  type="ns:GovernmentFeeType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="DivisionList" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Данные по обособленному подразделению</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Division" type="ns:DivisionType" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="GovernmentFeeType">
+    <xs:all>
+    <xs:element name="KBK" type="c:StringOfNumbers20Type" minOccurs="1" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation>КБК зачисления</xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Date" type="xs:date" minOccurs="1" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation>Дата</xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Number" type="c:StringOfNumbers10Type" minOccurs="1" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation>Номер зачисления</xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    <xs:element name="Total" type="c:NoNegativeDecimalType" minOccurs="1" maxOccurs="1">
+      <xs:annotation>
+        <xs:documentation>Оплаченная сумма</xs:documentation>
+      </xs:annotation>
+    </xs:element>
+    </xs:all>  
+  </xs:complexType>
+
+  <xs:complexType name="DivisionType">
+    <xs:all>
+      <xs:element name="ObjectKPP" type="oref:KPPType" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>КПП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NameBank" type="c:NoEmptyString500" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование банка</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Account" type="c:StringOfNumbers20Type" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Расчетный счет</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PhoneNumber" type="c:StringOfNumbers11Type" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Контактный телефон. Номер телефона в формате 89162428313</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="EmailAddress" type="c:NoEmptyString500" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Адрес электронной почты</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContractNumber"  type="c:NoEmptyString20" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер договора</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ContractDate" type="xs:date" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата договора</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectName" type="c:NoEmptyString500" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование торгового объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectTime" type="c:NoEmptyString20" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Часы работы</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectType" type="c:NoEmptyString500" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BusinessAddress" type="c:NoEmptyString500" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Адрес места осуществления деятельности. Фактический адрес по ФИАС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectAddress" type="c:NoEmptyString500" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Адрес местонахождения объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectNumber" type="c:NoEmptyString20" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Кадастровый номер объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectCompanyType" type="c:NoEmptyString500" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип торгового объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectCompanySize" type="c:NoEmptyString20" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Площадь торгового объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectSize" type="c:NoEmptyString20" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Площадь объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ObjectCoordinate" type="c:NoEmptyString20" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Значения координат объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  
+</xs:schema>

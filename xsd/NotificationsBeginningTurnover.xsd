@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/NotificationsBeginningTurnover"
+           targetNamespace="http://fsrar.ru/WEGAIS/NotificationsBeginningTurnover"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:cee="http://fsrar.ru/WEGAIS/CommonV3"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+           xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonV3" schemaLocation="EGCommonV3.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="NotificationsBeginningTurnoverType">
+    <xs:annotation>
+      <xs:documentation>Уведомление о начале оборота АП</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор уведомления (клиентский, к заполнению необязательный)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер уведомления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата уведомления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="LicenseRegNumber" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Лицензия (Необходимость в наличии лицензии зависит от вида АП)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Notifier" type="c:FSRARIDType" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>СИО организации уведомителя</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Producer" type="c:FSRARIDType" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>СИО производителя</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="FullName" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Наименование продукции полное</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="FullNameManufacturerLanguage" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Наименование на языке производителя</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="AlcVolumeMin" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Крепость от, %</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:minInclusive value="0"/>
+                  <xs:maxInclusive value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="AlcVolumeMax" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Крепость до, %</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:minInclusive value="0"/>
+                  <xs:maxInclusive value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="AlcVolume" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Фактическая крепость, %</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:minInclusive value="0"/>
+                  <xs:maxInclusive value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="UnitType" type="pref:WbUnitType" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Признак расфасовки в потребительскую тару</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="PackageType" type="c:packageTypeString" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Код тары</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            
+            <!-- ?????? Или все таки должен быть список емкостей ??????? -->
+            <xs:element name="Capacity" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Емкость упаковки продукции согласно ЕГАИС</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="DistinctiveCharacteristics" type="xs:string" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Другие отличительные характеристики (в том числе органолептические) алкогольной продукции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ShelfLife" type="c:NoNegativeIntegerType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Срок годности в днях. 0 – срок неограничен</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="StorageTemperatureMin" type="xs:decimal" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Температура хранения минимальная</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="StorageTemperatureMax" type="xs:decimal" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Температура хранения максимальная</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="StorageHumidityMin" type="xs:decimal" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Влажность хранения минимальная</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="StorageHumidityMax" type="xs:decimal" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Влажность хранения максимальная</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="OtherStorageCharacteristics" type="xs:string" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Др. хар. хранения</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="CodAP231" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Код АП. Справочник, приказ Росалкогольрегулирования №231 от 23.08.2012</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="CodOKPD2" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Код ОКПД2. Справочник, приказ Росстандарта от 31.01.2014 № 14-ст</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="CodTNVEDTS" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Код ТН ВЭД ТС. Справочник товарной номенклатуры Евразийского экономического союза</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="VidAP171FZ" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Вид АП по 171 ФЗ. Справочник, статья 2 ФЗ171 от 22.11.1995</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="DateFirstDelivery" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата первой поставки</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TrademarkDetails" type="c:BrandString" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Сведения о товарном знаке</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Note" type="xs:string" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Примечание</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TermsTransportation" type="xs:string" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Условия перевозки алкогольной продукции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TermsSale" type="xs:string" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Условия реализации алкогольной продукции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TermsDisposal" type="xs:string" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Условия утилизации алкогольной продукции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="LabelFoto" type="xs:base64Binary" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Этикетка. Архив с фотографиями этикетки</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="CompositionProducts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionCompositionProductsType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Состав продукции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="PosUn">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:Identity"/>
+        </xs:unique>
+      </xs:element>
+
+      <xs:element name="IdentifyingDocuments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionIdentifyingDocumentsType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Идентифицирующие документы</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="PosUnId">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:Identity"/>
+        </xs:unique>
+      </xs:element>
+
+      <xs:element name="Declaration">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionDeclarationType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Декларация</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="PosUnDec">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:Identity"/>
+        </xs:unique>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PositionCompositionProductsType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри секции состав продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="IngredientType" type="pref:WbIngredientType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип ингредиента. Принимает значения: основной, дополнительный</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="IngredientCode" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код, для основных код из справочника. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="IngredientName" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>наименование ингредиента, для дополнительных</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PositionIdentifyingDocumentsType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри секции идентифицирующие документы</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="DocumentVid" type="pref:DocumentVidType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Вид документа. Принимает значения: ГОСТ, ТИ, ТУ, РЦ, Другое</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="DocumentNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер документа. Для ГОСТ – справочник</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="ElectronicView" type="xs:base64Binary" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Электронный вид. Может заполняться только для вида, отличного от ГОСТ, содержит архив с документами </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PositionDeclarationType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри секции декларация</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="DeclarationtVid" type="pref:DeclarationVidType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Вид документа. Принимает значения: Декларация о соответствии, Сертификат соответствия</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="DeclarationNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер документа.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="DateValidity" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата начала действия</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="DateExpiration" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата окончания действия</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

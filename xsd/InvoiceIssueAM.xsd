@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/InvoiceIssueAM"
+           targetNamespace="http://fsrar.ru/WEGAIS/InvoiceIssueAM"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:cee="http://fsrar.ru/WEGAIS/CommonV3"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+           xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonV3" schemaLocation="EGCommonV3.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="InvoiceIssueAMType">
+    <xs:annotation>
+      <xs:documentation>квитанция о выдаче АМ для импорта АП</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор квитанции (клиентский, к заполнению необязательный)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер квитанции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата квитанции</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Importer" type="oref:OrgInfoRus_ClaimIssue" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>СИО импортера</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="CustomsDepartment" type="oref:OrgInfoRus_ClaimIssue" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>СИО таможенного поста, с которого осуществляется отгрузка АМ</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="RequestAM" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер заявления о выдаче акцизных марок</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ActualShipmentDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата фактической отгрузки</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TotalQuantity" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Количество марок (штуки)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Content">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionInvoiceIssueAMType" nillable="false" minOccurs="1" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Содержимое квитанциb о выдаче АМ для импорта АП</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="PosUn">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:Identity"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PositionInvoiceIssueAMType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри ТТН</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="MarkType" type="c:MarkGZTypeString" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип марки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="MarkTypeCode" type="c:CodeSampleTypeString" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Строка (идентификатор типа марок в ЕГАИС)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Rank" type="pref:RankType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Серия марки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Start" type="pref:MarkNumberType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Начальный номер диапазона</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Last" type="pref:MarkNumberType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Конечный номер диапазона</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="QuantityRange" type="xs:integer" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество марок в диапазоне</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

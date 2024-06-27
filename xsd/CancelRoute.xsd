@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/CancelRoute"
+           targetNamespace="http://fsrar.ru/WEGAIS/CancelRoute"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+
+  <xs:complexType name="CancelRoute">
+    <xs:annotation>
+      <xs:documentation>Отмена транспортной накладной</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Date" type="c:DateNoTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="RouteId" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

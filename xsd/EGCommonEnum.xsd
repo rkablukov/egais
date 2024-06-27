@@ -12,7 +12,7 @@
     <xs:documentation>Только три цифры</xs:documentation>
   </xs:annotation>
   <xs:restriction base="xs:string">
-    <xs:pattern value="\d{3}"/>
+    <xs:pattern value="\d{3}|\d{4}|\d{5}"/>
   </xs:restriction>
 </xs:simpleType>
 
@@ -863,6 +863,71 @@
           <xs:documentation>АМ. Крепкие спиртные напитки свыше 0,75 л</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="301">
+        <xs:annotation>
+          <xs:documentation>СМ. Пиво и пивная продукция</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="187">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция свыше 9% до 0,5 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="188">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция свыше 9% до 0,75 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="189">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция свыше 9% свыше 0,75 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="190">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Напитки алкогольные до 0,75 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="191">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Напитки алкогольные свыше 0,75 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="192">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Вина</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="193">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Вина игристые (шампанские)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="194">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Вина ликерные</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="195">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция плодовая</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="196">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция до 9%</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="197">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция свыше 9% до 0,1 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="198">
+        <xs:annotation>
+          <xs:documentation>ФСМ. Алкогольная продукция свыше 9% до 0,25 л</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -936,6 +1001,11 @@
           <xs:documentation>Списание продукции при производственных потерях</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Приготовление">
+        <xs:annotation>
+          <xs:documentation>Использовано для приготовления коктейлей (блюд)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
@@ -951,7 +1021,7 @@
 
   <xs:simpleType name="TypeChargeOn">
     <xs:annotation>
-      <xs:documentation>Основания списания</xs:documentation>
+      <xs:documentation>Основания постановки на баланс</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="Пересортица">
@@ -976,5 +1046,142 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+
+  <xs:simpleType name="ReportUseAutoProcessType">
+    <xs:annotation>
+      <xs:documentation>Справочник текста для заявления на выдачу ФСМ</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="c:NoEmptyString">
+      <xs:enumeration value="Отчет об использовании ФСМ прошу автоматически сформировать на основе данных, зафиксированных заявителем в ЕГАИС расчетным путем.">
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ClaimIssueFSMType">
+    <xs:annotation>
+      <xs:documentation>Справочник типов заявок</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="3"/>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>«1» - на алкогольную продукцию, произведенную на территории Российской Федерации</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>«2» - на алкогольную продукцию, ввозимую в Российскую Федерацию из государств, не являющихся членами ЕАЭС</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>«3» - на алкогольную продукцию, ввозимую в Российскую Федерацию из государств - членов ЕАЭС</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="VersionFormatType">
+    <xs:annotation>
+      <xs:documentation>Справочник версий форматов для Уведомлений о начале оборота АП</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="5"/>
+      <xs:enumeration value="1.1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TypesOrgType">
+    <xs:annotation>
+      <xs:documentation>Справочник типов заявок</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500"/>
+      <xs:enumeration value="организация, осуществляющая производство алкогольной продукции, подлежащей маркировке федеральными специальными марками."/>
+      <xs:enumeration value="организация, осуществляющая производство пива и пивных напитков, сидра, пуаре, медовухи и имеющая основное технологическое оборудование для производства указанной продукции с производственной мощностью не более 300 тысяч декалитров в год."/>
+      <xs:enumeration value="организация, осуществляющая производство пива и пивных напитков, сидра, пуаре, медовухи и имеющая основное технологическое оборудование для производства указанной продукции с производственной мощностью более 300 тысяч декалитров в год."/>
+      <xs:enumeration value="организация, осуществляющая ввоз алкогольной продукции в Российскую Федерацию."/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TypesBeerType">
+    <xs:annotation>
+      <xs:documentation>Справочник типов пива </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+      <xs:enumeration value="светлое"/>
+      <xs:enumeration value="темное"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BeerProcessingMethodType">
+    <xs:annotation>
+      <xs:documentation>Способы обработки пива</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="50"/>
+      <xs:enumeration value="непастеризованное"/>
+      <xs:enumeration value="пастеризованное"/>
+      <xs:enumeration value="фильтрованное"/>
+      <xs:enumeration value="нефильтрованное осветленное"/>
+      <xs:enumeration value="нефильтрованное неосветленное"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+    <xs:simpleType name="MarketSupplyType">
+    <xs:annotation>
+      <xs:documentation>Справочник рынков поставки</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500"/>
+      <xs:enumeration value="для поставки на территории Российской Федерации"/>
+      <xs:enumeration value="для поставки продукции за пределы территории Российской Федерации – на экспорт"/>
+      <xs:enumeration value="для поставки на территории Российской Федерации и за пределы территории Российской Федерации – на экспорт"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LicenseApplicationType">
+    <xs:annotation>
+      <xs:documentation>Перечень типов заявления на получение лицензии</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500"/>
+      <xs:enumeration value="заявление о выдаче"/>
+      <xs:enumeration value="заявление о продлении"/>
+      <xs:enumeration value="заявление о переоформлении"/>
+      <xs:enumeration value="заявление о прекращении"/>
+      <xs:enumeration value="заявление о возобновлении"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LicenseActivityType">
+    <xs:annotation>
+      <xs:documentation>Перечень видов деятельности по лицензии</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="500"/>
+      <xs:enumeration value="розничная продажа алкогольной продукции при оказании услуг общественного питания"/>
+      <xs:enumeration value="розничная продажа алкогольной продукции"/>
+      <xs:enumeration value="производство, хранение и поставки произведенного этилового спирта"/>
+      <xs:enumeration value="производство, хранение и поставки произведенной алкогольной продукции"/>
+      <xs:enumeration value="производство, хранение и поставки произведенной сельскохозяйственными производителями винодельческой продукции"/>
+      <xs:enumeration value="производство, хранение, поставки и розничная продажа произведенной сельскохозяйственными производителями винодельческой продукции"/>
+      <xs:enumeration value="производство, хранение и поставки произведенной спиртосодержащей пищевой продукции"/>
+      <xs:enumeration value="производство, хранение и поставки спиртосодержащей непищевой продукции"/>
+      <xs:enumeration value="производство этилового спирта для производства фармацевтической субстанции спирта этилового (этанола)"/>
+      <xs:enumeration value="закупка, хранение и поставки алкогольной продукции"/>
+      <xs:enumeration value="закупка, хранение и поставки спиртосодержащей пищевой продукции"/>
+      <xs:enumeration value="закупка, хранение и поставки спиртосодержащей непищевой продукции"/>
+      <xs:enumeration value="хранение этилового спирта"/>
+      <xs:enumeration value="хранение алкогольной продукции"/>
+      <xs:enumeration value="хранение спиртосодержащей пищевой продукции"/>
+      <xs:enumeration value="хранение спиртосодержащей непищевой продукции"/>
+      <xs:enumeration value="перевозки этилового спирта"/>
+      <xs:enumeration value="перевозки нефасованной спиртосодержащей пищевой продукции с содержанием этилового спирта более 25 процентов объема готовой продукции"/>
+      <xs:enumeration value="перевозки нефасованной спиртосодержащей не пищевой продукции с содержанием этилового спирта более 25 процентов объема готовой продукции"/>
+    </xs:restriction>
+  </xs:simpleType>
+
 
 </xs:schema>

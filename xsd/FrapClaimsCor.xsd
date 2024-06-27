@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/FrapClaimsCor"
+           targetNamespace="http://fsrar.ru/WEGAIS/FrapClaimsCor"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+>
+
+  <xs:complexType name="FrapClaimsCorType">
+    <xs:annotation>
+      <xs:documentation>Уведомление о начале оборота АП. Уточнение</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      
+      <xs:element name="NameDoc" fixed="Уведомление о начале оборота на территории РФ АП, сведения которого уточняются">
+        <xs:annotation>
+          <xs:documentation>Секция заголовка документа.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:sequence>
+
+            <xs:element name="RegNumber" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>РегНомерУточнения. Регистрационный номер  уведомления, сведения которого уточняются. Содержит регистрационный номер  уведомления, содержащийся в реестре уведомлений.</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="20"/>
+                  <xs:pattern value="\S+(.*\S+)*"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="Producer" nillable="false" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Производитель. Производитель (реквизиты)</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ClientRegId" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Код организации в ЕГАИС</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+
+                  <xs:element name="FullName" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Полное наименование</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="255"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+
+                  <xs:element name="ShortName" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Сокращенное наименование</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="64"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+
+                  <xs:choice>
+                    <xs:element name="UL" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Юридическое лицо</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="INN"  minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>ИНН организации</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:length value="10" />
+                                <xs:pattern value="[0-9]{10}" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="KPP"  minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>КПП организации, обособленного подразделения (на котором осуществляется производство (импорт) указанного наименования алкогольной продукции)</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:length value="9" />
+                                <xs:pattern value="[0-9]{9}" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="address" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Адрес места осуществления деятельности на территории Российской Федерации</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Country" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Код страны</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:pattern value="[0-9][0-9][0-9]" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="RegionCode" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Код региона</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:pattern value="[0-9][0-9]" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Description" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Адрес места осуществления деятельности</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:minLength value="1" fixed="true"/>
+                                      <xs:maxLength value="5000"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FL" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>СХП (ИП)</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="FullName" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Фамилия, имя, отчество СХП (ИП)</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:minLength value="1" fixed="true"/>
+                                <xs:maxLength value="255"/>
+                                <xs:pattern value="\S+(.*\S+)*"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="INN"  minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>ИНН организации</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:length value="12" />
+                                <xs:pattern value="[0-9]{12}" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="address" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Адрес места осуществления деятельности на территории Российской Федерации</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Country" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Код страны</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:pattern value="[0-9][0-9][0-9]" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="RegionCode" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Код региона</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:pattern value="[0-9][0-9]" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Description" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Адрес места осуществления деятельности</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:minLength value="1" fixed="true"/>
+                                      <xs:maxLength value="5000"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FO" minOccurs="1" maxOccurs="1">
+                      <xs:annotation>
+                        <xs:documentation>Иностранная организация</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:all>
+                          <xs:element name="address" minOccurs="1" maxOccurs="1">
+                            <xs:annotation>
+                              <xs:documentation>Адрес места осуществления деятельности за пределами Российской Федерации</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element name="Country" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Код страны</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:pattern value="[0-9][0-9][0-9]" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="Description" minOccurs="1" maxOccurs="1">
+                                  <xs:annotation>
+                                    <xs:documentation>Адрес места осуществления деятельности</xs:documentation>
+                                  </xs:annotation>
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:minLength value="1" fixed="true"/>
+                                      <xs:maxLength value="5000"/>
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:all>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="CapacityList"  nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ЕмкостьАП</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CapacityDescr" type="ns:CapacityType" nillable="false" minOccurs="1" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>Емкость упаковки продукции согласно ЕГАИС</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="MarketSupply" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Рынок поставки</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="500"/>
+                  <xs:enumeration value="для поставки на территории Российской Федерации"/>
+                  <xs:enumeration value="для поставки продукции за пределы территории Российской Федерации – на экспорт"/>
+                  <xs:enumeration value="для поставки на территории Российской Федерации и за пределы территории Российской Федерации – на экспорт"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="CompositionProducts" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Position" type="ns:PositionCompositionProductsType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>СоставАП. Состав продукции</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+              <xs:unique name="PosUn">
+                <xs:selector xpath="ns:Position"/>
+                <xs:field xpath="ns:Identity"/>
+              </xs:unique>
+            </xs:element>
+
+            <xs:element name="TechReglStandard" nillable="false" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Технический регламент, документы по стандартизации, указанные в пунктах 1-4 статьи 14 Федерального закона "О стандартизации в Российской Федерации".</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element name="TechRegl" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Технический регламент</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="TechReglNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                          <xs:annotation>
+                            <xs:documentation>Номер Решения Совета Евразийской экономической комиссии.</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="1" fixed="true"/>
+                              <xs:maxLength value="50"/>
+                              <xs:pattern value="\S+(.*\S+)*"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="TechReglName" nillable="false" minOccurs="1" maxOccurs="1">
+                          <xs:annotation>
+                            <xs:documentation>Наименование. Содержит полное наименование технической документации.</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="1" fixed="true"/>
+                              <xs:maxLength value="500"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:all>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element name="TechStandard" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НацСтандарт. межгосударственный (национальный) стандарт</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:all>
+                        <xs:element name="StandardNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                          <xs:annotation>
+                            <xs:documentation>НомерНацСтандарта. Содержит номер принятия стандарта. </xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="1" fixed="true"/>
+                              <xs:maxLength value="50"/>
+                              <xs:pattern value="\S+(.*\S+)*"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="StandardName" nillable="false" minOccurs="1" maxOccurs="1">
+                          <xs:annotation>
+                            <xs:documentation>НаименНацСтандарта. Наименование. Содержит полное наименование стандарта.</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                              <xs:minLength value="1" fixed="true"/>
+                              <xs:maxLength value="500"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:element>
+                      </xs:all>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="AdditionalDocuments" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Position" type="ns:PositionAdditionalDocumentsType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>
+                        ДопДокументы. Дополнительные документы, в соответствии с которыми производится алкогольная продукция
+                        Указываются наименование и реквизиты документов, в соответствии с которыми производится алкогольная продукция: технологические инструкции, рецептуры,
+                        стандарты организаций - для алкогольной продукции, произведенной на территории Российской Федерации, международные и национальные стандарты страны происхождения,
+                        национальные регламенты, техническая документация - для импортной алкогольной продукции, и иной технической документации.
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+              <xs:unique name="PosUnAD">
+                <xs:selector xpath="ns:Position"/>
+                <xs:field xpath="ns:Identity"/>
+              </xs:unique>
+            </xs:element>
+
+            <xs:element name="DistinctiveCharacteristics" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Другие отличительные характеристики (в том числе органолептические) алкогольной продукциию. В случае отсутствия отличительных характеристик указывается слово "отсутствуют".</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="500"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="SugarContWine" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>классификация вин по содержанию сахаров</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="50"/>
+                  <xs:enumeration value="сухое"/>
+                  <xs:enumeration value="полусухое"/>
+                  <xs:enumeration value="полусладкое"/>
+                  <xs:enumeration value="сладкое"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="SugarContSparkWine" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>классификация игристых вин по содержанию сахаров</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="50"/>
+                  <xs:enumeration value="экстра брют"/>
+                  <xs:enumeration value="брют"/>
+                  <xs:enumeration value="сухое"/>
+                  <xs:enumeration value="полусухое"/>
+                  <xs:enumeration value="полусладкое"/>
+                  <xs:enumeration value="сладкое"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="MinAge" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>минимальный срок выдержки дистиллята, используемого для производства алкогольной продукции</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:decimal">
+                  <xs:minInclusive value="0"/>
+                  <xs:maxInclusive value="100"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="StorageTemperature" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ТемперХранения. Температура хранения, Указываются установленные производителем алкогольной продукции температурные условия хранения, в градусах по Цельсию.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="StorageTemperatureMin" type="xs:decimal" nillable="false" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>ТемперХраненияОт. Температура хранения - от</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+
+                  <xs:element name="StorageTemperatureMax" type="xs:decimal" nillable="false" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>ТемперХраненияДо. Температура хранения - до</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="StorageHumidity" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ВлажХранения. Влажность хранения, диапазон "от и до". Указываются установленные производителем алкогольной продукции относительная влажность хранения, в процентах.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="StorageHumidityMin" type="xs:decimal" nillable="false" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>ВлажХраненияОт. Влажность хранения - от</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+
+                  <xs:element name="StorageHumidityMax" type="xs:decimal" nillable="false" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>ВлажХраненияДо. Влажность хранения - до</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="OtherStorageCharacteristics" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>ДрОтлХарактеристики. Другие характеристики хранения. Принимает значения в соответствии со справочником ЕГАИС "Другие характеристики хранения".</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="500"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="DeclarationCertificate" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Position" type="ns:PositionDeclarationType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>Декларация</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+              <xs:unique name="PosUnDec">
+                <xs:selector xpath="ns:Position"/>
+                <xs:field xpath="ns:Identity"/>
+              </xs:unique>
+            </xs:element>
+
+            <xs:element name="TrademarkDetails" type="ns:TrademarkDetailsType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>ТоварнЗнак. Сведения о товарном знаке</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Note" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Примечание.</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="500"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="TermsTransportation" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>УсловияПеревоз. Условия перевозки алкогольной продукции</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="500"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="TermsSale" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>УсловияРеализац. Условия реализации алкогольной продукции</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="500"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="TermsDisposal" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>УсловияУтилиз. Условия утилизации алкогольной продукции</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:minLength value="1" fixed="true"/>
+                  <xs:maxLength value="500"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PositionCompositionProductsType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identity" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри секции состав продукции</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="50"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element name="CompulsoryRawMaterials" nillable="false" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Принимает значения в соответствии со справочником сырья, содержащимся в НСИ ЕГАИС.
+                ФЛК: при описании состава АП:
+                - для алкогольной продукции, производимой из одного (нескольких) видов сырья, указывается вид сырья;
+                - в случае указания винограда - указывается год сбора урожая и (или) сорта винограда. В случае указания нескольких годов сбора урожая, указывается каждый год сбора урожая в отдельной позиции;
+                - в случае указания этилового спирта - сорт используемого ректификованного этилового спирта;
+                - для пива и напитков, изготавливаемых на основе пива (пивных напитков), - тип, способ обработки, сведения о фильтровании.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:minLength value="1" fixed="true"/>
+                <xs:maxLength value="500"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="CompulsoryRawMaterialsDescr" nillable="false" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Для винных напитков, пива и пивных напитков указываются также доли (проценты) используемых при производстве алкогольной продукции компонентов.
+                На официальном сайте Федеральной службы по регулированию алкогольного рынка доли (проценты) не размещаются.
+                В случае указания винограда - указывается его сорт и год сбора урожая.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:minLength value="1" fixed="true"/>
+                <xs:maxLength value="255"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence> 
+        <xs:element name="OtherAP" nillable="false" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Из Классификатора видов и кодов вида продукции, содержащимся в НСИ ЕГАИС.</xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="255"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="OtherRawMaterials" nillable="false" minOccurs="1" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>
+              ИноеСырье. Указываются иное сырье (компоненты) используемое при производстве алкогольной продукции, отсутствующее в справочнике сырья, содержащимся в НСИ ЕГАИС.
+              В случае использования более одного вида сырья, каждый компонент заполняется в отдельном поле (строке).
+            </xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="255"/>
+            </xs:restriction>
+          </xs:simpleType>
+         </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="CapacityType">
+    <xs:annotation>
+      <xs:documentation>Емкость</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Capacity"  nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Принимает значения в соответствии со справочником "Емкости АП", содержащимся в НСИ ЕГАИС.
+            Указывается объем алкогольной продукции в потребительской (транспортной) таре, в которую разливается алкогольная продукция, в литрах (с точностью до третьего знака после запятой).
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:fractionDigits value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DescriptionPackaging" type="ns:DescriptionPackagingType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ОписаниеТарыУпаковки. Описание Тары Упаковки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ShelfLife" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Срок годности в днях. - указывается установленный производителем алкогольной продукции срок годности на данный вид алкогольной продукции при соблюдении условий хранения, в днях|
+            - в случае если производителем срок годности не установлен, указываются 0
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="DescriptionPackagingType">
+    <xs:annotation>
+      <xs:documentation>Описание Тары Упаковки</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PackageType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Содержит вид тары.
+            Принимает значения в соответствии со справочником "Справочник описания и вида тары", содержащимся в НСИ ЕГАИС
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="50"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ContComposition" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Описание тары из Справочника описания и вида тары</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="50"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="LabelFotoAP"  nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="LabelFoto" type="xs:base64Binary" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  Обязательно требуется прикрепление файла (в формате pdf), состоящего из фотографий алкогольной продукции в потребительской (транспортной) таре
+                  во всю величину (вид спереди, вид сзади, этикетка, контрэтикетка, кольеретка) на каждую емкость в потребительской (транспортной) таре, в которую разливается алкогольная продукция.
+                  Фотографии этикетки, контрэтикетки, кольеретки, используемых на потребительской (транспортной) таре,
+                  должны предусматривать возможность их прочтения. Фотографии должны обеспечивать прочтение всей информации, нанесенной на потребительскую (транспортную) тару.
+                  Для импортной продукции четвертая фотография должна содержать состав продукции на языке производителя продукции.
+                  В случае отсутствия состава на языке производителя прикрепляется фотография с контрэтикеткой на языке производителя без наличия состава продукции на ней.
+                </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="CapacityDescrVal"  nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>
+                  Принимает значения, в соответствии с пунктом 30 Приложения № 1 к Правилам ведения ЕГАИС:
+                  - для алкогольной продукции, производимой на территории Российской Федерации и разливаемой в потребительскую тару;
+                  - для алкогольной продукции, производимой на территории Российской Федерации и разливаемой в транспортную тару;
+                  - для импортной продукции в потребительской таре;
+                  - для импортной продукции в транспортной таре;
+                  - не подлежит маркировке (производство и потребление пива осуществляется в месте оказания услуг общественного питания).
+                  для варианта 1 должно быть приложено 3 фотографии;
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="255"/>
+                  <xs:enumeration value="для алкогольной продукции, производимой на территории Российской Федерации и разливаемой в потребительскую тару"/>
+                  <xs:enumeration value="для алкогольной продукции, производимой на территории Российской Федерации и разливаемой в транспортную тару"/>
+                  <xs:enumeration value="для импортной продукции в потребительской таре"/>
+                  <xs:enumeration value="для импортной продукции в транспортной таре"/>
+                  <xs:enumeration value="не подлежит маркировке (производство и потребление пива осуществляется в месте оказания услуг общественного питания)"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TrademarkDetailsType">
+    <xs:annotation>
+      <xs:documentation>
+        Принимает значения, в соответствии с пунктом 26 Приложения № 1 к Правилам ведения ЕГАИС:
+        - в случае наличия товарного знака|
+        - в случае отсутствия товарного знака указывается слово "отсутствует".
+        Товарный знак должен содержаться в ФГИС Роспатента:
+        - Реестр товарных знаков и знаков обслуживания Российской Федерации
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="TrademarkName" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Содержит наименование товарного знака.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="50"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="StateRegistrationNumber" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер государственной регистрации </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:length fixed="true" value="6" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DateStateRegistration" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата государственной регистрации </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="NameCopyrightHolder" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование правообладателя</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="100"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PositionAdditionalDocumentsType">
+    <xs:annotation>
+      <xs:documentation>ДопДокументы. Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри секции дополнительных документов</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="50"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="AdditionalDoc" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element name="TechnologicalInstruction">
+              <xs:annotation>
+                <xs:documentation>
+                  ТИ. Обязательно требуется прикрепление файла (в формате pdf), содержащего технологическую инструкцию, описывающую технологические процессы, применяемые для изготовления алкогольной продукции на территории Российской Федерации.
+                  Технологическая инструкция файла, прикрепленная (в формате pdf) для служебного использования, на официальном сайте Федеральной службы по регулированию алкогольного рынка не размещается.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="TINumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НомерТИ. Номер.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TIDate" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата ТИ. Дата</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="TIName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НаименТИ. Наименование. Содержит полное наименование технической документации.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TIElectronicView" type="xs:base64Binary" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Электронный вид.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="OrganizationStandard">
+              <xs:annotation>
+                <xs:documentation>
+                  СтандартОрг. стандарт организации
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="OSNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НомерСтандартОрг. Содержит номер стандарта организации.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OSDate" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>ДатаСтандартОрг. Дата</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="OSName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НаименСтандартОрг. Наименование. Содержит полное наименование стандарта организации.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="InternationalStandardCountryOrigin">
+              <xs:annotation>
+                <xs:documentation>
+                  МеждунарСтандарт. международный стандарт страны происхождения
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="ISCONumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НомерМеждунарСтандарта. Содержит номер международного стандарта страны происхождения.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ISCOName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НаименМеждунарСтандарта. Содержит полное наименование международного стандарта страны происхождения.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="NationalStandardCountryOrigin">
+              <xs:annotation>
+                <xs:documentation>
+                  НацСтандартМеждунар. национальный стандарт страны происхождения
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="NSCONumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НомерНацСтандартМеждунар. Содержит номер национального стандарта страны происхождения.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NSCOName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>НаименНацСтандартМеждунар. Содержит полное наименование национального стандарта страны происхождения.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="NationalRegulations">
+              <xs:annotation>
+                <xs:documentation>
+                  НацРеглМеждународ. национальный регламент
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="NRNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Содержит номер национального регламента.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NRName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Содержит полное наименование национального регламента.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="TechnicalDocumentation">
+              <xs:annotation>
+                <xs:documentation>
+                  Техническая документация. Обязательно прикрепление файла (в формате pdf), содержащего информацию производителя (или импортера) с описанием технологических процессов производства алкогольной продукции за пределами территории Российской Федерации на русском языке.
+                </xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="TDNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Номер.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TDDate" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="TDName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Наименование. Содержит полное наименование технической документации.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TDElectronicView" type="xs:base64Binary" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Электронный вид.</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="RC">
+              <xs:annotation>
+                <xs:documentation>рецептура</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="RCNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>номер</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="100"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="RCDate" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="RCName" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Наименование. Содержит полное наименование рецептуры..</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="500"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="PositionDeclarationType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Identity" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри секции декларация</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1" fixed="true"/>
+            <xs:maxLength value="50"/>
+            <xs:pattern value="\S+(.*\S+)*"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="DeclarCertif" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Декларация о соответствии или сертификат соответствия.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:choice>
+            <xs:element name="Declaration">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="DeclarationNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Регистрационный номер документа.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DateValidity" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата регистрации</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="DateExpiration" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата окончания действия</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+            <xs:element name="Certificate">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="CertificateNumber" nillable="false" minOccurs="1" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Регистрационный номер документа.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1" fixed="true"/>
+                        <xs:maxLength value="50"/>
+                        <xs:pattern value="\S+(.*\S+)*"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DateValidity" type="xs:date" nillable="false" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата регистрации</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                  <xs:element name="DateExpiration" type="xs:date" nillable="false" minOccurs="0" maxOccurs="1">
+                    <xs:annotation>
+                      <xs:documentation>Дата окончания действия</xs:documentation>
+                    </xs:annotation>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+
+</xs:schema>

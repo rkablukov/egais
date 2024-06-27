@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:ns="http://fsrar.ru/WEGAIS/ReplyRestBCode"
@@ -13,7 +13,7 @@
 
   <xs:complexType name="ReplyRestBCode">
     <xs:annotation>
-      <xs:documentation>Ответ на запрос об остатках по складу (сокращенный)</xs:documentation>
+      <xs:documentation>Ответ на запрос остатков штрихкодов по идентификатору справки 2</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="RestsDate" type="c:DateWTime" minOccurs="1" maxOccurs="1">

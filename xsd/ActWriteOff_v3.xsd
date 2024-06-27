@@ -73,10 +73,7 @@
           <xs:selector xpath="ns:Position"/>
           <xs:field xpath="ns:Identity"/>
         </xs:unique>
-        <xs:unique name="MarkUn">
-          <xs:selector xpath="ns:Position/ns:MarkCodeInfo/cee:amc"/>
-          <xs:field xpath="."/>
-        </xs:unique>
+        
       </xs:element>
     </xs:sequence>
   </xs:complexType>

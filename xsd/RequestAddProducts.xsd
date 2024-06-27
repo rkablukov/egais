@@ -117,6 +117,16 @@
           <xs:documentation>Регистрационный код продукции по ФРАП</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name ="Brand" type="c:BrandString" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Бренд</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PackageType" type="c:packageTypeString" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код типа упаковки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:all>
   </xs:complexType>
 

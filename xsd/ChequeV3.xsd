@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/ChequeV3"
+           targetNamespace="http://fsrar.ru/WEGAIS/ChequeV3"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+		   xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+>
+
+<xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+<xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="ChequeV3Type">
+    <xs:annotation>
+      <xs:documentation>Чек, чек возврата, розница по безналу</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identity" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор чека</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+		  <xs:choice>
+      		  <xs:element name="Header" type="ns:Header" minOccurs="1" maxOccurs="1"/>
+      		  <xs:element name="HeaderTTN" type="ns:HeaderTTN" minOccurs="1" maxOccurs="1"/>
+		  </xs:choice>
+	    <xs:element name="Content">
+                <xs:annotation>
+                  <xs:documentation>Содержимое чека</xs:documentation>
+                </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice minOccurs="1" maxOccurs="unbounded">
+                  <xs:element name="Bottle" type="ns:Bottle"/>
+                  <xs:element name="Nomark" type="ns:Nomark"/>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+          <xs:unique name="BAR">
+            <xs:selector xpath="ns:Bottle"/>
+            <xs:field xpath="ns:Barcode"/>
+          </xs:unique>
+          <xs:unique name="posid">
+            <xs:selector xpath="ns:Nomark"/>
+            <xs:field xpath="ns:PosIdentity"/>
+          </xs:unique>
+        </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Header">
+    <xs:annotation>
+      <xs:documentation>Чек, чек возврата</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Date" type="c:DateWTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Kassa" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Shift" type="ns:COUNT" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Number" type="ns:COUNT" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Type" type="ns:TYPE" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ConfirmOrder" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="HeaderTTN">
+    <xs:annotation>
+      <xs:documentation>Розничная продажа по безналичному расчету</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+	  <xs:element name="Date" type="c:DateNoTime" minOccurs="1" maxOccurs="1"/>
+	  <xs:element name="BillNumber" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1"/>
+	  <xs:element name="TTNNumber" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Type" type="ns:TYPE" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Bottle">
+    <xs:annotation>
+      <xs:documentation>Маркированная продукция</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Barcode" type="c:Barmix" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="EAN" type="c:EANType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Price" type="c:NoNegativeDecimalType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Nomark">
+    <xs:annotation>
+      <xs:documentation>Пиво</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PosIdentity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Product" type="pref:ProductInfo_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Информация о продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Quantity" type="c:PositiveDecimalType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="EAN" type="c:EANType" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Price" type="c:NoNegativeDecimalType" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="COUNT">
+    <xs:annotation>
+      <xs:documentation>Целые не ноль и без ведущего нуля</xs:documentation>
+    </xs:annotation>
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[1-9][0-9]{0,9}" />
+        </xs:restriction>
+    </xs:simpleType>
+  <xs:simpleType name="TYPE">
+    <xs:annotation>
+      <xs:documentation>Справочник типов чеков</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="c:NoEmptyString50">
+      <xs:enumeration value="Продажа">
+        <xs:annotation>
+          <xs:documentation>Чек продажи</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Возврат">
+        <xs:annotation>
+          <xs:documentation>Чек возврата</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

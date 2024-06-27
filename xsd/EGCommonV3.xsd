@@ -11,6 +11,7 @@
 
 
   <!--новые схемы для помарочного учета-->
+<!--  
   <xs:complexType name="AMCforDocType">
     <xs:annotation>
       <xs:documentation>Список считанных кодов марок</xs:documentation>
@@ -20,13 +21,25 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+-->
 
+  <xs:complexType name="AMCforDocType">
+    <xs:annotation>
+      <xs:documentation>Список считанных кодов марок</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="amc" type="c:PDF417String" nillable="false" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="ms" type="c:BeerCode" nillable="false" minOccurs="1" maxOccurs="unbounded" />
+    </xs:choice>
+  </xs:complexType>
+
+  
   <xs:complexType name="boxtype">
     <xs:sequence>
-      <xs:element name="boxnum" type="c:NoEmptyString" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="boxnum" type="c:boxNumberTypeString" minOccurs="1" maxOccurs="1"/>
       <xs:choice>
         <xs:element name="bl" type="ns:boxtype" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="boxnum" type="c:NoEmptyString" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="boxnum" type="c:boxNumberTypeString" minOccurs="0" maxOccurs="unbounded"/>
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
@@ -46,7 +59,7 @@
       <xs:documentation>информация об упаковке с марками</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="boxnumber" type="c:NoEmptyString" minOccurs="0" maxOccurs="1">
+      <xs:element name="boxnumber" type="c:boxNumberTypeString" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Номер коробки(упаковки)</xs:documentation>
         </xs:annotation>

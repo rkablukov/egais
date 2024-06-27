@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema version="1.0"
            xmlns:ns="http://fsrar.ru/WEGAIS/ActWriteOff"
            targetNamespace="http://fsrar.ru/WEGAIS/ActWriteOff"
@@ -11,6 +11,7 @@
 >
   <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
   <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef" schemaLocation="ProductRef.xsd"/>
+
 
   <xs:complexType name="ActWriteOffType">
     <xs:annotation>

@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/ClaimIssueFSM"
+           targetNamespace="http://fsrar.ru/WEGAIS/ClaimIssueFSM"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:cee="http://fsrar.ru/WEGAIS/CommonV3"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+           xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonV3" schemaLocation="EGCommonV3.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="ClaimIssueFSMType">
+    <xs:annotation>
+      <xs:documentation>Заявление о выдаче ФСМ</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор отчета (клиентский, к заполнению необязательный)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="NUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер заявления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Date" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата заявления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TerrOrganRAR" type="oref:OrgInfoRus_ClaimIssue" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Территориальный орган РАР</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Declarer" type="oref:OrgInfoRus_ClaimIssue" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Заявитель</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Note" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Примечание к заявлению</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:maxLength value="200"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="ReportUseAutoProcess" type="ce:ReportUseAutoProcessType" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation> Всегда принимает значение: Отчет об использовании ФСМ прошу автоматически сформировать на основе данных, зафиксированных заявителем в ЕГАИС расчетным путем.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="ParentClaimID" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Системный идентификатор первоначальной заявки </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="TypeClaimM" type="ns:ClaimIssueFSMComplType" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Тип заявки.</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="Content">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionClaimType" nillable="false" minOccurs="1" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Содержимое Заявления о выдаче ФСМ должно содержать 1 и более позиций</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="PosUn">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:Identity"/>
+        </xs:unique>
+        <xs:unique name="ProductUn">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:VidAP171fz"/>
+          <xs:field xpath="ns:alcPercent"/>
+          <xs:field xpath="ns:Capacity"/>
+        </xs:unique>
+      </xs:element>
+      <xs:element name="CalculationDemand" type="ns:CalculationDemandType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Расчет потребности ФСМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--RM 111766-->
+
+  <xs:complexType name="producedru">
+    <xs:annotation>
+      <xs:documentation>на алкогольную продукцию, произведенную на территории Российской Федерации</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="TypeClaim" fixed="1" minOccurs="1" maxOccurs="1"></xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="producedts">
+    <xs:annotation>
+      <xs:documentation>на алкогольную продукцию, ввозимую в Российскую Федерацию из государств - членов ЕАЭС</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="TypeClaim" fixed="3" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="CONTRACTNUMBER" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер договора (контракта) поставки алкогольной продукции, при исполнении которого будет осуществляться ввоз продукции в Российскую Федерацию</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="CONTRACTDATE" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата договора (контракта) поставки алкогольной продукции, при исполнении которого будет осуществляться ввоз продукции в Российскую Федерацию;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="SHIPPER" type="oref:OrgInfoForeign_v2" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Поставщик продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="producedimp">
+    <xs:annotation>
+      <xs:documentation>на алкогольную продукцию, ввозимую в Российскую Федерацию из государств, не являющихся членами ЕАЭС</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="TypeClaim" fixed="2" nillable="false" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="CONTRACTNUMBER" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер договора (контракта) поставки алкогольной продукции, при исполнении которого будет осуществляться ввоз продукции в Российскую Федерацию</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="CONTRACTDATE" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата договора (контракта) поставки алкогольной продукции, при исполнении которого будет осуществляться ввоз продукции в Российскую Федерацию;</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="SHIPPER" type="oref:OrgInfoForeign_v2" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Поставщик продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name ="ClaimIssueFSMComplType">
+    <xs:annotation>
+      <xs:documentation>Типы заявок на получение ФСМ</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="TypeClaim1" type="ns:producedru" minOccurs="1" maxOccurs="1" ></xs:element>
+      <xs:element name="TypeClaim3" type="ns:producedts" minOccurs="1" maxOccurs="1"></xs:element>
+      <xs:element name="TypeClaim2" type="ns:producedimp" minOccurs="1" maxOccurs="1"></xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="PositionClaimType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="VidAP171fz" type="xs:string" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Вид  алкогольной продукции (в соответствии со ст. 2 ФЗ от 22.11.1995  № 171-ФЗ)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="alcPercent" type="c:AlcPercentType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Содержание этилового спирта, %</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="alcPercentMin" type="c:AlcPercentType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Содержание этилового спирта минимальное, %</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="alcPercentMax" type="c:AlcPercentType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Содержание этилового спирта максимальное, %</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="QuantityDal" type="c:PositiveDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём маркируемой алкогольной продукции (дал)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      
+      <xs:element name="Capacity" type="c:PositiveDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Емкость, подлежащая маркировке потребительской тары алкогольной продукции (л)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Identity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри заявления</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="SampleFSM" type="c:NoEmptyString" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Заявленный образец ФСМ (в соответствии с постановлением Правительства РФ от 11.07.2012 №704)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="MarkType" type="c:MarkGZTypeString" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код образца</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Quantity" type="c:PositiveDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество запрашиваемых марок (шт.)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name ="CalculationDemandType">
+    <xs:annotation>
+      <xs:documentation>расчёт потребностей в ФСМ</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Spirit" type="ns:SpiritType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>АП из спирта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WineMaterial" type="ns:WineMaterialType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>АП из виноматериала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RawAged" type="ns:RawAgedType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Объём сырья, находящегося на выдержке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MarkedAP" type="ns:MarkedAPType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Объём маркируемой АП.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+<!--
+      <xs:element name="ProductiveCapacity" type="ns:ProductiveCapacityType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Производственные мощности.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+-->      
+      <xs:element name="WinemakingAP" type="ns:WinemakingAPType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Объём полученного сырья для винодельческой АП с защищённым географическим указанием и защищённым наименованием места происхождения.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="WinemakingAPSTP" type="ns:WinemakingAPSTPType" nillable="false" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Сырье для маркировки винодельческой продукции сельскохозяйственными товаропроизводителями.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SpiritType">
+    <xs:annotation>
+      <xs:documentation>АП из спирта этилового ректификованного из пищевого сырья; винного; виноградного; плодового; коньячного; кальвадосного; вискового дистиллята; коньяка обработанного, предназначенного для отгрузки   с целью розлива на других предприятиях или промпереработки</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Raw" type="pref:ProductInfoAsiiu_v2" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование сырья</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeAnhydrousRest" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём остатка безводного спирта, указанный в предыдущем расчёте (дал)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeProducedRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём произведённого сырья с даты заполнения предыдущего расчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeOutRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём отгруженного сырья с даты заполнения предыдущего расчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeReceivedRaw" type="ns:VolumeReceivedRawType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём полученного сырья с с даты предыдущего отчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeUsedRaw" type="ns:VolumeUsedRawType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём использованного сырья с даты предыдущего отчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ClaimRaw" type="ns:ClaimRawType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Извещение или справка по импортированному сырью</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalRaw" type="c:PositiveDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Итого сырья для получения ФСМ, спирта безводного, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="WineMaterialType">
+    <xs:annotation>
+      <xs:documentation>АП из виноматериала</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Raw" type="pref:ProductInfoAsiiu_v2" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование сырья</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeAnhydrousRest" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём остатка безводного спирта, указанный в предыдущем расчёте (дал)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeProducedRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём произведённого сырья с даты заполнения предыдущего расчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeOutRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём отгруженного сырья с даты заполнения предыдущего расчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeReceivedRaw" type="ns:VolumeReceivedRawType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём полученного сырья с с даты предыдущего отчёта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeUsedRaw" type="ns:VolumeUsedRawType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>На производство АП (с учётом потерь, объём, зафиксированный в ЕГАИС)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeEstimatedRest" type="c:NoNegativeDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Планируемый объём к закупке или производству сырья, который на дату получения ФСМ должен быть получен или произведён и зафиксирован в ЕГАИС, спирта безводного, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalRaw" type="c:PositiveDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Итого сырья для получения ФСМ, спирта безводного, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name ="VolumeSpiritType">
+    <xs:all>
+      <xs:element name="Volume20C" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём при 20 градусах C, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeAnhydrous" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём безводного спирта, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="VolumeReceivedRawType">
+    <xs:annotation>
+      <xs:documentation>Объём полученного сырья с с даты предыдущего отчёта</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="VolumeFromAgingRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>С выдержки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeBuyRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Закупка от поставщиков (объём, зафиксированный в ЕГАИС)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeConversionRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Слив и переработка (объём, зафиксированный в ЕГАИС)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="VolumeUsedRawType">
+    <xs:annotation>
+      <xs:documentation>Объём использованного сырья с даты предыдущего отчёта</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="VolumeToAgingRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>На выдержку</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeToProducedRaw" type="ns:VolumeSpiritType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>На производство АП (с учётом потерь, объём, зафиксированный в ЕГАИС)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ClaimRawType">
+    <xs:annotation>
+      <xs:documentation>Извещение или справка по импортированному сырью</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="ClaimNumber" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>номер</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ClaimDate" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>дата</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SumAdvancePayment" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Сумма авансового платежа, руб.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeAnhydrous" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём безводного спирта, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ClaimNumberFNS" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Номер регистрации извещения в ФНС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ClaimDateFNS" type="c:DateNoTime" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата регистрации извещения в ФНС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeNotUsed" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем не полученного сырья на дату заявления, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="VolumeLocateAgainRawType">
+    <xs:annotation>
+      <xs:documentation>Объём сырья, находящегося на выдержке</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="TypeRawMaterial" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Вид сырья</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeSpirit" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Спирт,% об</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeRestOld" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Остаток сырья на дату предыдущего отчёта, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeTransferred" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём сырья, переданный на выдержку, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeReturned" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём сырья, возвращённый с выдержки, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeRest" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Остаток сырья на дату заполнения расчета потребностей, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="RawAgedType">
+    <xs:annotation>
+      <xs:documentation>Объём сырья, находящегося на выдержке</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="ExposureOneYear" type="ns:VolumeLocateAgainRawType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Выдержка 1 год</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExposureThreeYear" type="ns:VolumeLocateAgainRawType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Выдержка 3 года</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExposureFiveYear" type="ns:VolumeLocateAgainRawType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Выдержка 5 лет</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ExposureSevenYear" type="ns:VolumeLocateAgainRawType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Выдержка 7 лет</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="VolumeMarkedProductType">
+    <xs:annotation>
+      <xs:documentation>Объём маркируемой АП</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="SampleFSM" type="xs:string" nillable="false" minOccurs="0" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Образец ФСМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VidAP171fz" type="xs:string" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Вид АП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeSpirit" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Содержание этилового спирта, %</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeMarkedAP" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём маркируемой АП, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Capacity" type="c:PositiveDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Емкость потребительской тары для маркировки, литров</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="AmountFSM" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Количество ФСМ, шт.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeAnhydrousSpirit" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Объём безводного спирта, дал.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="MarkedAPType">
+    <xs:annotation>
+      <xs:documentation>Объём маркируемой АП</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="RestFSM" type="ns:VolumeMarkedProductType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Остаток ФСМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestFSM" type="ns:VolumeMarkedProductType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>ФСМ, запрашиваемые по заявлению (с учётом заявленных ранее и не полученных)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalVolumeAnhydrousSpirit" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Итого, объём безводного спирта для маркировки, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalVolumeMarkedAP" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Итого, объём маркируемой продукции, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+<!--
+  <xs:complexType name ="ProductiveCapacityType">
+    <xs:all>
+      <xs:element name="LicensedActivity" type="xs:string" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Лицензируемый вид деятельности в соответствии с реестром лицензий</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PowerMainTE" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Мощность основного технологического оборудования, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeMaxPeriod" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Максимальный объём производства за период действия обязательства об использовании, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+-->
+  
+  <xs:complexType name ="WinemakingAPType">
+    <xs:all>
+      <xs:element name="Raw" type="pref:ProductInfoAsiiu_v2" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование сырья</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeGrape" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём винограда. Всего</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeGrapeGeographical" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём винограда. Выращенного в граница географического объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeGrapeRegion" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём винограда. Выращенного в границах субъекта РФ, в котором расположен объект</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeGrapeGrowing" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объём винограда. Произрастающего и переработанного в границах географического объекта</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalRaw" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Итого сырья, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name ="WinemakingAPSTPType">
+    <xs:all>
+      <xs:element name="Raw" type="pref:ProductInfoAsiiu_v2" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование сырья</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeRest" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем остатка сырья</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeGrapeCollect" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем собранного винограда</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeGrapeUse" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем использованного винограда</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeToAgingRaw" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем сырья на выдержку</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeFromAgingRaw" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем сырья с выдержки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="VolumeUsedgRaw" type="c:NoNegativeDecimalType" nillable ="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Объем сырья, использованного на производство алкогольной продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TotalRaw" type="c:NoNegativeDecimalType" nillable="false" minOccurs="1" maxOccurs ="1">
+        <xs:annotation>
+          <xs:documentation>Итого сырья, дал</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

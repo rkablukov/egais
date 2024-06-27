@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/CarrierNotice_v4"
+           targetNamespace="http://fsrar.ru/WEGAIS/CarrierNotice_v4"
+           
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:ce="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+           xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ClientRef_v2" schemaLocation="ClientRef_v2.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="CarrierNotice_v4">
+    <xs:annotation>
+      <xs:documentation>Уведомление о перевозке</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Header">
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="ClientIdentity" type="c:IdentityType" nillable="false" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Идентификатор отчета (клиентский, к заполнению необязательный)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Serial" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Серия документа(вводится оператором)(не обязательное поле)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+
+            <xs:element name="Shipper" type="oref:OrgInfo_v2" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Отправитель</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Consignee" type="oref:OrgInfo_v2" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Получатель</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="Carrier" type="oref:OrgInfoRus_v2" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Грузоперевозчик</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ClientTransport" type="ns:ClientTransportType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Транспортное средство</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ShipmentOutDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата отпуска груза</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="ShipmentInDate" type="c:DateNoTime" nillable="false" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата получения груза</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="EGAISFixNumberTTN" type="c:NoEmptyString50" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер подтверждения о фиксации сведеий об отгрузке(Желательно, не обязательно)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="NotifNumber" type="c:NoEmptyString50" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Номер документа</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="NotifDate" type="c:DateNoTime" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Дата составления</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Content">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Position" type="ns:PositionType" minOccurs="1" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>Содержимое уведомления должно содержать 1 и более позиций</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+
+        <xs:unique name="PosUn">
+          <xs:selector xpath="ns:Position"/>
+          <xs:field xpath="ns:PosIdentity"/>
+        </xs:unique>
+      </xs:element>
+      
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PositionType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="PosIdentity" type="c:IdentityType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Идентификатор позиции внутри уведомления о перевозке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Product" type="pref:ProductInfo_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Продукция</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="Quantity20" type="c:PositiveDecimalType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество, дал (при 20 градусах по Цельсию)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      
+      <xs:element name="AlcPerc20" type="c:AlcPercentType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Содержание этилового спирта, % (при 20 градусах по Цельсию)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="ClientTransportType">
+    <xs:annotation>
+      <xs:documentation>Тип документа</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="Car" type="oref:OrgInfoRus_v2" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Автомобильный транспорт</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Railway" type="ns:RailwayType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Железнодорожный транспорт</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="RailwayType">
+    <xs:annotation>
+      <xs:documentation>Железнодорожный транспорт</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="RailwayModel" type="c:NoEmptyString2000" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип (модель) железнодорожного подвижного состава, значение из справочника</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RailwayVid" type="c:NoEmptyString2000" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Вид железнодорожного подвижного состава, значение из справочника</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RailwayNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер железнодорожного подвижного состава</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+</xs:schema>

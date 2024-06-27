@@ -1,21 +1,21 @@
 #!/usr/bin/env python
 
 #
-# Generated Wed Mar 11 12:21:36 2020 by generateDS.py version 2.35.15.
-# Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:57:15) [MSC v.1915 64 bit (AMD64)]
+# Generated Thu Jun 27 15:36:16 2024 by generateDS.py version 2.35.15.
+# Python 3.8.10 (default, Nov 22 2023, 10:22:35)  [GCC 9.4.0]
 #
 # Command line options:
-#   ('-o', 'egais.py')
-#   ('-s', 'egaissubs.py')
+#   ('-o', 'egais/egais.py')
+#   ('-s', 'egais/egaissubs.py')
 #   ('--use-old-simpletype-validators', '')
 #   ('--external-encoding', 'utf-8')
 #   ('--silence', '')
 #
 # Command line arguments:
-#   .\xsd\WB_DOC_SINGLE_01.xsd
+#   ./xsd/WB_DOC_SINGLE_01.xsd
 #
 # Command line:
-#   C:\Users\roof\.virtualenvs\egais-djViaaeL\Scripts\generateDS.py -o "egais.py" -s "egaissubs.py" --use-old-simpletype-validators --external-encoding="utf-8" --silence .\xsd\WB_DOC_SINGLE_01.xsd
+#   /root/.local/share/virtualenvs/egais-rBIiM-38/bin/generateDS.py -o "egais/egais.py" -s "egais/egaissubs.py" --use-old-simpletype-validators --external-encoding="utf-8" --silence ./xsd/WB_DOC_SINGLE_01.xsd
 #
 # Current working directory (os.getcwd()):
 #   egais
@@ -72,8 +72,8 @@ supermod.Documents.subclass = DocumentsSub
 
 
 class DocBodySub(supermod.DocBody):
-    def __init__(self, WayBill=None, Ticket=None, WayBillAct=None, ConfirmTicket=None, TTNInformBReg=None, ActInventory=None, ActChargeOn=None, ActInventoryInformBReg=None, QueryAP=None, QuerySSP=None, QuerySP=None, QueryClients=None, QueryClientVersion=None, QueryRests=None, QueryFormBHistory=None, QueryResendDoc=None, QueryFormA=None, QueryFormB=None, ActWriteOff=None, RepProducedProduct=None, RepImportedProduct=None, ReplySSP=None, ReplySpirit=None, ReplyClient=None, ReplyAP=None, ReplyRests=None, ReplyFormA=None, ReplyFormB=None, ReplyHistFormB=None, ReplyClientVersion=None, QueryRejectRepProduced=None, QueryRejectRepImported=None, ReplySSP_v2=None, ReplySpirit_v2=None, ReplyClient_v2=None, ReplyAP_v2=None, ReplyRests_v2=None, ReplyForm1=None, ReplyForm2=None, ReplyHistForm2=None, WayBill_v2=None, WayBillAct_v2=None, ActChargeOn_v2=None, ActInventoryInformF2Reg=None, TTNInformF2Reg=None, QueryAP_v2=None, QuerySSP_v2=None, QuerySP_v2=None, QueryClients_v2=None, QueryRests_v2=None, QueryFormF1=None, QueryFormF2=None, ActWriteOff_v2=None, TransferFromShop=None, TransferToShop=None, QueryForm2History=None, RepInformF1Reg=None, ReplyNoAnswerTTN=None, QueryNATTN=None, QueryRestsShop_v2=None, ReplyRestsShop_v2=None, Asiiu=None, AsiiuTime=None, ActChargeOnShop_v2=None, ActWriteOffShop_v2=None, InfoVersionTTN=None, QueryBarcode=None, ReplyBarcode=None, RequestRepealWB=None, ConfirmRepealWB=None, RequestRepealACO=None, RequestRepealAWO=None, QueryRests_Mini=None, QueryRestsShop_Mini=None, ReplyRests_Mini=None, ReplyRestsShop_Mini=None, RequestAddFProducer=None, RequestAddProducts=None, QueryHistoryRestShop=None, QueryWriteOffCheque=None, ReplyHistoryShop=None, ReplyWriteOffCheque=None, AscpNav=None, AsiiuSign=None, AsiiuTimeSign=None, WayBill_v3=None, ActWriteOff_v3=None, WayBillAct_v3=None, RepProducedProduct_v3=None, RepImportedProduct_v3=None, QueryRestBCode=None, ReplyRestBCode=None, ActFixBarCode=None, ActUnFixBarCode=None, QueryParentHistForm2=None, ReplyParentHistForm2=None, TTNHistoryF2Reg=None, CarrierNotice=None, **kwargs_):
-        super(DocBodySub, self).__init__(WayBill, Ticket, WayBillAct, ConfirmTicket, TTNInformBReg, ActInventory, ActChargeOn, ActInventoryInformBReg, QueryAP, QuerySSP, QuerySP, QueryClients, QueryClientVersion, QueryRests, QueryFormBHistory, QueryResendDoc, QueryFormA, QueryFormB, ActWriteOff, RepProducedProduct, RepImportedProduct, ReplySSP, ReplySpirit, ReplyClient, ReplyAP, ReplyRests, ReplyFormA, ReplyFormB, ReplyHistFormB, ReplyClientVersion, QueryRejectRepProduced, QueryRejectRepImported, ReplySSP_v2, ReplySpirit_v2, ReplyClient_v2, ReplyAP_v2, ReplyRests_v2, ReplyForm1, ReplyForm2, ReplyHistForm2, WayBill_v2, WayBillAct_v2, ActChargeOn_v2, ActInventoryInformF2Reg, TTNInformF2Reg, QueryAP_v2, QuerySSP_v2, QuerySP_v2, QueryClients_v2, QueryRests_v2, QueryFormF1, QueryFormF2, ActWriteOff_v2, TransferFromShop, TransferToShop, QueryForm2History, RepInformF1Reg, ReplyNoAnswerTTN, QueryNATTN, QueryRestsShop_v2, ReplyRestsShop_v2, Asiiu, AsiiuTime, ActChargeOnShop_v2, ActWriteOffShop_v2, InfoVersionTTN, QueryBarcode, ReplyBarcode, RequestRepealWB, ConfirmRepealWB, RequestRepealACO, RequestRepealAWO, QueryRests_Mini, QueryRestsShop_Mini, ReplyRests_Mini, ReplyRestsShop_Mini, RequestAddFProducer, RequestAddProducts, QueryHistoryRestShop, QueryWriteOffCheque, ReplyHistoryShop, ReplyWriteOffCheque, AscpNav, AsiiuSign, AsiiuTimeSign, WayBill_v3, ActWriteOff_v3, WayBillAct_v3, RepProducedProduct_v3, RepImportedProduct_v3, QueryRestBCode, ReplyRestBCode, ActFixBarCode, ActUnFixBarCode, QueryParentHistForm2, ReplyParentHistForm2, TTNHistoryF2Reg, CarrierNotice,  **kwargs_)
+    def __init__(self, WayBill=None, Ticket=None, WayBillAct=None, ConfirmTicket=None, TTNInformBReg=None, ActInventory=None, ActChargeOn=None, ActInventoryInformBReg=None, QueryAP=None, QuerySSP=None, QuerySP=None, QueryClients=None, QueryClientVersion=None, QueryRests=None, QueryFormBHistory=None, QueryResendDoc=None, QueryFormA=None, QueryFormB=None, ActWriteOff=None, RepProducedProduct=None, RepImportedProduct=None, ReplySSP=None, ReplySpirit=None, ReplyClient=None, ReplyAP=None, ReplyRests=None, ReplyFormA=None, ReplyFormB=None, ReplyHistFormB=None, ReplyClientVersion=None, QueryRejectRepProduced=None, QueryRejectRepImported=None, ReplySSP_v2=None, ReplySpirit_v2=None, ReplyClient_v2=None, ReplyAP_v2=None, ReplyAP_v3=None, ReplyRests_v2=None, ReplyForm1=None, ReplyForm2=None, ReplyHistForm2=None, WayBill_v2=None, WayBillAct_v2=None, ActChargeOn_v2=None, ActInventoryInformF2Reg=None, TTNInformF2Reg=None, QueryAP_v2=None, QueryAP_v3=None, QuerySSP_v2=None, QuerySP_v2=None, QueryClients_v2=None, QueryRests_v2=None, QueryFormF1=None, QueryFormF2=None, ActWriteOff_v2=None, TransferFromShop=None, TransferToShop=None, QueryForm2History=None, RepInformF1Reg=None, ReplyNoAnswerTTN=None, QueryNATTN=None, QueryRestsShop_v2=None, ReplyRestsShop_v2=None, Asiiu=None, AsiiuTime=None, ActChargeOnShop_v2=None, ActWriteOffShop_v2=None, InfoVersionTTN=None, QueryBarcode=None, ReplyBarcode=None, RequestRepealWB=None, ConfirmRepealWB=None, RequestRepealACO=None, RequestRepealAWO=None, QueryRests_Mini=None, QueryRestsShop_Mini=None, ReplyRests_Mini=None, ReplyRestsShop_Mini=None, RequestAddFProducer=None, RequestAddProducts=None, QueryHistoryRestShop=None, QueryWriteOffCheque=None, ReplyHistoryShop=None, ReplyWriteOffCheque=None, AscpNav=None, AsiiuSign=None, AsiiuTimeSign=None, WayBill_v3=None, ActWriteOff_v3=None, WayBillAct_v3=None, RepProducedProduct_v3=None, RepImportedProduct_v3=None, QueryRestBCode=None, ReplyRestBCode=None, ActFixBarCode=None, ActUnFixBarCode=None, QueryParentHistForm2=None, ReplyParentHistForm2=None, TTNHistoryF2Reg=None, CarrierNotice=None, CarrierNotice_v4=None, ClaimIssueFSM=None, RequestManufacturerFSM=None, TTNShipmentFSM=None, TTNIssueFSM=None, RejectionNoticeFSM=None, ReturnNoticeFSM=None, RecheckNotificationsFSM=None, QueryPlaceOfBusiness=None, ReplyPlaceOfBusiness=None, QueryGenerationOpenKey=None, ReplyGenerationOpenKey=None, InvoiceIssueAM=None, InvoiceExportFSM=None, InvoicePlannedImport=None, NotificationsBeginningTurnover=None, ChequeV3=None, RepProducedProduct_v4=None, RepImportedProduct_v4=None, ReportDestructionAMFSM=None, RequestRepealIPI=None, RequestRepealEFSM=None, RequestRepealIAM=None, TTNShipmentReturnFSM=None, TTNIssueReturnFSM=None, ReferenceOfDeficiencies=None, ManufacturingNoticeFSM=None, WayBill_v4=None, WayBillAct_v4=None, Route=None, CancelRoute=None, DebtAbsence=None, RequestAdjustmentData=None, ActReceiptOnlineOrder=None, ActConfirmOnlineOrder=None, ActCancelOnlineOrder=None, RequestBalanceTransfer=None, RequestManufacturerFSMforCheck=None, TicketRMCheck=None, FrapClaims=None, FrapClaimsCor=None, ApplicationLicenses=None, RepProducedProduct_v5=None, ReturnNotificationsFSM=None, TTNInternalMoveFSM=None, ActWriteOff_v4=None, ChequeV4=None, RepProducedProduct_v6=None, RepImportedProduct_v5=None, **kwargs_):
+        super(DocBodySub, self).__init__(WayBill, Ticket, WayBillAct, ConfirmTicket, TTNInformBReg, ActInventory, ActChargeOn, ActInventoryInformBReg, QueryAP, QuerySSP, QuerySP, QueryClients, QueryClientVersion, QueryRests, QueryFormBHistory, QueryResendDoc, QueryFormA, QueryFormB, ActWriteOff, RepProducedProduct, RepImportedProduct, ReplySSP, ReplySpirit, ReplyClient, ReplyAP, ReplyRests, ReplyFormA, ReplyFormB, ReplyHistFormB, ReplyClientVersion, QueryRejectRepProduced, QueryRejectRepImported, ReplySSP_v2, ReplySpirit_v2, ReplyClient_v2, ReplyAP_v2, ReplyAP_v3, ReplyRests_v2, ReplyForm1, ReplyForm2, ReplyHistForm2, WayBill_v2, WayBillAct_v2, ActChargeOn_v2, ActInventoryInformF2Reg, TTNInformF2Reg, QueryAP_v2, QueryAP_v3, QuerySSP_v2, QuerySP_v2, QueryClients_v2, QueryRests_v2, QueryFormF1, QueryFormF2, ActWriteOff_v2, TransferFromShop, TransferToShop, QueryForm2History, RepInformF1Reg, ReplyNoAnswerTTN, QueryNATTN, QueryRestsShop_v2, ReplyRestsShop_v2, Asiiu, AsiiuTime, ActChargeOnShop_v2, ActWriteOffShop_v2, InfoVersionTTN, QueryBarcode, ReplyBarcode, RequestRepealWB, ConfirmRepealWB, RequestRepealACO, RequestRepealAWO, QueryRests_Mini, QueryRestsShop_Mini, ReplyRests_Mini, ReplyRestsShop_Mini, RequestAddFProducer, RequestAddProducts, QueryHistoryRestShop, QueryWriteOffCheque, ReplyHistoryShop, ReplyWriteOffCheque, AscpNav, AsiiuSign, AsiiuTimeSign, WayBill_v3, ActWriteOff_v3, WayBillAct_v3, RepProducedProduct_v3, RepImportedProduct_v3, QueryRestBCode, ReplyRestBCode, ActFixBarCode, ActUnFixBarCode, QueryParentHistForm2, ReplyParentHistForm2, TTNHistoryF2Reg, CarrierNotice, CarrierNotice_v4, ClaimIssueFSM, RequestManufacturerFSM, TTNShipmentFSM, TTNIssueFSM, RejectionNoticeFSM, ReturnNoticeFSM, RecheckNotificationsFSM, QueryPlaceOfBusiness, ReplyPlaceOfBusiness, QueryGenerationOpenKey, ReplyGenerationOpenKey, InvoiceIssueAM, InvoiceExportFSM, InvoicePlannedImport, NotificationsBeginningTurnover, ChequeV3, RepProducedProduct_v4, RepImportedProduct_v4, ReportDestructionAMFSM, RequestRepealIPI, RequestRepealEFSM, RequestRepealIAM, TTNShipmentReturnFSM, TTNIssueReturnFSM, ReferenceOfDeficiencies, ManufacturingNoticeFSM, WayBill_v4, WayBillAct_v4, Route, CancelRoute, DebtAbsence, RequestAdjustmentData, ActReceiptOnlineOrder, ActConfirmOnlineOrder, ActCancelOnlineOrder, RequestBalanceTransfer, RequestManufacturerFSMforCheck, TicketRMCheck, FrapClaims, FrapClaimsCor, ApplicationLicenses, RepProducedProduct_v5, ReturnNotificationsFSM, TTNInternalMoveFSM, ActWriteOff_v4, ChequeV4, RepProducedProduct_v6, RepImportedProduct_v5,  **kwargs_)
 supermod.DocBody.subclass = DocBodySub
 # end class DocBodySub
 
@@ -93,8 +93,8 @@ supermod.MarkCodeInfoType.subclass = MarkCodeInfoTypeSub
 
 
 class AMCforDocTypeSub(supermod.AMCforDocType):
-    def __init__(self, amc=None, **kwargs_):
-        super(AMCforDocTypeSub, self).__init__(amc,  **kwargs_)
+    def __init__(self, amc=None, ms=None, **kwargs_):
+        super(AMCforDocTypeSub, self).__init__(amc, ms,  **kwargs_)
 supermod.AMCforDocType.subclass = AMCforDocTypeSub
 # end class AMCforDocTypeSub
 
@@ -492,10 +492,24 @@ supermod.OrgInfoReply_v2.subclass = OrgInfoReply_v2Sub
 
 
 class OrgInfoRus_v2Sub(supermod.OrgInfoRus_v2):
-    def __init__(self, UL=None, FL=None, **kwargs_):
-        super(OrgInfoRus_v2Sub, self).__init__(UL, FL,  **kwargs_)
+    def __init__(self, UL=None, FL=None, TR=None, **kwargs_):
+        super(OrgInfoRus_v2Sub, self).__init__(UL, FL, TR,  **kwargs_)
 supermod.OrgInfoRus_v2.subclass = OrgInfoRus_v2Sub
 # end class OrgInfoRus_v2Sub
+
+
+class OrgInfoRus_v2_ClaimFrapSub(supermod.OrgInfoRus_v2_ClaimFrap):
+    def __init__(self, UL=None, FL=None, **kwargs_):
+        super(OrgInfoRus_v2_ClaimFrapSub, self).__init__(UL, FL,  **kwargs_)
+supermod.OrgInfoRus_v2_ClaimFrap.subclass = OrgInfoRus_v2_ClaimFrapSub
+# end class OrgInfoRus_v2_ClaimFrapSub
+
+
+class OrgInfoRus_ClaimIssueSub(supermod.OrgInfoRus_ClaimIssue):
+    def __init__(self, UL=None, FL=None, **kwargs_):
+        super(OrgInfoRus_ClaimIssueSub, self).__init__(UL, FL,  **kwargs_)
+supermod.OrgInfoRus_ClaimIssue.subclass = OrgInfoRus_ClaimIssueSub
+# end class OrgInfoRus_ClaimIssueSub
 
 
 class OrgInfoRusReply_v2Sub(supermod.OrgInfoRusReply_v2):
@@ -526,6 +540,13 @@ supermod.ULType.subclass = ULTypeSub
 # end class ULTypeSub
 
 
+class ULType_ClaimIssueSub(supermod.ULType_ClaimIssue):
+    def __init__(self, ClientRegId=None, FullName=None, INN=None, KPP=None, address_ur=None, address=None, **kwargs_):
+        super(ULType_ClaimIssueSub, self).__init__(ClientRegId, FullName, INN, KPP, address_ur, address,  **kwargs_)
+supermod.ULType_ClaimIssue.subclass = ULType_ClaimIssueSub
+# end class ULType_ClaimIssueSub
+
+
 class ULReplyTypeSub(supermod.ULReplyType):
     def __init__(self, ClientRegId=None, FullName=None, ShortName=None, INN=None, KPP=None, address=None, **kwargs_):
         super(ULReplyTypeSub, self).__init__(ClientRegId, FullName, ShortName, INN, KPP, address,  **kwargs_)
@@ -538,6 +559,13 @@ class FLTypeSub(supermod.FLType):
         super(FLTypeSub, self).__init__(ClientRegId, FullName, ShortName, INN, address,  **kwargs_)
 supermod.FLType.subclass = FLTypeSub
 # end class FLTypeSub
+
+
+class FLType_ClaimIssueSub(supermod.FLType_ClaimIssue):
+    def __init__(self, ClientRegId=None, FullName=None, INN=None, address_ur=None, address=None, **kwargs_):
+        super(FLType_ClaimIssueSub, self).__init__(ClientRegId, FullName, INN, address_ur, address,  **kwargs_)
+supermod.FLType_ClaimIssue.subclass = FLType_ClaimIssueSub
+# end class FLType_ClaimIssueSub
 
 
 class FLReplyTypeSub(supermod.FLReplyType):
@@ -561,6 +589,13 @@ supermod.TSType.subclass = TSTypeSub
 # end class TSTypeSub
 
 
+class TRTypeSub(supermod.TRType):
+    def __init__(self, ClientRegId=None, address=None, **kwargs_):
+        super(TRTypeSub, self).__init__(ClientRegId, address,  **kwargs_)
+supermod.TRType.subclass = TRTypeSub
+# end class TRTypeSub
+
+
 class TSReplyTypeSub(supermod.TSReplyType):
     def __init__(self, ClientRegId=None, FullName=None, ShortName=None, TSNUM=None, address=None, **kwargs_):
         super(TSReplyTypeSub, self).__init__(ClientRegId, FullName, ShortName, TSNUM, address,  **kwargs_)
@@ -575,6 +610,13 @@ supermod.OrgAddressTypeULFL.subclass = OrgAddressTypeULFLSub
 # end class OrgAddressTypeULFLSub
 
 
+class OrgUrAddressTypeULFLSub(supermod.OrgUrAddressTypeULFL):
+    def __init__(self, Country=None, RegionCode=None, description=None, **kwargs_):
+        super(OrgUrAddressTypeULFLSub, self).__init__(Country, RegionCode, description,  **kwargs_)
+supermod.OrgUrAddressTypeULFL.subclass = OrgUrAddressTypeULFLSub
+# end class OrgUrAddressTypeULFLSub
+
+
 class OrgAddressTypeULFLReplySub(supermod.OrgAddressTypeULFLReply):
     def __init__(self, Country=None, RegionCode=None, description=None, **kwargs_):
         super(OrgAddressTypeULFLReplySub, self).__init__(Country, RegionCode, description,  **kwargs_)
@@ -587,6 +629,20 @@ class OrgAddressTypeFOTSSub(supermod.OrgAddressTypeFOTS):
         super(OrgAddressTypeFOTSSub, self).__init__(Country, description,  **kwargs_)
 supermod.OrgAddressTypeFOTS.subclass = OrgAddressTypeFOTSSub
 # end class OrgAddressTypeFOTSSub
+
+
+class OrgAddressTypeTRSub(supermod.OrgAddressTypeTR):
+    def __init__(self, description=None, **kwargs_):
+        super(OrgAddressTypeTRSub, self).__init__(description,  **kwargs_)
+supermod.OrgAddressTypeTR.subclass = OrgAddressTypeTRSub
+# end class OrgAddressTypeTRSub
+
+
+class ReplyPlaceOfBusinessTypeSub(supermod.ReplyPlaceOfBusinessType):
+    def __init__(self, ClientRegId=None, INN=None, KPP=None, RegNumberTS=None, address=None, **kwargs_):
+        super(ReplyPlaceOfBusinessTypeSub, self).__init__(ClientRegId, INN, KPP, RegNumberTS, address,  **kwargs_)
+supermod.ReplyPlaceOfBusinessType.subclass = ReplyPlaceOfBusinessTypeSub
+# end class ReplyPlaceOfBusinessTypeSub
 
 
 class ProductsType_v2Sub(supermod.ProductsType_v2):
@@ -622,6 +678,13 @@ class ProductInfoReply_v2Sub(supermod.ProductInfoReply_v2):
         super(ProductInfoReply_v2Sub, self).__init__(UnitType, Type, FullName, ShortName, AlcCode, Capacity, AlcVolume, Producer, ProductVCode,  **kwargs_)
 supermod.ProductInfoReply_v2.subclass = ProductInfoReply_v2Sub
 # end class ProductInfoReply_v2Sub
+
+
+class ProductInfoReply_v3Sub(supermod.ProductInfoReply_v3):
+    def __init__(self, UnitType=None, Type=None, FullName=None, ShortName=None, AlcCode=None, Capacity=None, AlcVolume=None, Producer=None, ProductVCode=None, Package_Type_Code=None, **kwargs_):
+        super(ProductInfoReply_v3Sub, self).__init__(UnitType, Type, FullName, ShortName, AlcCode, Capacity, AlcVolume, Producer, ProductVCode, Package_Type_Code,  **kwargs_)
+supermod.ProductInfoReply_v3.subclass = ProductInfoReply_v3Sub
+# end class ProductInfoReply_v3Sub
 
 
 class ProductInfoRus_v2Sub(supermod.ProductInfoRus_v2):
@@ -797,6 +860,13 @@ class ReplyAP_v2Sub(supermod.ReplyAP_v2):
         super(ReplyAP_v2Sub, self).__init__(Products,  **kwargs_)
 supermod.ReplyAP_v2.subclass = ReplyAP_v2Sub
 # end class ReplyAP_v2Sub
+
+
+class ReplyAP_v3Sub(supermod.ReplyAP_v3):
+    def __init__(self, Products=None, **kwargs_):
+        super(ReplyAP_v3Sub, self).__init__(Products,  **kwargs_)
+supermod.ReplyAP_v3.subclass = ReplyAP_v3Sub
+# end class ReplyAP_v3Sub
 
 
 class ReplyRests_v2Sub(supermod.ReplyRests_v2):
@@ -1052,8 +1122,8 @@ supermod.Asiiu.subclass = AsiiuSub
 
 
 class DataTypeSub(supermod.DataType):
-    def __init__(self, Product=None, StartDate=None, EndDate=None, VbsStart=None, VbsEnd=None, AStart=None, AEnd=None, PercentAlc=None, BottleCountStart=None, BottleCountEnd=None, Temperature=None, Mode=None, **kwargs_):
-        super(DataTypeSub, self).__init__(Product, StartDate, EndDate, VbsStart, VbsEnd, AStart, AEnd, PercentAlc, BottleCountStart, BottleCountEnd, Temperature, Mode,  **kwargs_)
+    def __init__(self, Product=None, StartDate=None, EndDate=None, VbsStart=None, VbsEnd=None, AStart=None, AEnd=None, PercentAlc=None, BottleCountStart=None, BottleCountEnd=None, Temperature=None, Mode=None, Crotonaldehyd=None, Toluene=None, **kwargs_):
+        super(DataTypeSub, self).__init__(Product, StartDate, EndDate, VbsStart, VbsEnd, AStart, AEnd, PercentAlc, BottleCountStart, BottleCountEnd, Temperature, Mode, Crotonaldehyd, Toluene,  **kwargs_)
 supermod.DataType.subclass = DataTypeSub
 # end class DataTypeSub
 
@@ -1066,8 +1136,8 @@ supermod.AsiiuTime.subclass = AsiiuTimeSub
 
 
 class DataType32Sub(supermod.DataType32):
-    def __init__(self, Product=None, ControlDate=None, VbsControl=None, AControl=None, PercentAlc=None, BottleCountControl=None, Temperature=None, Mode=None, **kwargs_):
-        super(DataType32Sub, self).__init__(Product, ControlDate, VbsControl, AControl, PercentAlc, BottleCountControl, Temperature, Mode,  **kwargs_)
+    def __init__(self, Product=None, ControlDate=None, VbsControl=None, AControl=None, PercentAlc=None, BottleCountControl=None, Temperature=None, Mode=None, Crotonaldehyd=None, Toluene=None, **kwargs_):
+        super(DataType32Sub, self).__init__(Product, ControlDate, VbsControl, AControl, PercentAlc, BottleCountControl, Temperature, Mode, Crotonaldehyd, Toluene,  **kwargs_)
 supermod.DataType32.subclass = DataType32Sub
 # end class DataType32Sub
 
@@ -1199,8 +1269,8 @@ supermod.RequestAddProducts.subclass = RequestAddProductsSub
 
 
 class RequestAddSSPPositionTypeSub(supermod.RequestAddSSPPositionType):
-    def __init__(self, Producer=None, Type=None, VidCode=None, CountryCode=None, FullName=None, ShortName=None, Unpacked_Flag=None, Capacity=None, PERCENT_ALC=None, PERCENT_ALC_min=None, PERCENT_ALC_max=None, FRAPID=None, **kwargs_):
-        super(RequestAddSSPPositionTypeSub, self).__init__(Producer, Type, VidCode, CountryCode, FullName, ShortName, Unpacked_Flag, Capacity, PERCENT_ALC, PERCENT_ALC_min, PERCENT_ALC_max, FRAPID,  **kwargs_)
+    def __init__(self, Producer=None, Type=None, VidCode=None, CountryCode=None, FullName=None, ShortName=None, Unpacked_Flag=None, Capacity=None, PERCENT_ALC=None, PERCENT_ALC_min=None, PERCENT_ALC_max=None, FRAPID=None, Brand=None, PackageType=None, **kwargs_):
+        super(RequestAddSSPPositionTypeSub, self).__init__(Producer, Type, VidCode, CountryCode, FullName, ShortName, Unpacked_Flag, Capacity, PERCENT_ALC, PERCENT_ALC_min, PERCENT_ALC_max, FRAPID, Brand, PackageType,  **kwargs_)
 supermod.RequestAddSSPPositionType.subclass = RequestAddSSPPositionTypeSub
 # end class RequestAddSSPPositionTypeSub
 
@@ -1437,10 +1507,969 @@ supermod.CarrierNotice.subclass = CarrierNoticeSub
 
 
 class PositionType50Sub(supermod.PositionType50):
-    def __init__(self, ProductCode=None, Quantity20=None, AlcPerc20=None, PosIdentity=None, **kwargs_):
-        super(PositionType50Sub, self).__init__(ProductCode, Quantity20, AlcPerc20, PosIdentity,  **kwargs_)
+    def __init__(self, PosIdentity=None, Product=None, Quantity20=None, AlcPerc20=None, **kwargs_):
+        super(PositionType50Sub, self).__init__(PosIdentity, Product, Quantity20, AlcPerc20,  **kwargs_)
 supermod.PositionType50.subclass = PositionType50Sub
 # end class PositionType50Sub
+
+
+class CarrierNotice_v4Sub(supermod.CarrierNotice_v4):
+    def __init__(self, Header=None, Content=None, **kwargs_):
+        super(CarrierNotice_v4Sub, self).__init__(Header, Content,  **kwargs_)
+supermod.CarrierNotice_v4.subclass = CarrierNotice_v4Sub
+# end class CarrierNotice_v4Sub
+
+
+class PositionType51Sub(supermod.PositionType51):
+    def __init__(self, PosIdentity=None, Product=None, Quantity20=None, AlcPerc20=None, **kwargs_):
+        super(PositionType51Sub, self).__init__(PosIdentity, Product, Quantity20, AlcPerc20,  **kwargs_)
+supermod.PositionType51.subclass = PositionType51Sub
+# end class PositionType51Sub
+
+
+class ClientTransportTypeSub(supermod.ClientTransportType):
+    def __init__(self, Car=None, Railway=None, **kwargs_):
+        super(ClientTransportTypeSub, self).__init__(Car, Railway,  **kwargs_)
+supermod.ClientTransportType.subclass = ClientTransportTypeSub
+# end class ClientTransportTypeSub
+
+
+class RailwayTypeSub(supermod.RailwayType):
+    def __init__(self, RailwayModel=None, RailwayVid=None, RailwayNumber=None, **kwargs_):
+        super(RailwayTypeSub, self).__init__(RailwayModel, RailwayVid, RailwayNumber,  **kwargs_)
+supermod.RailwayType.subclass = RailwayTypeSub
+# end class RailwayTypeSub
+
+
+class ClaimIssueFSMType52Sub(supermod.ClaimIssueFSMType52):
+    def __init__(self, Identity=None, Header=None, Content=None, CalculationDemand=None, **kwargs_):
+        super(ClaimIssueFSMType52Sub, self).__init__(Identity, Header, Content, CalculationDemand,  **kwargs_)
+supermod.ClaimIssueFSMType52.subclass = ClaimIssueFSMType52Sub
+# end class ClaimIssueFSMType52Sub
+
+
+class producedruSub(supermod.producedru):
+    def __init__(self, TypeClaim=None, **kwargs_):
+        super(producedruSub, self).__init__(TypeClaim,  **kwargs_)
+supermod.producedru.subclass = producedruSub
+# end class producedruSub
+
+
+class producedtsSub(supermod.producedts):
+    def __init__(self, TypeClaim=None, CONTRACTNUMBER=None, CONTRACTDATE=None, SHIPPER=None, **kwargs_):
+        super(producedtsSub, self).__init__(TypeClaim, CONTRACTNUMBER, CONTRACTDATE, SHIPPER,  **kwargs_)
+supermod.producedts.subclass = producedtsSub
+# end class producedtsSub
+
+
+class producedimpSub(supermod.producedimp):
+    def __init__(self, TypeClaim=None, CONTRACTNUMBER=None, CONTRACTDATE=None, SHIPPER=None, **kwargs_):
+        super(producedimpSub, self).__init__(TypeClaim, CONTRACTNUMBER, CONTRACTDATE, SHIPPER,  **kwargs_)
+supermod.producedimp.subclass = producedimpSub
+# end class producedimpSub
+
+
+class ClaimIssueFSMComplTypeSub(supermod.ClaimIssueFSMComplType):
+    def __init__(self, TypeClaim1=None, TypeClaim3=None, TypeClaim2=None, **kwargs_):
+        super(ClaimIssueFSMComplTypeSub, self).__init__(TypeClaim1, TypeClaim3, TypeClaim2,  **kwargs_)
+supermod.ClaimIssueFSMComplType.subclass = ClaimIssueFSMComplTypeSub
+# end class ClaimIssueFSMComplTypeSub
+
+
+class PositionClaimTypeSub(supermod.PositionClaimType):
+    def __init__(self, VidAP171fz=None, alcPercent=None, alcPercentMin=None, alcPercentMax=None, QuantityDal=None, Capacity=None, Identity=None, SampleFSM=None, MarkType=None, Quantity=None, **kwargs_):
+        super(PositionClaimTypeSub, self).__init__(VidAP171fz, alcPercent, alcPercentMin, alcPercentMax, QuantityDal, Capacity, Identity, SampleFSM, MarkType, Quantity,  **kwargs_)
+supermod.PositionClaimType.subclass = PositionClaimTypeSub
+# end class PositionClaimTypeSub
+
+
+class CalculationDemandTypeSub(supermod.CalculationDemandType):
+    def __init__(self, Spirit=None, WineMaterial=None, RawAged=None, MarkedAP=None, WinemakingAP=None, WinemakingAPSTP=None, **kwargs_):
+        super(CalculationDemandTypeSub, self).__init__(Spirit, WineMaterial, RawAged, MarkedAP, WinemakingAP, WinemakingAPSTP,  **kwargs_)
+supermod.CalculationDemandType.subclass = CalculationDemandTypeSub
+# end class CalculationDemandTypeSub
+
+
+class SpiritTypeSub(supermod.SpiritType):
+    def __init__(self, Raw=None, VolumeAnhydrousRest=None, VolumeProducedRaw=None, VolumeOutRaw=None, VolumeReceivedRaw=None, VolumeUsedRaw=None, ClaimRaw=None, TotalRaw=None, **kwargs_):
+        super(SpiritTypeSub, self).__init__(Raw, VolumeAnhydrousRest, VolumeProducedRaw, VolumeOutRaw, VolumeReceivedRaw, VolumeUsedRaw, ClaimRaw, TotalRaw,  **kwargs_)
+supermod.SpiritType.subclass = SpiritTypeSub
+# end class SpiritTypeSub
+
+
+class WineMaterialTypeSub(supermod.WineMaterialType):
+    def __init__(self, Raw=None, VolumeAnhydrousRest=None, VolumeProducedRaw=None, VolumeOutRaw=None, VolumeReceivedRaw=None, VolumeUsedRaw=None, VolumeEstimatedRest=None, TotalRaw=None, **kwargs_):
+        super(WineMaterialTypeSub, self).__init__(Raw, VolumeAnhydrousRest, VolumeProducedRaw, VolumeOutRaw, VolumeReceivedRaw, VolumeUsedRaw, VolumeEstimatedRest, TotalRaw,  **kwargs_)
+supermod.WineMaterialType.subclass = WineMaterialTypeSub
+# end class WineMaterialTypeSub
+
+
+class VolumeSpiritTypeSub(supermod.VolumeSpiritType):
+    def __init__(self, Volume20C=None, VolumeAnhydrous=None, **kwargs_):
+        super(VolumeSpiritTypeSub, self).__init__(Volume20C, VolumeAnhydrous,  **kwargs_)
+supermod.VolumeSpiritType.subclass = VolumeSpiritTypeSub
+# end class VolumeSpiritTypeSub
+
+
+class VolumeReceivedRawTypeSub(supermod.VolumeReceivedRawType):
+    def __init__(self, VolumeFromAgingRaw=None, VolumeBuyRaw=None, VolumeConversionRaw=None, **kwargs_):
+        super(VolumeReceivedRawTypeSub, self).__init__(VolumeFromAgingRaw, VolumeBuyRaw, VolumeConversionRaw,  **kwargs_)
+supermod.VolumeReceivedRawType.subclass = VolumeReceivedRawTypeSub
+# end class VolumeReceivedRawTypeSub
+
+
+class VolumeUsedRawTypeSub(supermod.VolumeUsedRawType):
+    def __init__(self, VolumeToAgingRaw=None, VolumeToProducedRaw=None, **kwargs_):
+        super(VolumeUsedRawTypeSub, self).__init__(VolumeToAgingRaw, VolumeToProducedRaw,  **kwargs_)
+supermod.VolumeUsedRawType.subclass = VolumeUsedRawTypeSub
+# end class VolumeUsedRawTypeSub
+
+
+class ClaimRawTypeSub(supermod.ClaimRawType):
+    def __init__(self, ClaimNumber=None, ClaimDate=None, SumAdvancePayment=None, VolumeAnhydrous=None, ClaimNumberFNS=None, ClaimDateFNS=None, VolumeNotUsed=None, **kwargs_):
+        super(ClaimRawTypeSub, self).__init__(ClaimNumber, ClaimDate, SumAdvancePayment, VolumeAnhydrous, ClaimNumberFNS, ClaimDateFNS, VolumeNotUsed,  **kwargs_)
+supermod.ClaimRawType.subclass = ClaimRawTypeSub
+# end class ClaimRawTypeSub
+
+
+class VolumeLocateAgainRawTypeSub(supermod.VolumeLocateAgainRawType):
+    def __init__(self, TypeRawMaterial=None, VolumeSpirit=None, VolumeRestOld=None, VolumeTransferred=None, VolumeReturned=None, VolumeRest=None, **kwargs_):
+        super(VolumeLocateAgainRawTypeSub, self).__init__(TypeRawMaterial, VolumeSpirit, VolumeRestOld, VolumeTransferred, VolumeReturned, VolumeRest,  **kwargs_)
+supermod.VolumeLocateAgainRawType.subclass = VolumeLocateAgainRawTypeSub
+# end class VolumeLocateAgainRawTypeSub
+
+
+class RawAgedTypeSub(supermod.RawAgedType):
+    def __init__(self, ExposureOneYear=None, ExposureThreeYear=None, ExposureFiveYear=None, ExposureSevenYear=None, **kwargs_):
+        super(RawAgedTypeSub, self).__init__(ExposureOneYear, ExposureThreeYear, ExposureFiveYear, ExposureSevenYear,  **kwargs_)
+supermod.RawAgedType.subclass = RawAgedTypeSub
+# end class RawAgedTypeSub
+
+
+class VolumeMarkedProductTypeSub(supermod.VolumeMarkedProductType):
+    def __init__(self, SampleFSM=None, VidAP171fz=None, VolumeSpirit=None, VolumeMarkedAP=None, Capacity=None, AmountFSM=None, VolumeAnhydrousSpirit=None, **kwargs_):
+        super(VolumeMarkedProductTypeSub, self).__init__(SampleFSM, VidAP171fz, VolumeSpirit, VolumeMarkedAP, Capacity, AmountFSM, VolumeAnhydrousSpirit,  **kwargs_)
+supermod.VolumeMarkedProductType.subclass = VolumeMarkedProductTypeSub
+# end class VolumeMarkedProductTypeSub
+
+
+class MarkedAPTypeSub(supermod.MarkedAPType):
+    def __init__(self, RestFSM=None, RequestFSM=None, TotalVolumeAnhydrousSpirit=None, TotalVolumeMarkedAP=None, **kwargs_):
+        super(MarkedAPTypeSub, self).__init__(RestFSM, RequestFSM, TotalVolumeAnhydrousSpirit, TotalVolumeMarkedAP,  **kwargs_)
+supermod.MarkedAPType.subclass = MarkedAPTypeSub
+# end class MarkedAPTypeSub
+
+
+class WinemakingAPTypeSub(supermod.WinemakingAPType):
+    def __init__(self, Raw=None, VolumeGrape=None, VolumeGrapeGeographical=None, VolumeGrapeRegion=None, VolumeGrapeGrowing=None, TotalRaw=None, **kwargs_):
+        super(WinemakingAPTypeSub, self).__init__(Raw, VolumeGrape, VolumeGrapeGeographical, VolumeGrapeRegion, VolumeGrapeGrowing, TotalRaw,  **kwargs_)
+supermod.WinemakingAPType.subclass = WinemakingAPTypeSub
+# end class WinemakingAPTypeSub
+
+
+class WinemakingAPSTPTypeSub(supermod.WinemakingAPSTPType):
+    def __init__(self, Raw=None, VolumeRest=None, VolumeGrapeCollect=None, VolumeGrapeUse=None, VolumeToAgingRaw=None, VolumeFromAgingRaw=None, VolumeUsedgRaw=None, TotalRaw=None, **kwargs_):
+        super(WinemakingAPSTPTypeSub, self).__init__(Raw, VolumeRest, VolumeGrapeCollect, VolumeGrapeUse, VolumeToAgingRaw, VolumeFromAgingRaw, VolumeUsedgRaw, TotalRaw,  **kwargs_)
+supermod.WinemakingAPSTPType.subclass = WinemakingAPSTPTypeSub
+# end class WinemakingAPSTPTypeSub
+
+
+class RequestManufacturerFSMTypeSub(supermod.RequestManufacturerFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RequestManufacturerFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RequestManufacturerFSMType.subclass = RequestManufacturerFSMTypeSub
+# end class RequestManufacturerFSMTypeSub
+
+
+class PositionReportTypeSub(supermod.PositionReportType):
+    def __init__(self, Identity=None, VidAP171fz=None, MarkType=None, Quantity=None, **kwargs_):
+        super(PositionReportTypeSub, self).__init__(Identity, VidAP171fz, MarkType, Quantity,  **kwargs_)
+supermod.PositionReportType.subclass = PositionReportTypeSub
+# end class PositionReportTypeSub
+
+
+class TTNShipmentFSMTypeSub(supermod.TTNShipmentFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(TTNShipmentFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.TTNShipmentFSMType.subclass = TTNShipmentFSMTypeSub
+# end class TTNShipmentFSMTypeSub
+
+
+class PositionTTNFSMTypeSub(supermod.PositionTTNFSMType):
+    def __init__(self, Identity=None, SampleFSM=None, MarkType=None, RollNumber=None, RangeNumberInRoll=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionTTNFSMTypeSub, self).__init__(Identity, SampleFSM, MarkType, RollNumber, RangeNumberInRoll, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionTTNFSMType.subclass = PositionTTNFSMTypeSub
+# end class PositionTTNFSMTypeSub
+
+
+class TTNIssueFSMTypeSub(supermod.TTNIssueFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(TTNIssueFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.TTNIssueFSMType.subclass = TTNIssueFSMTypeSub
+# end class TTNIssueFSMTypeSub
+
+
+class PositionTTNIssueFSMTypeSub(supermod.PositionTTNIssueFSMType):
+    def __init__(self, Identity=None, SampleFSM=None, MarkType=None, RollNumber=None, RangeNumberInRoll=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionTTNIssueFSMTypeSub, self).__init__(Identity, SampleFSM, MarkType, RollNumber, RangeNumberInRoll, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionTTNIssueFSMType.subclass = PositionTTNIssueFSMTypeSub
+# end class PositionTTNIssueFSMTypeSub
+
+
+class RejectionNoticeFSMTypeSub(supermod.RejectionNoticeFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RejectionNoticeFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RejectionNoticeFSMType.subclass = RejectionNoticeFSMTypeSub
+# end class RejectionNoticeFSMTypeSub
+
+
+class PositionRejectionNoticeFSMTypeSub(supermod.PositionRejectionNoticeFSMType):
+    def __init__(self, Identity=None, RejectionReasonCode=None, RejectionReason=None, **kwargs_):
+        super(PositionRejectionNoticeFSMTypeSub, self).__init__(Identity, RejectionReasonCode, RejectionReason,  **kwargs_)
+supermod.PositionRejectionNoticeFSMType.subclass = PositionRejectionNoticeFSMTypeSub
+# end class PositionRejectionNoticeFSMTypeSub
+
+
+class ReturnNoticeFSMTypeSub(supermod.ReturnNoticeFSMType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(ReturnNoticeFSMTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.ReturnNoticeFSMType.subclass = ReturnNoticeFSMTypeSub
+# end class ReturnNoticeFSMTypeSub
+
+
+class RecheckNotificationsFSMTypeSub(supermod.RecheckNotificationsFSMType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(RecheckNotificationsFSMTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.RecheckNotificationsFSMType.subclass = RecheckNotificationsFSMTypeSub
+# end class RecheckNotificationsFSMTypeSub
+
+
+class ReplyPlaceOfBusinessSub(supermod.ReplyPlaceOfBusiness):
+    def __init__(self, Clients=None, **kwargs_):
+        super(ReplyPlaceOfBusinessSub, self).__init__(Clients,  **kwargs_)
+supermod.ReplyPlaceOfBusiness.subclass = ReplyPlaceOfBusinessSub
+# end class ReplyPlaceOfBusinessSub
+
+
+class QueryGenerationOpenKeyTypeSub(supermod.QueryGenerationOpenKeyType):
+    def __init__(self, ClientId=None, CertificateRequest=None, **kwargs_):
+        super(QueryGenerationOpenKeyTypeSub, self).__init__(ClientId, CertificateRequest,  **kwargs_)
+supermod.QueryGenerationOpenKeyType.subclass = QueryGenerationOpenKeyTypeSub
+# end class QueryGenerationOpenKeyTypeSub
+
+
+class ReplyGenerationOpenKeyTypeSub(supermod.ReplyGenerationOpenKeyType):
+    def __init__(self, ClientId=None, Certificate=None, **kwargs_):
+        super(ReplyGenerationOpenKeyTypeSub, self).__init__(ClientId, Certificate,  **kwargs_)
+supermod.ReplyGenerationOpenKeyType.subclass = ReplyGenerationOpenKeyTypeSub
+# end class ReplyGenerationOpenKeyTypeSub
+
+
+class InvoiceIssueAMTypeSub(supermod.InvoiceIssueAMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(InvoiceIssueAMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.InvoiceIssueAMType.subclass = InvoiceIssueAMTypeSub
+# end class InvoiceIssueAMTypeSub
+
+
+class PositionInvoiceIssueAMTypeSub(supermod.PositionInvoiceIssueAMType):
+    def __init__(self, Identity=None, MarkType=None, MarkTypeCode=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionInvoiceIssueAMTypeSub, self).__init__(Identity, MarkType, MarkTypeCode, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionInvoiceIssueAMType.subclass = PositionInvoiceIssueAMTypeSub
+# end class PositionInvoiceIssueAMTypeSub
+
+
+class InvoiceExportFSMTypeSub(supermod.InvoiceExportFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(InvoiceExportFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.InvoiceExportFSMType.subclass = InvoiceExportFSMTypeSub
+# end class InvoiceExportFSMTypeSub
+
+
+class PositionInvoiceExportFSMTypeSub(supermod.PositionInvoiceExportFSMType):
+    def __init__(self, Identity=None, MarkType=None, MarkTypeCode=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionInvoiceExportFSMTypeSub, self).__init__(Identity, MarkType, MarkTypeCode, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionInvoiceExportFSMType.subclass = PositionInvoiceExportFSMTypeSub
+# end class PositionInvoiceExportFSMTypeSub
+
+
+class InvoicePlannedImportTypeSub(supermod.InvoicePlannedImportType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(InvoicePlannedImportTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.InvoicePlannedImportType.subclass = InvoicePlannedImportTypeSub
+# end class InvoicePlannedImportTypeSub
+
+
+class PositionInvoicePlannedImportTypeSub(supermod.PositionInvoicePlannedImportType):
+    def __init__(self, Identity=None, MarkType=None, MarkTypeCode=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionInvoicePlannedImportTypeSub, self).__init__(Identity, MarkType, MarkTypeCode, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionInvoicePlannedImportType.subclass = PositionInvoicePlannedImportTypeSub
+# end class PositionInvoicePlannedImportTypeSub
+
+
+class NotificationsBeginningTurnoverTypeSub(supermod.NotificationsBeginningTurnoverType):
+    def __init__(self, Identity=None, Header=None, CompositionProducts=None, IdentifyingDocuments=None, Declaration=None, **kwargs_):
+        super(NotificationsBeginningTurnoverTypeSub, self).__init__(Identity, Header, CompositionProducts, IdentifyingDocuments, Declaration,  **kwargs_)
+supermod.NotificationsBeginningTurnoverType.subclass = NotificationsBeginningTurnoverTypeSub
+# end class NotificationsBeginningTurnoverTypeSub
+
+
+class PositionCompositionProductsTypeSub(supermod.PositionCompositionProductsType):
+    def __init__(self, Identity=None, IngredientType=None, IngredientCode=None, IngredientName=None, **kwargs_):
+        super(PositionCompositionProductsTypeSub, self).__init__(Identity, IngredientType, IngredientCode, IngredientName,  **kwargs_)
+supermod.PositionCompositionProductsType.subclass = PositionCompositionProductsTypeSub
+# end class PositionCompositionProductsTypeSub
+
+
+class PositionIdentifyingDocumentsTypeSub(supermod.PositionIdentifyingDocumentsType):
+    def __init__(self, Identity=None, DocumentVid=None, DocumentNumber=None, ElectronicView=None, **kwargs_):
+        super(PositionIdentifyingDocumentsTypeSub, self).__init__(Identity, DocumentVid, DocumentNumber, ElectronicView,  **kwargs_)
+supermod.PositionIdentifyingDocumentsType.subclass = PositionIdentifyingDocumentsTypeSub
+# end class PositionIdentifyingDocumentsTypeSub
+
+
+class PositionDeclarationTypeSub(supermod.PositionDeclarationType):
+    def __init__(self, Identity=None, DeclarationtVid=None, DeclarationNumber=None, DateValidity=None, DateExpiration=None, **kwargs_):
+        super(PositionDeclarationTypeSub, self).__init__(Identity, DeclarationtVid, DeclarationNumber, DateValidity, DateExpiration,  **kwargs_)
+supermod.PositionDeclarationType.subclass = PositionDeclarationTypeSub
+# end class PositionDeclarationTypeSub
+
+
+class ChequeV3TypeSub(supermod.ChequeV3Type):
+    def __init__(self, Identity=None, Header=None, HeaderTTN=None, Content=None, **kwargs_):
+        super(ChequeV3TypeSub, self).__init__(Identity, Header, HeaderTTN, Content,  **kwargs_)
+supermod.ChequeV3Type.subclass = ChequeV3TypeSub
+# end class ChequeV3TypeSub
+
+
+class HeaderSub(supermod.Header):
+    def __init__(self, Date=None, Kassa=None, Shift=None, Number=None, Type=None, ConfirmOrder=None, **kwargs_):
+        super(HeaderSub, self).__init__(Date, Kassa, Shift, Number, Type, ConfirmOrder,  **kwargs_)
+supermod.Header.subclass = HeaderSub
+# end class HeaderSub
+
+
+class HeaderTTNSub(supermod.HeaderTTN):
+    def __init__(self, Date=None, BillNumber=None, TTNNumber=None, Type=None, **kwargs_):
+        super(HeaderTTNSub, self).__init__(Date, BillNumber, TTNNumber, Type,  **kwargs_)
+supermod.HeaderTTN.subclass = HeaderTTNSub
+# end class HeaderTTNSub
+
+
+class BottleSub(supermod.Bottle):
+    def __init__(self, Barcode=None, EAN=None, Price=None, **kwargs_):
+        super(BottleSub, self).__init__(Barcode, EAN, Price,  **kwargs_)
+supermod.Bottle.subclass = BottleSub
+# end class BottleSub
+
+
+class NomarkSub(supermod.Nomark):
+    def __init__(self, PosIdentity=None, Product=None, Quantity=None, EAN=None, Price=None, **kwargs_):
+        super(NomarkSub, self).__init__(PosIdentity, Product, Quantity, EAN, Price,  **kwargs_)
+supermod.Nomark.subclass = NomarkSub
+# end class NomarkSub
+
+
+class RepProducedType_v4Sub(supermod.RepProducedType_v4):
+    def __init__(self, Identity=None, Header=None, Content=None, ContentResource=None, **kwargs_):
+        super(RepProducedType_v4Sub, self).__init__(Identity, Header, Content, ContentResource,  **kwargs_)
+supermod.RepProducedType_v4.subclass = RepProducedType_v4Sub
+# end class RepProducedType_v4Sub
+
+
+class PositionType53Sub(supermod.PositionType53):
+    def __init__(self, ProductCode=None, Quantity=None, alcPercent=None, alcPercentMin=None, alcPercentMax=None, Party=None, Identity=None, Comment1=None, Comment2=None, Comment3=None, MarkInfo=None, **kwargs_):
+        super(PositionType53Sub, self).__init__(ProductCode, Quantity, alcPercent, alcPercentMin, alcPercentMax, Party, Identity, Comment1, Comment2, Comment3, MarkInfo,  **kwargs_)
+supermod.PositionType53.subclass = PositionType53Sub
+# end class PositionType53Sub
+
+
+class UsedResourceType54Sub(supermod.UsedResourceType54):
+    def __init__(self, IdentityRes=None, Product=None, RegForm2=None, Quantity=None, MarkInfo=None, **kwargs_):
+        super(UsedResourceType54Sub, self).__init__(IdentityRes, Product, RegForm2, Quantity, MarkInfo,  **kwargs_)
+supermod.UsedResourceType54.subclass = UsedResourceType54Sub
+# end class UsedResourceType54Sub
+
+
+class RepImportedType_v4Sub(supermod.RepImportedType_v4):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RepImportedType_v4Sub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RepImportedType_v4.subclass = RepImportedType_v4Sub
+# end class RepImportedType_v4Sub
+
+
+class PositionType56Sub(supermod.PositionType56):
+    def __init__(self, ProductCode=None, Quantity=None, alcPercent=None, alcPercentMin=None, alcPercentMax=None, Party=None, PlannedImport=None, Identity=None, Comment1=None, Comment2=None, Comment3=None, MarkInfo=None, **kwargs_):
+        super(PositionType56Sub, self).__init__(ProductCode, Quantity, alcPercent, alcPercentMin, alcPercentMax, Party, PlannedImport, Identity, Comment1, Comment2, Comment3, MarkInfo,  **kwargs_)
+supermod.PositionType56.subclass = PositionType56Sub
+# end class PositionType56Sub
+
+
+class ReportDestructionAMFSMTypeSub(supermod.ReportDestructionAMFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(ReportDestructionAMFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.ReportDestructionAMFSMType.subclass = ReportDestructionAMFSMTypeSub
+# end class ReportDestructionAMFSMTypeSub
+
+
+class PositionAMFSMTypeSub(supermod.PositionAMFSMType):
+    def __init__(self, Identity=None, CauseOfDestruction=None, SampleFSM=None, MarkType=None, RollNumber=None, RangeNumberInRoll=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionAMFSMTypeSub, self).__init__(Identity, CauseOfDestruction, SampleFSM, MarkType, RollNumber, RangeNumberInRoll, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionAMFSMType.subclass = PositionAMFSMTypeSub
+# end class PositionAMFSMTypeSub
+
+
+class RequestRepealIPISub(supermod.RequestRepealIPI):
+    def __init__(self, ClientId=None, RequestNumber=None, RequestDate=None, IPIRegId=None, **kwargs_):
+        super(RequestRepealIPISub, self).__init__(ClientId, RequestNumber, RequestDate, IPIRegId,  **kwargs_)
+supermod.RequestRepealIPI.subclass = RequestRepealIPISub
+# end class RequestRepealIPISub
+
+
+class RequestRepealEFSMSub(supermod.RequestRepealEFSM):
+    def __init__(self, ClientId=None, RequestNumber=None, RequestDate=None, EFSMRegId=None, **kwargs_):
+        super(RequestRepealEFSMSub, self).__init__(ClientId, RequestNumber, RequestDate, EFSMRegId,  **kwargs_)
+supermod.RequestRepealEFSM.subclass = RequestRepealEFSMSub
+# end class RequestRepealEFSMSub
+
+
+class RequestRepealIAMSub(supermod.RequestRepealIAM):
+    def __init__(self, ClientId=None, RequestNumber=None, RequestDate=None, IAMRegId=None, **kwargs_):
+        super(RequestRepealIAMSub, self).__init__(ClientId, RequestNumber, RequestDate, IAMRegId,  **kwargs_)
+supermod.RequestRepealIAM.subclass = RequestRepealIAMSub
+# end class RequestRepealIAMSub
+
+
+class TTNShipmentReturnFSMTypeSub(supermod.TTNShipmentReturnFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(TTNShipmentReturnFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.TTNShipmentReturnFSMType.subclass = TTNShipmentReturnFSMTypeSub
+# end class TTNShipmentReturnFSMTypeSub
+
+
+class PositionTTNFSMType57Sub(supermod.PositionTTNFSMType57):
+    def __init__(self, Identity=None, SampleFSM=None, MarkType=None, RollNumber=None, RangeNumberInRoll=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionTTNFSMType57Sub, self).__init__(Identity, SampleFSM, MarkType, RollNumber, RangeNumberInRoll, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionTTNFSMType57.subclass = PositionTTNFSMType57Sub
+# end class PositionTTNFSMType57Sub
+
+
+class TTNIssueReturnFSMTypeSub(supermod.TTNIssueReturnFSMType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(TTNIssueReturnFSMTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.TTNIssueReturnFSMType.subclass = TTNIssueReturnFSMTypeSub
+# end class TTNIssueReturnFSMTypeSub
+
+
+class PositionTTNIssueReturnFSMTypeSub(supermod.PositionTTNIssueReturnFSMType):
+    def __init__(self, Identity=None, SampleFSM=None, MarkType=None, RollNumber=None, RangeNumberInRoll=None, Rank=None, Start=None, Last=None, QuantityRange=None, **kwargs_):
+        super(PositionTTNIssueReturnFSMTypeSub, self).__init__(Identity, SampleFSM, MarkType, RollNumber, RangeNumberInRoll, Rank, Start, Last, QuantityRange,  **kwargs_)
+supermod.PositionTTNIssueReturnFSMType.subclass = PositionTTNIssueReturnFSMTypeSub
+# end class PositionTTNIssueReturnFSMTypeSub
+
+
+class ReferenceOfDeficienciesSub(supermod.ReferenceOfDeficiencies):
+    def __init__(self, Header=None, **kwargs_):
+        super(ReferenceOfDeficienciesSub, self).__init__(Header,  **kwargs_)
+supermod.ReferenceOfDeficiencies.subclass = ReferenceOfDeficienciesSub
+# end class ReferenceOfDeficienciesSub
+
+
+class ManufacturingNoticeFSMSub(supermod.ManufacturingNoticeFSM):
+    def __init__(self, Header=None, **kwargs_):
+        super(ManufacturingNoticeFSMSub, self).__init__(Header,  **kwargs_)
+supermod.ManufacturingNoticeFSM.subclass = ManufacturingNoticeFSMSub
+# end class ManufacturingNoticeFSMSub
+
+
+class WayBillType_v4Sub(supermod.WayBillType_v4):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(WayBillType_v4Sub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.WayBillType_v4.subclass = WayBillType_v4Sub
+# end class WayBillType_v4Sub
+
+
+class PositionType58Sub(supermod.PositionType58):
+    def __init__(self, Product=None, Pack_ID=None, Quantity=None, alcPercent=None, alcPercentMin=None, alcPercentMax=None, Price=None, Party=None, Identity=None, EXCISE_NUMBER=None, EXCISE_DATE=None, EXCISE_SUM=None, EXCISE_BS=None, EAN13=None, FARegId=None, InformF2=None, boxInfo=None, **kwargs_):
+        super(PositionType58Sub, self).__init__(Product, Pack_ID, Quantity, alcPercent, alcPercentMin, alcPercentMax, Price, Party, Identity, EXCISE_NUMBER, EXCISE_DATE, EXCISE_SUM, EXCISE_BS, EAN13, FARegId, InformF2, boxInfo,  **kwargs_)
+supermod.PositionType58.subclass = PositionType58Sub
+# end class PositionType58Sub
+
+
+class TransportType59Sub(supermod.TransportType59):
+    def __init__(self, ChangeOwnership=None, TRAN_TYPE=None, TRAN_COMPANY=None, TRANSPORT_TYPE=None, TRANSPORT_REGNUMBER=None, TRAN_TRAILER=None, TRAN_CUSTOMER=None, TRAN_DRIVER=None, TRAN_LOADPOINT=None, TRAN_UNLOADPOINT=None, TRAN_REDIRECT=None, TRAN_FORWARDER=None, **kwargs_):
+        super(TransportType59Sub, self).__init__(ChangeOwnership, TRAN_TYPE, TRAN_COMPANY, TRANSPORT_TYPE, TRANSPORT_REGNUMBER, TRAN_TRAILER, TRAN_CUSTOMER, TRAN_DRIVER, TRAN_LOADPOINT, TRAN_UNLOADPOINT, TRAN_REDIRECT, TRAN_FORWARDER,  **kwargs_)
+supermod.TransportType59.subclass = TransportType59Sub
+# end class TransportType59Sub
+
+
+class WayBillActType_v4Sub(supermod.WayBillActType_v4):
+    def __init__(self, Identity=None, Header=None, Content=None, Transport=None, **kwargs_):
+        super(WayBillActType_v4Sub, self).__init__(Identity, Header, Content, Transport,  **kwargs_)
+supermod.WayBillActType_v4.subclass = WayBillActType_v4Sub
+# end class WayBillActType_v4Sub
+
+
+class PositionType62Sub(supermod.PositionType62):
+    def __init__(self, Identity=None, InformF2RegId=None, RealQuantity=None, alcPercent=None, alcPercentMin=None, alcPercentMax=None, MarkInfo=None, **kwargs_):
+        super(PositionType62Sub, self).__init__(Identity, InformF2RegId, RealQuantity, alcPercent, alcPercentMin, alcPercentMax, MarkInfo,  **kwargs_)
+supermod.PositionType62.subclass = PositionType62Sub
+# end class PositionType62Sub
+
+
+class TransportActTypeSub(supermod.TransportActType):
+    def __init__(self, ChangeOwnership=None, **kwargs_):
+        super(TransportActTypeSub, self).__init__(ChangeOwnership,  **kwargs_)
+supermod.TransportActType.subclass = TransportActTypeSub
+# end class TransportActTypeSub
+
+
+class RouteSub(supermod.Route):
+    def __init__(self, NUMBER=None, Date=None, Ownership=None, WBRegId=None, ParentRoutes=None, TRAN_TYPE=None, TRAN_COMPANY=None, TRAN_CAR=None, TRAN_TRAILER=None, TRAN_CUSTOMER=None, TRAN_DRIVER=None, TRAN_LOADPOINT=None, TRAN_UNLOADPOINT=None, TRAN_REDIRECT=None, TRAN_FORWARDER=None, Quantity=None, **kwargs_):
+        super(RouteSub, self).__init__(NUMBER, Date, Ownership, WBRegId, ParentRoutes, TRAN_TYPE, TRAN_COMPANY, TRAN_CAR, TRAN_TRAILER, TRAN_CUSTOMER, TRAN_DRIVER, TRAN_LOADPOINT, TRAN_UNLOADPOINT, TRAN_REDIRECT, TRAN_FORWARDER, Quantity,  **kwargs_)
+supermod.Route.subclass = RouteSub
+# end class RouteSub
+
+
+class CancelRouteSub(supermod.CancelRoute):
+    def __init__(self, Date=None, RouteId=None, **kwargs_):
+        super(CancelRouteSub, self).__init__(Date, RouteId,  **kwargs_)
+supermod.CancelRoute.subclass = CancelRouteSub
+# end class CancelRouteSub
+
+
+class DebtAbsenceTypeSub(supermod.DebtAbsenceType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(DebtAbsenceTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.DebtAbsenceType.subclass = DebtAbsenceTypeSub
+# end class DebtAbsenceTypeSub
+
+
+class RequestAdjustmentDataSub(supermod.RequestAdjustmentData):
+    def __init__(self, ClientId=None, RequestNumber=None, RequestDate=None, ProveDocs=None, Content=None, **kwargs_):
+        super(RequestAdjustmentDataSub, self).__init__(ClientId, RequestNumber, RequestDate, ProveDocs, Content,  **kwargs_)
+supermod.RequestAdjustmentData.subclass = RequestAdjustmentDataSub
+# end class RequestAdjustmentDataSub
+
+
+class RequestAdjustmentPositionTypeSub(supermod.RequestAdjustmentPositionType):
+    def __init__(self, TTN=None, TTNPos=None, ReportProduced=None, ReportImported=None, ActWO=None, ActWOPos=None, ActWOS=None, ActWOSPos=None, ActCO=None, ActTTN=None, Route=None, **kwargs_):
+        super(RequestAdjustmentPositionTypeSub, self).__init__(TTN, TTNPos, ReportProduced, ReportImported, ActWO, ActWOPos, ActWOS, ActWOSPos, ActCO, ActTTN, Route,  **kwargs_)
+supermod.RequestAdjustmentPositionType.subclass = RequestAdjustmentPositionTypeSub
+# end class RequestAdjustmentPositionTypeSub
+
+
+class TTNTypeSub(supermod.TTNType):
+    def __init__(self, WBRegId=None, NUMBER=None, Date=None, ShippingDate=None, Type=None, Transport=None, **kwargs_):
+        super(TTNTypeSub, self).__init__(WBRegId, NUMBER, Date, ShippingDate, Type, Transport,  **kwargs_)
+supermod.TTNType.subclass = TTNTypeSub
+# end class TTNTypeSub
+
+
+class TTNPosTypeSub(supermod.TTNPosType):
+    def __init__(self, WBRegId=None, Identity=None, Price=None, EXCISE_NUMBER=None, EXCISE_DATE=None, EXCISE_SUM=None, EXCISE_BS=None, **kwargs_):
+        super(TTNPosTypeSub, self).__init__(WBRegId, Identity, Price, EXCISE_NUMBER, EXCISE_DATE, EXCISE_SUM, EXCISE_BS,  **kwargs_)
+supermod.TTNPosType.subclass = TTNPosTypeSub
+# end class TTNPosTypeSub
+
+
+class ReportProducedTypeSub(supermod.ReportProducedType):
+    def __init__(self, RegId=None, NUMBER=None, Date=None, ProducedDate=None, **kwargs_):
+        super(ReportProducedTypeSub, self).__init__(RegId, NUMBER, Date, ProducedDate,  **kwargs_)
+supermod.ReportProducedType.subclass = ReportProducedTypeSub
+# end class ReportProducedTypeSub
+
+
+class ReportImportedTypeSub(supermod.ReportImportedType):
+    def __init__(self, RegId=None, NUMBER=None, Date=None, ImportedDate=None, GTDNUMBER=None, GTDDate=None, Country=None, supplierOwnerid=None, **kwargs_):
+        super(ReportImportedTypeSub, self).__init__(RegId, NUMBER, Date, ImportedDate, GTDNUMBER, GTDDate, Country, supplierOwnerid,  **kwargs_)
+supermod.ReportImportedType.subclass = ReportImportedTypeSub
+# end class ReportImportedTypeSub
+
+
+class ActWOTypeSub(supermod.ActWOType):
+    def __init__(self, AWORegId=None, ActNumber=None, ActDate=None, TypeWriteOff=None, **kwargs_):
+        super(ActWOTypeSub, self).__init__(AWORegId, ActNumber, ActDate, TypeWriteOff,  **kwargs_)
+supermod.ActWOType.subclass = ActWOTypeSub
+# end class ActWOTypeSub
+
+
+class ActWOPosTypeSub(supermod.ActWOPosType):
+    def __init__(self, AWORegId=None, Identity=None, SumSale=None, **kwargs_):
+        super(ActWOPosTypeSub, self).__init__(AWORegId, Identity, SumSale,  **kwargs_)
+supermod.ActWOPosType.subclass = ActWOPosTypeSub
+# end class ActWOPosTypeSub
+
+
+class ActWOSTypeSub(supermod.ActWOSType):
+    def __init__(self, AWOSRegId=None, ActNumber=None, ActDate=None, TypeWriteOff=None, **kwargs_):
+        super(ActWOSTypeSub, self).__init__(AWOSRegId, ActNumber, ActDate, TypeWriteOff,  **kwargs_)
+supermod.ActWOSType.subclass = ActWOSTypeSub
+# end class ActWOSTypeSub
+
+
+class ActWOSPosTypeSub(supermod.ActWOSPosType):
+    def __init__(self, AWOSRegId=None, Identity=None, SumSale=None, **kwargs_):
+        super(ActWOSPosTypeSub, self).__init__(AWOSRegId, Identity, SumSale,  **kwargs_)
+supermod.ActWOSPosType.subclass = ActWOSPosTypeSub
+# end class ActWOSPosTypeSub
+
+
+class ActCOTypeSub(supermod.ActCOType):
+    def __init__(self, ACORegId=None, Number=None, ActDate=None, **kwargs_):
+        super(ActCOTypeSub, self).__init__(ACORegId, Number, ActDate,  **kwargs_)
+supermod.ActCOType.subclass = ActCOTypeSub
+# end class ActCOTypeSub
+
+
+class ActTTNTypeSub(supermod.ActTTNType):
+    def __init__(self, WBRegId=None, ACTNUMBER=None, ActDate=None, **kwargs_):
+        super(ActTTNTypeSub, self).__init__(WBRegId, ACTNUMBER, ActDate,  **kwargs_)
+supermod.ActTTNType.subclass = ActTTNTypeSub
+# end class ActTTNTypeSub
+
+
+class RouteTypeSub(supermod.RouteType):
+    def __init__(self, RegId=None, Date=None, TRAN_TYPE=None, TRAN_COMPANY=None, TRAN_CAR=None, TRAN_TRAILER=None, TRAN_CUSTOMER=None, TRAN_DRIVER=None, TRAN_LOADPOINT=None, TRAN_UNLOADPOINT=None, TRAN_REDIRECT=None, TRAN_FORWARDER=None, **kwargs_):
+        super(RouteTypeSub, self).__init__(RegId, Date, TRAN_TYPE, TRAN_COMPANY, TRAN_CAR, TRAN_TRAILER, TRAN_CUSTOMER, TRAN_DRIVER, TRAN_LOADPOINT, TRAN_UNLOADPOINT, TRAN_REDIRECT, TRAN_FORWARDER,  **kwargs_)
+supermod.RouteType.subclass = RouteTypeSub
+# end class RouteTypeSub
+
+
+class ActCancelOnlineOrderTypeSub(supermod.ActCancelOnlineOrderType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(ActCancelOnlineOrderTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.ActCancelOnlineOrderType.subclass = ActCancelOnlineOrderTypeSub
+# end class ActCancelOnlineOrderTypeSub
+
+
+class ActConfirmOnlineOrderTypeSub(supermod.ActConfirmOnlineOrderType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(ActConfirmOnlineOrderTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.ActConfirmOnlineOrderType.subclass = ActConfirmOnlineOrderTypeSub
+# end class ActConfirmOnlineOrderTypeSub
+
+
+class ActConfirmOnlineOrderPositionTypeSub(supermod.ActConfirmOnlineOrderPositionType):
+    def __init__(self, Identity=None, Product=None, Quantity=None, SumSale=None, F2Detail=None, **kwargs_):
+        super(ActConfirmOnlineOrderPositionTypeSub, self).__init__(Identity, Product, Quantity, SumSale, F2Detail,  **kwargs_)
+supermod.ActConfirmOnlineOrderPositionType.subclass = ActConfirmOnlineOrderPositionTypeSub
+# end class ActConfirmOnlineOrderPositionTypeSub
+
+
+class F2DetailTypeSub(supermod.F2DetailType):
+    def __init__(self, InformF2=None, QuantityF2=None, Price=None, **kwargs_):
+        super(F2DetailTypeSub, self).__init__(InformF2, QuantityF2, Price,  **kwargs_)
+supermod.F2DetailType.subclass = F2DetailTypeSub
+# end class F2DetailTypeSub
+
+
+class ActReceiptOnlineOrderTypeSub(supermod.ActReceiptOnlineOrderType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(ActReceiptOnlineOrderTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.ActReceiptOnlineOrderType.subclass = ActReceiptOnlineOrderTypeSub
+# end class ActReceiptOnlineOrderTypeSub
+
+
+class ActReceiptOnlineOrderPositionTypeSub(supermod.ActReceiptOnlineOrderPositionType):
+    def __init__(self, Identity=None, Product=None, Quantity=None, SumSale=None, **kwargs_):
+        super(ActReceiptOnlineOrderPositionTypeSub, self).__init__(Identity, Product, Quantity, SumSale,  **kwargs_)
+supermod.ActReceiptOnlineOrderPositionType.subclass = ActReceiptOnlineOrderPositionTypeSub
+# end class ActReceiptOnlineOrderPositionTypeSub
+
+
+class RequestBalanceTransferSub(supermod.RequestBalanceTransfer):
+    def __init__(self, Header=None, **kwargs_):
+        super(RequestBalanceTransferSub, self).__init__(Header,  **kwargs_)
+supermod.RequestBalanceTransfer.subclass = RequestBalanceTransferSub
+# end class RequestBalanceTransferSub
+
+
+class RequestManufacturerFSMforCheckTypeSub(supermod.RequestManufacturerFSMforCheckType):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RequestManufacturerFSMforCheckTypeSub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RequestManufacturerFSMforCheckType.subclass = RequestManufacturerFSMforCheckTypeSub
+# end class RequestManufacturerFSMforCheckTypeSub
+
+
+class PositionReportType67Sub(supermod.PositionReportType67):
+    def __init__(self, Identity=None, VidAP171fz=None, MarkType=None, Quantity=None, **kwargs_):
+        super(PositionReportType67Sub, self).__init__(Identity, VidAP171fz, MarkType, Quantity,  **kwargs_)
+supermod.PositionReportType67.subclass = PositionReportType67Sub
+# end class PositionReportType67Sub
+
+
+class TicketRMCheckTypeSub(supermod.TicketRMCheckType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(TicketRMCheckTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.TicketRMCheckType.subclass = TicketRMCheckTypeSub
+# end class TicketRMCheckTypeSub
+
+
+class FrapClaimsTypeSub(supermod.FrapClaimsType):
+    def __init__(self, NameDoc=None, Header=None, **kwargs_):
+        super(FrapClaimsTypeSub, self).__init__(NameDoc, Header,  **kwargs_)
+supermod.FrapClaimsType.subclass = FrapClaimsTypeSub
+# end class FrapClaimsTypeSub
+
+
+class PositionCompositionProductsType69Sub(supermod.PositionCompositionProductsType69):
+    def __init__(self, Identity=None, CompulsoryRawMaterials=None, CompulsoryRawMaterialsDescr=None, OtherAP=None, OtherRawMaterials=None, **kwargs_):
+        super(PositionCompositionProductsType69Sub, self).__init__(Identity, CompulsoryRawMaterials, CompulsoryRawMaterialsDescr, OtherAP, OtherRawMaterials,  **kwargs_)
+supermod.PositionCompositionProductsType69.subclass = PositionCompositionProductsType69Sub
+# end class PositionCompositionProductsType69Sub
+
+
+class PositionAdditionalDocumentsTypeSub(supermod.PositionAdditionalDocumentsType):
+    def __init__(self, Identity=None, AdditionalDoc=None, **kwargs_):
+        super(PositionAdditionalDocumentsTypeSub, self).__init__(Identity, AdditionalDoc,  **kwargs_)
+supermod.PositionAdditionalDocumentsType.subclass = PositionAdditionalDocumentsTypeSub
+# end class PositionAdditionalDocumentsTypeSub
+
+
+class PositionDeclarationType70Sub(supermod.PositionDeclarationType70):
+    def __init__(self, Identity=None, DeclarCertif=None, **kwargs_):
+        super(PositionDeclarationType70Sub, self).__init__(Identity, DeclarCertif,  **kwargs_)
+supermod.PositionDeclarationType70.subclass = PositionDeclarationType70Sub
+# end class PositionDeclarationType70Sub
+
+
+class NameAPTypeSub(supermod.NameAPType):
+    def __init__(self, FullName=None, TypeBeer=None, BeerProcessingMethod=None, **kwargs_):
+        super(NameAPTypeSub, self).__init__(FullName, TypeBeer, BeerProcessingMethod,  **kwargs_)
+supermod.NameAPType.subclass = NameAPTypeSub
+# end class NameAPTypeSub
+
+
+class CapacityTypeSub(supermod.CapacityType):
+    def __init__(self, Capacity=None, DescriptionPackaging=None, ShelfLife=None, **kwargs_):
+        super(CapacityTypeSub, self).__init__(Capacity, DescriptionPackaging, ShelfLife,  **kwargs_)
+supermod.CapacityType.subclass = CapacityTypeSub
+# end class CapacityTypeSub
+
+
+class DescriptionPackagingTypeSub(supermod.DescriptionPackagingType):
+    def __init__(self, PackageType=None, ContComposition=None, LabelFotoAP=None, **kwargs_):
+        super(DescriptionPackagingTypeSub, self).__init__(PackageType, ContComposition, LabelFotoAP,  **kwargs_)
+supermod.DescriptionPackagingType.subclass = DescriptionPackagingTypeSub
+# end class DescriptionPackagingTypeSub
+
+
+class TrademarkDetailsTypeSub(supermod.TrademarkDetailsType):
+    def __init__(self, TrademarkName=None, StateRegistrationNumber=None, DateStateRegistration=None, NameCopyrightHolder=None, **kwargs_):
+        super(TrademarkDetailsTypeSub, self).__init__(TrademarkName, StateRegistrationNumber, DateStateRegistration, NameCopyrightHolder,  **kwargs_)
+supermod.TrademarkDetailsType.subclass = TrademarkDetailsTypeSub
+# end class TrademarkDetailsTypeSub
+
+
+class FrapClaimsCorTypeSub(supermod.FrapClaimsCorType):
+    def __init__(self, NameDoc=None, Header=None, **kwargs_):
+        super(FrapClaimsCorTypeSub, self).__init__(NameDoc, Header,  **kwargs_)
+supermod.FrapClaimsCorType.subclass = FrapClaimsCorTypeSub
+# end class FrapClaimsCorTypeSub
+
+
+class PositionCompositionProductsType71Sub(supermod.PositionCompositionProductsType71):
+    def __init__(self, Identity=None, CompulsoryRawMaterials=None, CompulsoryRawMaterialsDescr=None, OtherAP=None, OtherRawMaterials=None, **kwargs_):
+        super(PositionCompositionProductsType71Sub, self).__init__(Identity, CompulsoryRawMaterials, CompulsoryRawMaterialsDescr, OtherAP, OtherRawMaterials,  **kwargs_)
+supermod.PositionCompositionProductsType71.subclass = PositionCompositionProductsType71Sub
+# end class PositionCompositionProductsType71Sub
+
+
+class CapacityType72Sub(supermod.CapacityType72):
+    def __init__(self, Capacity=None, DescriptionPackaging=None, ShelfLife=None, **kwargs_):
+        super(CapacityType72Sub, self).__init__(Capacity, DescriptionPackaging, ShelfLife,  **kwargs_)
+supermod.CapacityType72.subclass = CapacityType72Sub
+# end class CapacityType72Sub
+
+
+class DescriptionPackagingType73Sub(supermod.DescriptionPackagingType73):
+    def __init__(self, PackageType=None, ContComposition=None, LabelFotoAP=None, **kwargs_):
+        super(DescriptionPackagingType73Sub, self).__init__(PackageType, ContComposition, LabelFotoAP,  **kwargs_)
+supermod.DescriptionPackagingType73.subclass = DescriptionPackagingType73Sub
+# end class DescriptionPackagingType73Sub
+
+
+class TrademarkDetailsType74Sub(supermod.TrademarkDetailsType74):
+    def __init__(self, TrademarkName=None, StateRegistrationNumber=None, DateStateRegistration=None, NameCopyrightHolder=None, **kwargs_):
+        super(TrademarkDetailsType74Sub, self).__init__(TrademarkName, StateRegistrationNumber, DateStateRegistration, NameCopyrightHolder,  **kwargs_)
+supermod.TrademarkDetailsType74.subclass = TrademarkDetailsType74Sub
+# end class TrademarkDetailsType74Sub
+
+
+class PositionAdditionalDocumentsType75Sub(supermod.PositionAdditionalDocumentsType75):
+    def __init__(self, Identity=None, AdditionalDoc=None, **kwargs_):
+        super(PositionAdditionalDocumentsType75Sub, self).__init__(Identity, AdditionalDoc,  **kwargs_)
+supermod.PositionAdditionalDocumentsType75.subclass = PositionAdditionalDocumentsType75Sub
+# end class PositionAdditionalDocumentsType75Sub
+
+
+class PositionDeclarationType76Sub(supermod.PositionDeclarationType76):
+    def __init__(self, Identity=None, DeclarCertif=None, **kwargs_):
+        super(PositionDeclarationType76Sub, self).__init__(Identity, DeclarCertif,  **kwargs_)
+supermod.PositionDeclarationType76.subclass = PositionDeclarationType76Sub
+# end class PositionDeclarationType76Sub
+
+
+class ApplicationsTypeSub(supermod.ApplicationsType):
+    def __init__(self, Application=None, **kwargs_):
+        super(ApplicationsTypeSub, self).__init__(Application,  **kwargs_)
+supermod.ApplicationsType.subclass = ApplicationsTypeSub
+# end class ApplicationsTypeSub
+
+
+class GovernmentFeeTypeSub(supermod.GovernmentFeeType):
+    def __init__(self, KBK=None, Date=None, Number=None, Total=None, **kwargs_):
+        super(GovernmentFeeTypeSub, self).__init__(KBK, Date, Number, Total,  **kwargs_)
+supermod.GovernmentFeeType.subclass = GovernmentFeeTypeSub
+# end class GovernmentFeeTypeSub
+
+
+class DivisionTypeSub(supermod.DivisionType):
+    def __init__(self, ObjectKPP=None, NameBank=None, Account=None, PhoneNumber=None, EmailAddress=None, ContractNumber=None, ContractDate=None, ObjectName=None, ObjectTime=None, ObjectType=None, BusinessAddress=None, ObjectAddress=None, ObjectNumber=None, ObjectCompanyType=None, ObjectCompanySize=None, ObjectSize=None, ObjectCoordinate=None, **kwargs_):
+        super(DivisionTypeSub, self).__init__(ObjectKPP, NameBank, Account, PhoneNumber, EmailAddress, ContractNumber, ContractDate, ObjectName, ObjectTime, ObjectType, BusinessAddress, ObjectAddress, ObjectNumber, ObjectCompanyType, ObjectCompanySize, ObjectSize, ObjectCoordinate,  **kwargs_)
+supermod.DivisionType.subclass = DivisionTypeSub
+# end class DivisionTypeSub
+
+
+class RepProducedType_v5Sub(supermod.RepProducedType_v5):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RepProducedType_v5Sub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RepProducedType_v5.subclass = RepProducedType_v5Sub
+# end class RepProducedType_v5Sub
+
+
+class PositionType77Sub(supermod.PositionType77):
+    def __init__(self, ProductCode=None, Quantity=None, alcPercent=None, alcPercentMin=None, alcPercentMax=None, Party=None, Identity=None, Comment1=None, Comment2=None, Comment3=None, MarkInfo=None, ContentResource=None, **kwargs_):
+        super(PositionType77Sub, self).__init__(ProductCode, Quantity, alcPercent, alcPercentMin, alcPercentMax, Party, Identity, Comment1, Comment2, Comment3, MarkInfo, ContentResource,  **kwargs_)
+supermod.PositionType77.subclass = PositionType77Sub
+# end class PositionType77Sub
+
+
+class UsedResourceType78Sub(supermod.UsedResourceType78):
+    def __init__(self, IdentityRes=None, Product=None, RegForm2=None, Quantity=None, MarkInfo=None, **kwargs_):
+        super(UsedResourceType78Sub, self).__init__(IdentityRes, Product, RegForm2, Quantity, MarkInfo,  **kwargs_)
+supermod.UsedResourceType78.subclass = UsedResourceType78Sub
+# end class UsedResourceType78Sub
+
+
+class ReturnNotificationsFSMTypeSub(supermod.ReturnNotificationsFSMType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(ReturnNotificationsFSMTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.ReturnNotificationsFSMType.subclass = ReturnNotificationsFSMTypeSub
+# end class ReturnNotificationsFSMTypeSub
+
+
+class TTNInternalMoveFSMTypeSub(supermod.TTNInternalMoveFSMType):
+    def __init__(self, Identity=None, Header=None, **kwargs_):
+        super(TTNInternalMoveFSMTypeSub, self).__init__(Identity, Header,  **kwargs_)
+supermod.TTNInternalMoveFSMType.subclass = TTNInternalMoveFSMTypeSub
+# end class TTNInternalMoveFSMTypeSub
+
+
+class ActWriteOffType_v4Sub(supermod.ActWriteOffType_v4):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(ActWriteOffType_v4Sub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.ActWriteOffType_v4.subclass = ActWriteOffType_v4Sub
+# end class ActWriteOffType_v4Sub
+
+
+class ActWriteOffPositionType80Sub(supermod.ActWriteOffPositionType80):
+    def __init__(self, Identity=None, writeoffvolume=None, SumSale=None, InformF1F2=None, MarkCodeInfo=None, **kwargs_):
+        super(ActWriteOffPositionType80Sub, self).__init__(Identity, writeoffvolume, SumSale, InformF1F2, MarkCodeInfo,  **kwargs_)
+supermod.ActWriteOffPositionType80.subclass = ActWriteOffPositionType80Sub
+# end class ActWriteOffPositionType80Sub
+
+
+class InformF1F281Sub(supermod.InformF1F281):
+    def __init__(self, InformF2=None, InformF1=None, **kwargs_):
+        super(InformF1F281Sub, self).__init__(InformF2, InformF1,  **kwargs_)
+supermod.InformF1F281.subclass = InformF1F281Sub
+# end class InformF1F281Sub
+
+
+class ChequeV4TypeSub(supermod.ChequeV4Type):
+    def __init__(self, Identity=None, Header=None, HeaderTTN=None, Content=None, **kwargs_):
+        super(ChequeV4TypeSub, self).__init__(Identity, Header, HeaderTTN, Content,  **kwargs_)
+supermod.ChequeV4Type.subclass = ChequeV4TypeSub
+# end class ChequeV4TypeSub
+
+
+class Header82Sub(supermod.Header82):
+    def __init__(self, Date=None, Kassa=None, Shift=None, Number=None, Type=None, ConfirmOrder=None, **kwargs_):
+        super(Header82Sub, self).__init__(Date, Kassa, Shift, Number, Type, ConfirmOrder,  **kwargs_)
+supermod.Header82.subclass = Header82Sub
+# end class Header82Sub
+
+
+class HeaderTTN83Sub(supermod.HeaderTTN83):
+    def __init__(self, Date=None, BillNumber=None, TTNNumber=None, Type=None, **kwargs_):
+        super(HeaderTTN83Sub, self).__init__(Date, BillNumber, TTNNumber, Type,  **kwargs_)
+supermod.HeaderTTN83.subclass = HeaderTTN83Sub
+# end class HeaderTTN83Sub
+
+
+class Bottle84Sub(supermod.Bottle84):
+    def __init__(self, Barcode=None, EAN=None, Price=None, **kwargs_):
+        super(Bottle84Sub, self).__init__(Barcode, EAN, Price,  **kwargs_)
+supermod.Bottle84.subclass = Bottle84Sub
+# end class Bottle84Sub
+
+
+class CateringSub(supermod.Catering):
+    def __init__(self, Barcode=None, EAN=None, Price=None, Volume=None, **kwargs_):
+        super(CateringSub, self).__init__(Barcode, EAN, Price, Volume,  **kwargs_)
+supermod.Catering.subclass = CateringSub
+# end class CateringSub
+
+
+class Nomark85Sub(supermod.Nomark85):
+    def __init__(self, PosIdentity=None, Product=None, Quantity=None, EAN=None, Price=None, **kwargs_):
+        super(Nomark85Sub, self).__init__(PosIdentity, Product, Quantity, EAN, Price,  **kwargs_)
+supermod.Nomark85.subclass = Nomark85Sub
+# end class Nomark85Sub
+
+
+class RepProducedType_v6Sub(supermod.RepProducedType_v6):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RepProducedType_v6Sub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RepProducedType_v6.subclass = RepProducedType_v6Sub
+# end class RepProducedType_v6Sub
+
+
+class PositionType88Sub(supermod.PositionType88):
+    def __init__(self, ProductCode=None, Quantity=None, alcPercent=None, Party=None, Identity=None, Comment1=None, Comment2=None, Comment3=None, MarkInfo=None, ContentResource=None, **kwargs_):
+        super(PositionType88Sub, self).__init__(ProductCode, Quantity, alcPercent, Party, Identity, Comment1, Comment2, Comment3, MarkInfo, ContentResource,  **kwargs_)
+supermod.PositionType88.subclass = PositionType88Sub
+# end class PositionType88Sub
+
+
+class UsedResourceType89Sub(supermod.UsedResourceType89):
+    def __init__(self, IDENTITYPRODUCT=None, Product=None, RegForm2=None, Quantity=None, MarkInfo=None, **kwargs_):
+        super(UsedResourceType89Sub, self).__init__(IDENTITYPRODUCT, Product, RegForm2, Quantity, MarkInfo,  **kwargs_)
+supermod.UsedResourceType89.subclass = UsedResourceType89Sub
+# end class UsedResourceType89Sub
+
+
+class GRAPERESOURCETypeSub(supermod.GRAPERESOURCEType):
+    def __init__(self, IDENTITYGRAPERES=None, GRAPESORT=None, WEIGHT=None, DATEOFRECEIPT=None, VINEYARDNUMBER=None, GRAPESUPPLIER=None, **kwargs_):
+        super(GRAPERESOURCETypeSub, self).__init__(IDENTITYGRAPERES, GRAPESORT, WEIGHT, DATEOFRECEIPT, VINEYARDNUMBER, GRAPESUPPLIER,  **kwargs_)
+supermod.GRAPERESOURCEType.subclass = GRAPERESOURCETypeSub
+# end class GRAPERESOURCETypeSub
+
+
+class RepImportedType_v5Sub(supermod.RepImportedType_v5):
+    def __init__(self, Identity=None, Header=None, Content=None, **kwargs_):
+        super(RepImportedType_v5Sub, self).__init__(Identity, Header, Content,  **kwargs_)
+supermod.RepImportedType_v5.subclass = RepImportedType_v5Sub
+# end class RepImportedType_v5Sub
+
+
+class PositionType91Sub(supermod.PositionType91):
+    def __init__(self, ProductCode=None, Quantity=None, alcPercent=None, Party=None, PlannedImport=None, Identity=None, Comment1=None, Comment2=None, Comment3=None, MarkInfo=None, **kwargs_):
+        super(PositionType91Sub, self).__init__(ProductCode, Quantity, alcPercent, Party, PlannedImport, Identity, Comment1, Comment2, Comment3, MarkInfo,  **kwargs_)
+supermod.PositionType91.subclass = PositionType91Sub
+# end class PositionType91Sub
 
 
 class addresslistTypeSub(supermod.addresslistType):
@@ -1478,60 +2507,60 @@ supermod.ContentType.subclass = ContentTypeSub
 # end class ContentTypeSub
 
 
-class HeaderType55Sub(supermod.HeaderType55):
+class HeaderType96Sub(supermod.HeaderType96):
     def __init__(self, IsAccept=None, ACTNUMBER=None, ActDate=None, WBRegId=None, Note=None, **kwargs_):
-        super(HeaderType55Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
-supermod.HeaderType55.subclass = HeaderType55Sub
-# end class HeaderType55Sub
+        super(HeaderType96Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
+supermod.HeaderType96.subclass = HeaderType96Sub
+# end class HeaderType96Sub
 
 
-class ContentType57Sub(supermod.ContentType57):
+class ContentType98Sub(supermod.ContentType98):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType57Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType57.subclass = ContentType57Sub
-# end class ContentType57Sub
+        super(ContentType98Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType98.subclass = ContentType98Sub
+# end class ContentType98Sub
 
 
-class HeaderType58Sub(supermod.HeaderType58):
+class HeaderType99Sub(supermod.HeaderType99):
     def __init__(self, IsConfirm=None, TicketNumber=None, TicketDate=None, WBRegId=None, Note=None, **kwargs_):
-        super(HeaderType58Sub, self).__init__(IsConfirm, TicketNumber, TicketDate, WBRegId, Note,  **kwargs_)
-supermod.HeaderType58.subclass = HeaderType58Sub
-# end class HeaderType58Sub
+        super(HeaderType99Sub, self).__init__(IsConfirm, TicketNumber, TicketDate, WBRegId, Note,  **kwargs_)
+supermod.HeaderType99.subclass = HeaderType99Sub
+# end class HeaderType99Sub
 
 
-class HeaderType60Sub(supermod.HeaderType60):
+class HeaderType101Sub(supermod.HeaderType101):
     def __init__(self, Number=None, DivisionName=None, InventoryBasis=None, InventoryBasisNumber=None, InventoryBasisDate=None, InventoryDateBegin=None, InventoryDateEnd=None, Note=None, **kwargs_):
-        super(HeaderType60Sub, self).__init__(Number, DivisionName, InventoryBasis, InventoryBasisNumber, InventoryBasisDate, InventoryDateBegin, InventoryDateEnd, Note,  **kwargs_)
-supermod.HeaderType60.subclass = HeaderType60Sub
-# end class HeaderType60Sub
+        super(HeaderType101Sub, self).__init__(Number, DivisionName, InventoryBasis, InventoryBasisNumber, InventoryBasisDate, InventoryDateBegin, InventoryDateEnd, Note,  **kwargs_)
+supermod.HeaderType101.subclass = HeaderType101Sub
+# end class HeaderType101Sub
 
 
-class ContentType62Sub(supermod.ContentType62):
+class ContentType103Sub(supermod.ContentType103):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType62Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType62.subclass = ContentType62Sub
-# end class ContentType62Sub
+        super(ContentType103Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType103.subclass = ContentType103Sub
+# end class ContentType103Sub
 
 
-class InformBType63Sub(supermod.InformBType63):
+class InformBType104Sub(supermod.InformBType104):
     def __init__(self, InformBItem=None, **kwargs_):
-        super(InformBType63Sub, self).__init__(InformBItem,  **kwargs_)
-supermod.InformBType63.subclass = InformBType63Sub
-# end class InformBType63Sub
+        super(InformBType104Sub, self).__init__(InformBItem,  **kwargs_)
+supermod.InformBType104.subclass = InformBType104Sub
+# end class InformBType104Sub
 
 
-class HeaderType64Sub(supermod.HeaderType64):
+class HeaderType105Sub(supermod.HeaderType105):
     def __init__(self, Number=None, ActDate=None, Note=None, **kwargs_):
-        super(HeaderType64Sub, self).__init__(Number, ActDate, Note,  **kwargs_)
-supermod.HeaderType64.subclass = HeaderType64Sub
-# end class HeaderType64Sub
+        super(HeaderType105Sub, self).__init__(Number, ActDate, Note,  **kwargs_)
+supermod.HeaderType105.subclass = HeaderType105Sub
+# end class HeaderType105Sub
 
 
-class ContentType66Sub(supermod.ContentType66):
+class ContentType107Sub(supermod.ContentType107):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType66Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType66.subclass = ContentType66Sub
-# end class ContentType66Sub
+        super(ContentType107Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType107.subclass = ContentType107Sub
+# end class ContentType107Sub
 
 
 class InformABTypeSub(supermod.InformABType):
@@ -1541,25 +2570,25 @@ supermod.InformABType.subclass = InformABTypeSub
 # end class InformABTypeSub
 
 
-class HeaderType67Sub(supermod.HeaderType67):
+class HeaderType108Sub(supermod.HeaderType108):
     def __init__(self, Identity=None, ActRegId=None, Number=None, **kwargs_):
-        super(HeaderType67Sub, self).__init__(Identity, ActRegId, Number,  **kwargs_)
-supermod.HeaderType67.subclass = HeaderType67Sub
-# end class HeaderType67Sub
+        super(HeaderType108Sub, self).__init__(Identity, ActRegId, Number,  **kwargs_)
+supermod.HeaderType108.subclass = HeaderType108Sub
+# end class HeaderType108Sub
 
 
-class ContentType68Sub(supermod.ContentType68):
+class ContentType109Sub(supermod.ContentType109):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType68Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType68.subclass = ContentType68Sub
-# end class ContentType68Sub
+        super(ContentType109Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType109.subclass = ContentType109Sub
+# end class ContentType109Sub
 
 
-class InformBType69Sub(supermod.InformBType69):
+class InformBType110Sub(supermod.InformBType110):
     def __init__(self, InformBItem=None, **kwargs_):
-        super(InformBType69Sub, self).__init__(InformBItem,  **kwargs_)
-supermod.InformBType69.subclass = InformBType69Sub
-# end class InformBType69Sub
+        super(InformBType110Sub, self).__init__(InformBItem,  **kwargs_)
+supermod.InformBType110.subclass = InformBType110Sub
+# end class InformBType110Sub
 
 
 class ParametersTypeSub(supermod.ParametersType):
@@ -1569,46 +2598,46 @@ supermod.ParametersType.subclass = ParametersTypeSub
 # end class ParametersTypeSub
 
 
-class HeaderType70Sub(supermod.HeaderType70):
+class HeaderType111Sub(supermod.HeaderType111):
     def __init__(self, Identity=None, WBRegId=None, EGAISFixNumber=None, EGAISFixDate=None, WBNUMBER=None, WBDate=None, Shipper=None, Consignee=None, Supplier=None, **kwargs_):
-        super(HeaderType70Sub, self).__init__(Identity, WBRegId, EGAISFixNumber, EGAISFixDate, WBNUMBER, WBDate, Shipper, Consignee, Supplier,  **kwargs_)
-supermod.HeaderType70.subclass = HeaderType70Sub
-# end class HeaderType70Sub
+        super(HeaderType111Sub, self).__init__(Identity, WBRegId, EGAISFixNumber, EGAISFixDate, WBNUMBER, WBDate, Shipper, Consignee, Supplier,  **kwargs_)
+supermod.HeaderType111.subclass = HeaderType111Sub
+# end class HeaderType111Sub
 
 
-class ContentType71Sub(supermod.ContentType71):
+class ContentType112Sub(supermod.ContentType112):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType71Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType71.subclass = ContentType71Sub
-# end class ContentType71Sub
+        super(ContentType112Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType112.subclass = ContentType112Sub
+# end class ContentType112Sub
 
 
-class HeaderType72Sub(supermod.HeaderType72):
+class HeaderType113Sub(supermod.HeaderType113):
     def __init__(self, ActNumber=None, ActDate=None, TypeWriteOff=None, Note=None, **kwargs_):
-        super(HeaderType72Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
-supermod.HeaderType72.subclass = HeaderType72Sub
-# end class HeaderType72Sub
+        super(HeaderType113Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
+supermod.HeaderType113.subclass = HeaderType113Sub
+# end class HeaderType113Sub
 
 
-class ContentType74Sub(supermod.ContentType74):
+class ContentType115Sub(supermod.ContentType115):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType74Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType74.subclass = ContentType74Sub
-# end class ContentType74Sub
+        super(ContentType115Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType115.subclass = ContentType115Sub
+# end class ContentType115Sub
 
 
-class HeaderType75Sub(supermod.HeaderType75):
+class HeaderType116Sub(supermod.HeaderType116):
     def __init__(self, Type='OperProduction', NUMBER=None, Date=None, ProducedDate=None, Producer=None, Note=None, **kwargs_):
-        super(HeaderType75Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
-supermod.HeaderType75.subclass = HeaderType75Sub
-# end class HeaderType75Sub
+        super(HeaderType116Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
+supermod.HeaderType116.subclass = HeaderType116Sub
+# end class HeaderType116Sub
 
 
-class ContentType77Sub(supermod.ContentType77):
+class ContentType118Sub(supermod.ContentType118):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType77Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType77.subclass = ContentType77Sub
-# end class ContentType77Sub
+        super(ContentType118Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType118.subclass = ContentType118Sub
+# end class ContentType118Sub
 
 
 class ContentResourceTypeSub(supermod.ContentResourceType):
@@ -1618,53 +2647,53 @@ supermod.ContentResourceType.subclass = ContentResourceTypeSub
 # end class ContentResourceTypeSub
 
 
-class addresslistType78Sub(supermod.addresslistType78):
+class addresslistType119Sub(supermod.addresslistType119):
     def __init__(self, address=None, **kwargs_):
-        super(addresslistType78Sub, self).__init__(address,  **kwargs_)
-supermod.addresslistType78.subclass = addresslistType78Sub
-# end class addresslistType78Sub
+        super(addresslistType119Sub, self).__init__(address,  **kwargs_)
+supermod.addresslistType119.subclass = addresslistType119Sub
+# end class addresslistType119Sub
 
 
-class RangesType104Sub(supermod.RangesType104):
+class RangesType151Sub(supermod.RangesType151):
     def __init__(self, Range=None, **kwargs_):
-        super(RangesType104Sub, self).__init__(Range,  **kwargs_)
-supermod.RangesType104.subclass = RangesType104Sub
-# end class RangesType104Sub
+        super(RangesType151Sub, self).__init__(Range,  **kwargs_)
+supermod.RangesType151.subclass = RangesType151Sub
+# end class RangesType151Sub
 
 
-class RangeType105Sub(supermod.RangeType105):
+class RangeType152Sub(supermod.RangeType152):
     def __init__(self, Identity=None, Rank=None, Start=None, Last=None, **kwargs_):
-        super(RangeType105Sub, self).__init__(Identity, Rank, Start, Last,  **kwargs_)
-supermod.RangeType105.subclass = RangeType105Sub
-# end class RangeType105Sub
+        super(RangeType152Sub, self).__init__(Identity, Rank, Start, Last,  **kwargs_)
+supermod.RangeType152.subclass = RangeType152Sub
+# end class RangeType152Sub
 
 
-class HeaderType131Sub(supermod.HeaderType131):
+class HeaderType183Sub(supermod.HeaderType183):
     def __init__(self, NUMBER=None, Date=None, ImportedDate=None, Importer=None, Supplier=None, GTDNUMBER=None, GTDDate=None, ContractNUMBER=None, ContractDate=None, Country=None, Note=None, **kwargs_):
-        super(HeaderType131Sub, self).__init__(NUMBER, Date, ImportedDate, Importer, Supplier, GTDNUMBER, GTDDate, ContractNUMBER, ContractDate, Country, Note,  **kwargs_)
-supermod.HeaderType131.subclass = HeaderType131Sub
-# end class HeaderType131Sub
+        super(HeaderType183Sub, self).__init__(NUMBER, Date, ImportedDate, Importer, Supplier, GTDNUMBER, GTDDate, ContractNUMBER, ContractDate, Country, Note,  **kwargs_)
+supermod.HeaderType183.subclass = HeaderType183Sub
+# end class HeaderType183Sub
 
 
-class ContentType134Sub(supermod.ContentType134):
+class ContentType186Sub(supermod.ContentType186):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType134Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType134.subclass = ContentType134Sub
-# end class ContentType134Sub
+        super(ContentType186Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType186.subclass = ContentType186Sub
+# end class ContentType186Sub
 
 
-class ProductsType138Sub(supermod.ProductsType138):
+class ProductsType190Sub(supermod.ProductsType190):
     def __init__(self, Product=None, **kwargs_):
-        super(ProductsType138Sub, self).__init__(Product,  **kwargs_)
-supermod.ProductsType138.subclass = ProductsType138Sub
-# end class ProductsType138Sub
+        super(ProductsType190Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType190.subclass = ProductsType190Sub
+# end class ProductsType190Sub
 
 
-class ProductsType139Sub(supermod.ProductsType139):
+class ProductsType191Sub(supermod.ProductsType191):
     def __init__(self, Product=None, **kwargs_):
-        super(ProductsType139Sub, self).__init__(Product,  **kwargs_)
-supermod.ProductsType139.subclass = ProductsType139Sub
-# end class ProductsType139Sub
+        super(ProductsType191Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType191.subclass = ProductsType191Sub
+# end class ProductsType191Sub
 
 
 class ClientsTypeSub(supermod.ClientsType):
@@ -1674,18 +2703,18 @@ supermod.ClientsType.subclass = ClientsTypeSub
 # end class ClientsTypeSub
 
 
-class ProductsType140Sub(supermod.ProductsType140):
+class ProductsType192Sub(supermod.ProductsType192):
     def __init__(self, Product=None, **kwargs_):
-        super(ProductsType140Sub, self).__init__(Product,  **kwargs_)
-supermod.ProductsType140.subclass = ProductsType140Sub
-# end class ProductsType140Sub
+        super(ProductsType192Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType192.subclass = ProductsType192Sub
+# end class ProductsType192Sub
 
 
-class ProductsType141Sub(supermod.ProductsType141):
+class ProductsType193Sub(supermod.ProductsType193):
     def __init__(self, StockPosition=None, **kwargs_):
-        super(ProductsType141Sub, self).__init__(StockPosition,  **kwargs_)
-supermod.ProductsType141.subclass = ProductsType141Sub
-# end class ProductsType141Sub
+        super(ProductsType193Sub, self).__init__(StockPosition,  **kwargs_)
+supermod.ProductsType193.subclass = ProductsType193Sub
+# end class ProductsType193Sub
 
 
 class HistoryBTypeSub(supermod.HistoryBType):
@@ -1695,39 +2724,46 @@ supermod.HistoryBType.subclass = HistoryBTypeSub
 # end class HistoryBTypeSub
 
 
-class ProductsType142Sub(supermod.ProductsType142):
+class ProductsType194Sub(supermod.ProductsType194):
     def __init__(self, Product=None, **kwargs_):
-        super(ProductsType142Sub, self).__init__(Product,  **kwargs_)
-supermod.ProductsType142.subclass = ProductsType142Sub
-# end class ProductsType142Sub
+        super(ProductsType194Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType194.subclass = ProductsType194Sub
+# end class ProductsType194Sub
 
 
-class ProductsType143Sub(supermod.ProductsType143):
+class ProductsType195Sub(supermod.ProductsType195):
     def __init__(self, Product=None, **kwargs_):
-        super(ProductsType143Sub, self).__init__(Product,  **kwargs_)
-supermod.ProductsType143.subclass = ProductsType143Sub
-# end class ProductsType143Sub
+        super(ProductsType195Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType195.subclass = ProductsType195Sub
+# end class ProductsType195Sub
 
 
-class ClientsType144Sub(supermod.ClientsType144):
+class ClientsType196Sub(supermod.ClientsType196):
     def __init__(self, Client=None, **kwargs_):
-        super(ClientsType144Sub, self).__init__(Client,  **kwargs_)
-supermod.ClientsType144.subclass = ClientsType144Sub
-# end class ClientsType144Sub
+        super(ClientsType196Sub, self).__init__(Client,  **kwargs_)
+supermod.ClientsType196.subclass = ClientsType196Sub
+# end class ClientsType196Sub
 
 
-class ProductsType145Sub(supermod.ProductsType145):
+class ProductsType197Sub(supermod.ProductsType197):
     def __init__(self, Product=None, **kwargs_):
-        super(ProductsType145Sub, self).__init__(Product,  **kwargs_)
-supermod.ProductsType145.subclass = ProductsType145Sub
-# end class ProductsType145Sub
+        super(ProductsType197Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType197.subclass = ProductsType197Sub
+# end class ProductsType197Sub
 
 
-class ProductsType146Sub(supermod.ProductsType146):
+class ProductsType198Sub(supermod.ProductsType198):
+    def __init__(self, Product=None, **kwargs_):
+        super(ProductsType198Sub, self).__init__(Product,  **kwargs_)
+supermod.ProductsType198.subclass = ProductsType198Sub
+# end class ProductsType198Sub
+
+
+class ProductsType199Sub(supermod.ProductsType199):
     def __init__(self, StockPosition=None, **kwargs_):
-        super(ProductsType146Sub, self).__init__(StockPosition,  **kwargs_)
-supermod.ProductsType146.subclass = ProductsType146Sub
-# end class ProductsType146Sub
+        super(ProductsType199Sub, self).__init__(StockPosition,  **kwargs_)
+supermod.ProductsType199.subclass = ProductsType199Sub
+# end class ProductsType199Sub
 
 
 class HistoryF2TypeSub(supermod.HistoryF2Type):
@@ -1737,46 +2773,46 @@ supermod.HistoryF2Type.subclass = HistoryF2TypeSub
 # end class HistoryF2TypeSub
 
 
-class HeaderType147Sub(supermod.HeaderType147):
+class HeaderType200Sub(supermod.HeaderType200):
     def __init__(self, Type='WBInvoiceFromMe', NUMBER=None, Date=None, ShippingDate=None, Transport=None, Shipper=None, Consignee=None, Base=None, Note=None, VarField1=None, VarField2=None, VarField3=None, **kwargs_):
-        super(HeaderType147Sub, self).__init__(Type, NUMBER, Date, ShippingDate, Transport, Shipper, Consignee, Base, Note, VarField1, VarField2, VarField3,  **kwargs_)
-supermod.HeaderType147.subclass = HeaderType147Sub
-# end class HeaderType147Sub
+        super(HeaderType200Sub, self).__init__(Type, NUMBER, Date, ShippingDate, Transport, Shipper, Consignee, Base, Note, VarField1, VarField2, VarField3,  **kwargs_)
+supermod.HeaderType200.subclass = HeaderType200Sub
+# end class HeaderType200Sub
 
 
-class ContentType150Sub(supermod.ContentType150):
+class ContentType203Sub(supermod.ContentType203):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType150Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType150.subclass = ContentType150Sub
-# end class ContentType150Sub
+        super(ContentType203Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType203.subclass = ContentType203Sub
+# end class ContentType203Sub
 
 
-class HeaderType161Sub(supermod.HeaderType161):
+class HeaderType214Sub(supermod.HeaderType214):
     def __init__(self, IsAccept=None, ACTNUMBER=None, ActDate=None, WBRegId=None, Note=None, **kwargs_):
-        super(HeaderType161Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
-supermod.HeaderType161.subclass = HeaderType161Sub
-# end class HeaderType161Sub
+        super(HeaderType214Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
+supermod.HeaderType214.subclass = HeaderType214Sub
+# end class HeaderType214Sub
 
 
-class ContentType163Sub(supermod.ContentType163):
+class ContentType216Sub(supermod.ContentType216):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType163Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType163.subclass = ContentType163Sub
-# end class ContentType163Sub
+        super(ContentType216Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType216.subclass = ContentType216Sub
+# end class ContentType216Sub
 
 
-class HeaderType164Sub(supermod.HeaderType164):
+class HeaderType217Sub(supermod.HeaderType217):
     def __init__(self, Number=None, ActDate=None, TypeChargeOn=None, ActWriteOff=None, Note=None, **kwargs_):
-        super(HeaderType164Sub, self).__init__(Number, ActDate, TypeChargeOn, ActWriteOff, Note,  **kwargs_)
-supermod.HeaderType164.subclass = HeaderType164Sub
-# end class HeaderType164Sub
+        super(HeaderType217Sub, self).__init__(Number, ActDate, TypeChargeOn, ActWriteOff, Note,  **kwargs_)
+supermod.HeaderType217.subclass = HeaderType217Sub
+# end class HeaderType217Sub
 
 
-class ContentType166Sub(supermod.ContentType166):
+class ContentType219Sub(supermod.ContentType219):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType166Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType166.subclass = ContentType166Sub
-# end class ContentType166Sub
+        super(ContentType219Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType219.subclass = ContentType219Sub
+# end class ContentType219Sub
 
 
 class InformF1F2TypeSub(supermod.InformF1F2Type):
@@ -1786,95 +2822,95 @@ supermod.InformF1F2Type.subclass = InformF1F2TypeSub
 # end class InformF1F2TypeSub
 
 
-class HeaderType167Sub(supermod.HeaderType167):
+class HeaderType220Sub(supermod.HeaderType220):
     def __init__(self, Identity=None, ActRegId=None, Number=None, **kwargs_):
-        super(HeaderType167Sub, self).__init__(Identity, ActRegId, Number,  **kwargs_)
-supermod.HeaderType167.subclass = HeaderType167Sub
-# end class HeaderType167Sub
+        super(HeaderType220Sub, self).__init__(Identity, ActRegId, Number,  **kwargs_)
+supermod.HeaderType220.subclass = HeaderType220Sub
+# end class HeaderType220Sub
 
 
-class ContentType168Sub(supermod.ContentType168):
+class ContentType221Sub(supermod.ContentType221):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType168Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType168.subclass = ContentType168Sub
-# end class ContentType168Sub
+        super(ContentType221Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType221.subclass = ContentType221Sub
+# end class ContentType221Sub
 
 
-class InformF2Type169Sub(supermod.InformF2Type169):
+class InformF2Type222Sub(supermod.InformF2Type222):
     def __init__(self, InformF2Item=None, **kwargs_):
-        super(InformF2Type169Sub, self).__init__(InformF2Item,  **kwargs_)
-supermod.InformF2Type169.subclass = InformF2Type169Sub
-# end class InformF2Type169Sub
+        super(InformF2Type222Sub, self).__init__(InformF2Item,  **kwargs_)
+supermod.InformF2Type222.subclass = InformF2Type222Sub
+# end class InformF2Type222Sub
 
 
-class HeaderType170Sub(supermod.HeaderType170):
+class HeaderType223Sub(supermod.HeaderType223):
     def __init__(self, Identity=None, WBRegId=None, EGAISFixNumber=None, EGAISFixDate=None, WBNUMBER=None, WBDate=None, Shipper=None, Consignee=None, **kwargs_):
-        super(HeaderType170Sub, self).__init__(Identity, WBRegId, EGAISFixNumber, EGAISFixDate, WBNUMBER, WBDate, Shipper, Consignee,  **kwargs_)
-supermod.HeaderType170.subclass = HeaderType170Sub
-# end class HeaderType170Sub
+        super(HeaderType223Sub, self).__init__(Identity, WBRegId, EGAISFixNumber, EGAISFixDate, WBNUMBER, WBDate, Shipper, Consignee,  **kwargs_)
+supermod.HeaderType223.subclass = HeaderType223Sub
+# end class HeaderType223Sub
 
 
-class ContentType171Sub(supermod.ContentType171):
+class ContentType224Sub(supermod.ContentType224):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType171Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType171.subclass = ContentType171Sub
-# end class ContentType171Sub
+        super(ContentType224Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType224.subclass = ContentType224Sub
+# end class ContentType224Sub
 
 
-class HeaderType172Sub(supermod.HeaderType172):
+class HeaderType225Sub(supermod.HeaderType225):
     def __init__(self, ActNumber=None, ActDate=None, TypeWriteOff=None, Note=None, **kwargs_):
-        super(HeaderType172Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
-supermod.HeaderType172.subclass = HeaderType172Sub
-# end class HeaderType172Sub
+        super(HeaderType225Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
+supermod.HeaderType225.subclass = HeaderType225Sub
+# end class HeaderType225Sub
 
 
-class ContentType174Sub(supermod.ContentType174):
+class ContentType227Sub(supermod.ContentType227):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType174Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType174.subclass = ContentType174Sub
-# end class ContentType174Sub
+        super(ContentType227Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType227.subclass = ContentType227Sub
+# end class ContentType227Sub
 
 
-class HeaderType175Sub(supermod.HeaderType175):
+class HeaderType228Sub(supermod.HeaderType228):
     def __init__(self, TransferNumber=None, TransferDate=None, Note=None, **kwargs_):
-        super(HeaderType175Sub, self).__init__(TransferNumber, TransferDate, Note,  **kwargs_)
-supermod.HeaderType175.subclass = HeaderType175Sub
-# end class HeaderType175Sub
+        super(HeaderType228Sub, self).__init__(TransferNumber, TransferDate, Note,  **kwargs_)
+supermod.HeaderType228.subclass = HeaderType228Sub
+# end class HeaderType228Sub
 
 
-class ContentType177Sub(supermod.ContentType177):
+class ContentType230Sub(supermod.ContentType230):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType177Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType177.subclass = ContentType177Sub
-# end class ContentType177Sub
+        super(ContentType230Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType230.subclass = ContentType230Sub
+# end class ContentType230Sub
 
 
-class HeaderType178Sub(supermod.HeaderType178):
+class HeaderType231Sub(supermod.HeaderType231):
     def __init__(self, TransferNumber=None, TransferDate=None, Note=None, **kwargs_):
-        super(HeaderType178Sub, self).__init__(TransferNumber, TransferDate, Note,  **kwargs_)
-supermod.HeaderType178.subclass = HeaderType178Sub
-# end class HeaderType178Sub
+        super(HeaderType231Sub, self).__init__(TransferNumber, TransferDate, Note,  **kwargs_)
+supermod.HeaderType231.subclass = HeaderType231Sub
+# end class HeaderType231Sub
 
 
-class ContentType180Sub(supermod.ContentType180):
+class ContentType233Sub(supermod.ContentType233):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType180Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType180.subclass = ContentType180Sub
-# end class ContentType180Sub
+        super(ContentType233Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType233.subclass = ContentType233Sub
+# end class ContentType233Sub
 
 
-class HeaderType181Sub(supermod.HeaderType181):
+class HeaderType234Sub(supermod.HeaderType234):
     def __init__(self, Identity=None, RepRegId=None, Client=None, **kwargs_):
-        super(HeaderType181Sub, self).__init__(Identity, RepRegId, Client,  **kwargs_)
-supermod.HeaderType181.subclass = HeaderType181Sub
-# end class HeaderType181Sub
+        super(HeaderType234Sub, self).__init__(Identity, RepRegId, Client,  **kwargs_)
+supermod.HeaderType234.subclass = HeaderType234Sub
+# end class HeaderType234Sub
 
 
-class ContentType182Sub(supermod.ContentType182):
+class ContentType235Sub(supermod.ContentType235):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType182Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType182.subclass = ContentType182Sub
-# end class ContentType182Sub
+        super(ContentType235Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType235.subclass = ContentType235Sub
+# end class ContentType235Sub
 
 
 class ttnlistTypeSub(supermod.ttnlistType):
@@ -1884,11 +2920,11 @@ supermod.ttnlistType.subclass = ttnlistTypeSub
 # end class ttnlistTypeSub
 
 
-class ProductsType183Sub(supermod.ProductsType183):
+class ProductsType236Sub(supermod.ProductsType236):
     def __init__(self, ShopPosition=None, **kwargs_):
-        super(ProductsType183Sub, self).__init__(ShopPosition,  **kwargs_)
-supermod.ProductsType183.subclass = ProductsType183Sub
-# end class ProductsType183Sub
+        super(ProductsType236Sub, self).__init__(ShopPosition,  **kwargs_)
+supermod.ProductsType236.subclass = ProductsType236Sub
+# end class ProductsType236Sub
 
 
 class SensorTypeSub(supermod.SensorType):
@@ -1898,53 +2934,53 @@ supermod.SensorType.subclass = SensorTypeSub
 # end class SensorTypeSub
 
 
-class DataType184Sub(supermod.DataType184):
+class DataType237Sub(supermod.DataType237):
     def __init__(self, Position=None, **kwargs_):
-        super(DataType184Sub, self).__init__(Position,  **kwargs_)
-supermod.DataType184.subclass = DataType184Sub
-# end class DataType184Sub
+        super(DataType237Sub, self).__init__(Position,  **kwargs_)
+supermod.DataType237.subclass = DataType237Sub
+# end class DataType237Sub
 
 
-class SensorType185Sub(supermod.SensorType185):
+class SensorType238Sub(supermod.SensorType238):
     def __init__(self, SensorNumber=None, PlaceId=None, SensorModel=None, **kwargs_):
-        super(SensorType185Sub, self).__init__(SensorNumber, PlaceId, SensorModel,  **kwargs_)
-supermod.SensorType185.subclass = SensorType185Sub
-# end class SensorType185Sub
+        super(SensorType238Sub, self).__init__(SensorNumber, PlaceId, SensorModel,  **kwargs_)
+supermod.SensorType238.subclass = SensorType238Sub
+# end class SensorType238Sub
 
 
-class DataType186Sub(supermod.DataType186):
+class DataType239Sub(supermod.DataType239):
     def __init__(self, Position=None, **kwargs_):
-        super(DataType186Sub, self).__init__(Position,  **kwargs_)
-supermod.DataType186.subclass = DataType186Sub
-# end class DataType186Sub
+        super(DataType239Sub, self).__init__(Position,  **kwargs_)
+supermod.DataType239.subclass = DataType239Sub
+# end class DataType239Sub
 
 
-class HeaderType187Sub(supermod.HeaderType187):
+class HeaderType240Sub(supermod.HeaderType240):
     def __init__(self, Number=None, ActDate=None, TypeChargeOn=None, ActWriteOff=None, Note=None, **kwargs_):
-        super(HeaderType187Sub, self).__init__(Number, ActDate, TypeChargeOn, ActWriteOff, Note,  **kwargs_)
-supermod.HeaderType187.subclass = HeaderType187Sub
-# end class HeaderType187Sub
+        super(HeaderType240Sub, self).__init__(Number, ActDate, TypeChargeOn, ActWriteOff, Note,  **kwargs_)
+supermod.HeaderType240.subclass = HeaderType240Sub
+# end class HeaderType240Sub
 
 
-class ContentType189Sub(supermod.ContentType189):
+class ContentType242Sub(supermod.ContentType242):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType189Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType189.subclass = ContentType189Sub
-# end class ContentType189Sub
+        super(ContentType242Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType242.subclass = ContentType242Sub
+# end class ContentType242Sub
 
 
-class HeaderType190Sub(supermod.HeaderType190):
+class HeaderType243Sub(supermod.HeaderType243):
     def __init__(self, ActNumber=None, ActDate=None, TypeWriteOff=None, Note=None, **kwargs_):
-        super(HeaderType190Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
-supermod.HeaderType190.subclass = HeaderType190Sub
-# end class HeaderType190Sub
+        super(HeaderType243Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
+supermod.HeaderType243.subclass = HeaderType243Sub
+# end class HeaderType243Sub
 
 
-class ContentType192Sub(supermod.ContentType192):
+class ContentType245Sub(supermod.ContentType245):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType192Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType192.subclass = ContentType192Sub
-# end class ContentType192Sub
+        super(ContentType245Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType245.subclass = ContentType245Sub
+# end class ContentType245Sub
 
 
 class MarksTypeSub(supermod.MarksType):
@@ -1954,32 +2990,32 @@ supermod.MarksType.subclass = MarksTypeSub
 # end class MarksTypeSub
 
 
-class MarksType193Sub(supermod.MarksType193):
+class MarksType246Sub(supermod.MarksType246):
     def __init__(self, Mark=None, **kwargs_):
-        super(MarksType193Sub, self).__init__(Mark,  **kwargs_)
-supermod.MarksType193.subclass = MarksType193Sub
-# end class MarksType193Sub
+        super(MarksType246Sub, self).__init__(Mark,  **kwargs_)
+supermod.MarksType246.subclass = MarksType246Sub
+# end class MarksType246Sub
 
 
-class HeaderType194Sub(supermod.HeaderType194):
+class HeaderType247Sub(supermod.HeaderType247):
     def __init__(self, IsConfirm=None, ConfirmNumber=None, ConfirmDate=None, WBRegId=None, Note=None, **kwargs_):
-        super(HeaderType194Sub, self).__init__(IsConfirm, ConfirmNumber, ConfirmDate, WBRegId, Note,  **kwargs_)
-supermod.HeaderType194.subclass = HeaderType194Sub
-# end class HeaderType194Sub
+        super(HeaderType247Sub, self).__init__(IsConfirm, ConfirmNumber, ConfirmDate, WBRegId, Note,  **kwargs_)
+supermod.HeaderType247.subclass = HeaderType247Sub
+# end class HeaderType247Sub
 
 
-class ProductsType196Sub(supermod.ProductsType196):
+class ProductsType249Sub(supermod.ProductsType249):
     def __init__(self, StockPosition=None, **kwargs_):
-        super(ProductsType196Sub, self).__init__(StockPosition,  **kwargs_)
-supermod.ProductsType196.subclass = ProductsType196Sub
-# end class ProductsType196Sub
+        super(ProductsType249Sub, self).__init__(StockPosition,  **kwargs_)
+supermod.ProductsType249.subclass = ProductsType249Sub
+# end class ProductsType249Sub
 
 
-class ProductsType197Sub(supermod.ProductsType197):
+class ProductsType250Sub(supermod.ProductsType250):
     def __init__(self, ShopPosition=None, **kwargs_):
-        super(ProductsType197Sub, self).__init__(ShopPosition,  **kwargs_)
-supermod.ProductsType197.subclass = ProductsType197Sub
-# end class ProductsType197Sub
+        super(ProductsType250Sub, self).__init__(ShopPosition,  **kwargs_)
+supermod.ProductsType250.subclass = ProductsType250Sub
+# end class ProductsType250Sub
 
 
 class HistoryTypeSub(supermod.HistoryType):
@@ -1989,11 +3025,11 @@ supermod.HistoryType.subclass = HistoryTypeSub
 # end class HistoryTypeSub
 
 
-class SensorType206Sub(supermod.SensorType206):
+class SensorType259Sub(supermod.SensorType259):
     def __init__(self, IMEI=None, **kwargs_):
-        super(SensorType206Sub, self).__init__(IMEI,  **kwargs_)
-supermod.SensorType206.subclass = SensorType206Sub
-# end class SensorType206Sub
+        super(SensorType259Sub, self).__init__(IMEI,  **kwargs_)
+supermod.SensorType259.subclass = SensorType259Sub
+# end class SensorType259Sub
 
 
 class DataLevelGaugeTypeSub(supermod.DataLevelGaugeType):
@@ -2003,18 +3039,18 @@ supermod.DataLevelGaugeType.subclass = DataLevelGaugeTypeSub
 # end class DataLevelGaugeTypeSub
 
 
-class HeaderType207Sub(supermod.HeaderType207):
+class HeaderType260Sub(supermod.HeaderType260):
     def __init__(self, Type='WBInvoiceFromMe', NUMBER=None, Date=None, ShippingDate=None, Transport=None, Shipper=None, Consignee=None, Base=None, Note=None, VarField1=None, VarField2=None, VarField3=None, **kwargs_):
-        super(HeaderType207Sub, self).__init__(Type, NUMBER, Date, ShippingDate, Transport, Shipper, Consignee, Base, Note, VarField1, VarField2, VarField3,  **kwargs_)
-supermod.HeaderType207.subclass = HeaderType207Sub
-# end class HeaderType207Sub
+        super(HeaderType260Sub, self).__init__(Type, NUMBER, Date, ShippingDate, Transport, Shipper, Consignee, Base, Note, VarField1, VarField2, VarField3,  **kwargs_)
+supermod.HeaderType260.subclass = HeaderType260Sub
+# end class HeaderType260Sub
 
 
-class ContentType213Sub(supermod.ContentType213):
+class ContentType266Sub(supermod.ContentType266):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType213Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType213.subclass = ContentType213Sub
-# end class ContentType213Sub
+        super(ContentType266Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType266.subclass = ContentType266Sub
+# end class ContentType266Sub
 
 
 class boxInfoTypeSub(supermod.boxInfoType):
@@ -2024,95 +3060,95 @@ supermod.boxInfoType.subclass = boxInfoTypeSub
 # end class boxInfoTypeSub
 
 
-class HeaderType224Sub(supermod.HeaderType224):
+class HeaderType277Sub(supermod.HeaderType277):
     def __init__(self, ActNumber=None, ActDate=None, TypeWriteOff=None, Note=None, **kwargs_):
-        super(HeaderType224Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
-supermod.HeaderType224.subclass = HeaderType224Sub
-# end class HeaderType224Sub
+        super(HeaderType277Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
+supermod.HeaderType277.subclass = HeaderType277Sub
+# end class HeaderType277Sub
 
 
-class ContentType226Sub(supermod.ContentType226):
+class ContentType279Sub(supermod.ContentType279):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType226Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType226.subclass = ContentType226Sub
-# end class ContentType226Sub
+        super(ContentType279Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType279.subclass = ContentType279Sub
+# end class ContentType279Sub
 
 
-class HeaderType227Sub(supermod.HeaderType227):
+class HeaderType280Sub(supermod.HeaderType280):
     def __init__(self, IsAccept=None, ACTNUMBER=None, ActDate=None, WBRegId=None, Note=None, **kwargs_):
-        super(HeaderType227Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
-supermod.HeaderType227.subclass = HeaderType227Sub
-# end class HeaderType227Sub
+        super(HeaderType280Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
+supermod.HeaderType280.subclass = HeaderType280Sub
+# end class HeaderType280Sub
 
 
-class ContentType229Sub(supermod.ContentType229):
+class ContentType282Sub(supermod.ContentType282):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType229Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType229.subclass = ContentType229Sub
-# end class ContentType229Sub
+        super(ContentType282Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType282.subclass = ContentType282Sub
+# end class ContentType282Sub
 
 
-class HeaderType230Sub(supermod.HeaderType230):
+class HeaderType283Sub(supermod.HeaderType283):
     def __init__(self, Type='OperProduction', NUMBER=None, Date=None, ProducedDate=None, Producer=None, Note=None, **kwargs_):
-        super(HeaderType230Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
-supermod.HeaderType230.subclass = HeaderType230Sub
-# end class HeaderType230Sub
+        super(HeaderType283Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
+supermod.HeaderType283.subclass = HeaderType283Sub
+# end class HeaderType283Sub
 
 
-class ContentType232Sub(supermod.ContentType232):
+class ContentType285Sub(supermod.ContentType285):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType232Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType232.subclass = ContentType232Sub
-# end class ContentType232Sub
+        super(ContentType285Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType285.subclass = ContentType285Sub
+# end class ContentType285Sub
 
 
-class ContentResourceType233Sub(supermod.ContentResourceType233):
+class ContentResourceType286Sub(supermod.ContentResourceType286):
     def __init__(self, Resource=None, **kwargs_):
-        super(ContentResourceType233Sub, self).__init__(Resource,  **kwargs_)
-supermod.ContentResourceType233.subclass = ContentResourceType233Sub
-# end class ContentResourceType233Sub
+        super(ContentResourceType286Sub, self).__init__(Resource,  **kwargs_)
+supermod.ContentResourceType286.subclass = ContentResourceType286Sub
+# end class ContentResourceType286Sub
 
 
-class HeaderType237Sub(supermod.HeaderType237):
+class HeaderType290Sub(supermod.HeaderType290):
     def __init__(self, NUMBER=None, Date=None, ImportedDate=None, Importer=None, Supplier=None, GTDNUMBER=None, GTDDate=None, ContractNUMBER=None, ContractDate=None, Country=None, Note=None, **kwargs_):
-        super(HeaderType237Sub, self).__init__(NUMBER, Date, ImportedDate, Importer, Supplier, GTDNUMBER, GTDDate, ContractNUMBER, ContractDate, Country, Note,  **kwargs_)
-supermod.HeaderType237.subclass = HeaderType237Sub
-# end class HeaderType237Sub
+        super(HeaderType290Sub, self).__init__(NUMBER, Date, ImportedDate, Importer, Supplier, GTDNUMBER, GTDDate, ContractNUMBER, ContractDate, Country, Note,  **kwargs_)
+supermod.HeaderType290.subclass = HeaderType290Sub
+# end class HeaderType290Sub
 
 
-class ContentType240Sub(supermod.ContentType240):
+class ContentType293Sub(supermod.ContentType293):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType240Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType240.subclass = ContentType240Sub
-# end class ContentType240Sub
+        super(ContentType293Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType293.subclass = ContentType293Sub
+# end class ContentType293Sub
 
 
-class HeaderType244Sub(supermod.HeaderType244):
+class HeaderType297Sub(supermod.HeaderType297):
     def __init__(self, Number=None, ActDate=None, Note=None, **kwargs_):
-        super(HeaderType244Sub, self).__init__(Number, ActDate, Note,  **kwargs_)
-supermod.HeaderType244.subclass = HeaderType244Sub
-# end class HeaderType244Sub
+        super(HeaderType297Sub, self).__init__(Number, ActDate, Note,  **kwargs_)
+supermod.HeaderType297.subclass = HeaderType297Sub
+# end class HeaderType297Sub
 
 
-class ContentType246Sub(supermod.ContentType246):
+class ContentType299Sub(supermod.ContentType299):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType246Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType246.subclass = ContentType246Sub
-# end class ContentType246Sub
+        super(ContentType299Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType299.subclass = ContentType299Sub
+# end class ContentType299Sub
 
 
-class HeaderType247Sub(supermod.HeaderType247):
+class HeaderType300Sub(supermod.HeaderType300):
     def __init__(self, Number=None, ActDate=None, Note=None, **kwargs_):
-        super(HeaderType247Sub, self).__init__(Number, ActDate, Note,  **kwargs_)
-supermod.HeaderType247.subclass = HeaderType247Sub
-# end class HeaderType247Sub
+        super(HeaderType300Sub, self).__init__(Number, ActDate, Note,  **kwargs_)
+supermod.HeaderType300.subclass = HeaderType300Sub
+# end class HeaderType300Sub
 
 
-class ContentType249Sub(supermod.ContentType249):
+class ContentType302Sub(supermod.ContentType302):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType249Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType249.subclass = ContentType249Sub
-# end class ContentType249Sub
+        super(ContentType302Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType302.subclass = ContentType302Sub
+# end class ContentType302Sub
 
 
 class ParentHistTypeSub(supermod.ParentHistType):
@@ -2122,18 +3158,18 @@ supermod.ParentHistType.subclass = ParentHistTypeSub
 # end class ParentHistTypeSub
 
 
-class HeaderType250Sub(supermod.HeaderType250):
+class HeaderType303Sub(supermod.HeaderType303):
     def __init__(self, WBRegId=None, **kwargs_):
-        super(HeaderType250Sub, self).__init__(WBRegId,  **kwargs_)
-supermod.HeaderType250.subclass = HeaderType250Sub
-# end class HeaderType250Sub
+        super(HeaderType303Sub, self).__init__(WBRegId,  **kwargs_)
+supermod.HeaderType303.subclass = HeaderType303Sub
+# end class HeaderType303Sub
 
 
-class ContentType251Sub(supermod.ContentType251):
+class ContentType304Sub(supermod.ContentType304):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType251Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType251.subclass = ContentType251Sub
-# end class ContentType251Sub
+        super(ContentType304Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType304.subclass = ContentType304Sub
+# end class ContentType304Sub
 
 
 class HistF2TypeSub(supermod.HistF2Type):
@@ -2143,18 +3179,984 @@ supermod.HistF2Type.subclass = HistF2TypeSub
 # end class HistF2TypeSub
 
 
-class HeaderType252Sub(supermod.HeaderType252):
-    def __init__(self, ClientIdentity=None, Serial=None, Shipper=None, Consignee=None, Carrier=None, ClientTransport=None, ShipmentOutDate=None, ShipmentInDate=None, EGAISFixNumberTTN=None, NotifNumber=None, NotifDate=None, NotifSupplierId=None, NotifCustomerId=None, **kwargs_):
-        super(HeaderType252Sub, self).__init__(ClientIdentity, Serial, Shipper, Consignee, Carrier, ClientTransport, ShipmentOutDate, ShipmentInDate, EGAISFixNumberTTN, NotifNumber, NotifDate, NotifSupplierId, NotifCustomerId,  **kwargs_)
-supermod.HeaderType252.subclass = HeaderType252Sub
-# end class HeaderType252Sub
+class HeaderType305Sub(supermod.HeaderType305):
+    def __init__(self, ClientIdentity=None, Serial=None, Shipper=None, Consignee=None, Carrier=None, ClientTransport=None, ShipmentOutDate=None, ShipmentInDate=None, EGAISFixNumberTTN=None, NotifNumber=None, NotifDate=None, **kwargs_):
+        super(HeaderType305Sub, self).__init__(ClientIdentity, Serial, Shipper, Consignee, Carrier, ClientTransport, ShipmentOutDate, ShipmentInDate, EGAISFixNumberTTN, NotifNumber, NotifDate,  **kwargs_)
+supermod.HeaderType305.subclass = HeaderType305Sub
+# end class HeaderType305Sub
 
 
-class ContentType253Sub(supermod.ContentType253):
+class ContentType306Sub(supermod.ContentType306):
     def __init__(self, Position=None, **kwargs_):
-        super(ContentType253Sub, self).__init__(Position,  **kwargs_)
-supermod.ContentType253.subclass = ContentType253Sub
-# end class ContentType253Sub
+        super(ContentType306Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType306.subclass = ContentType306Sub
+# end class ContentType306Sub
+
+
+class HeaderType307Sub(supermod.HeaderType307):
+    def __init__(self, ClientIdentity=None, Serial=None, Shipper=None, Consignee=None, Carrier=None, ClientTransport=None, ShipmentOutDate=None, ShipmentInDate=None, EGAISFixNumberTTN=None, NotifNumber=None, NotifDate=None, **kwargs_):
+        super(HeaderType307Sub, self).__init__(ClientIdentity, Serial, Shipper, Consignee, Carrier, ClientTransport, ShipmentOutDate, ShipmentInDate, EGAISFixNumberTTN, NotifNumber, NotifDate,  **kwargs_)
+supermod.HeaderType307.subclass = HeaderType307Sub
+# end class HeaderType307Sub
+
+
+class ContentType308Sub(supermod.ContentType308):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType308Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType308.subclass = ContentType308Sub
+# end class ContentType308Sub
+
+
+class HeaderType309Sub(supermod.HeaderType309):
+    def __init__(self, NUMBER=None, Date=None, TerrOrganRAR=None, Declarer=None, Note=None, ReportUseAutoProcess=None, ParentClaimID=None, TypeClaimM=None, **kwargs_):
+        super(HeaderType309Sub, self).__init__(NUMBER, Date, TerrOrganRAR, Declarer, Note, ReportUseAutoProcess, ParentClaimID, TypeClaimM,  **kwargs_)
+supermod.HeaderType309.subclass = HeaderType309Sub
+# end class HeaderType309Sub
+
+
+class ContentType311Sub(supermod.ContentType311):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType311Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType311.subclass = ContentType311Sub
+# end class ContentType311Sub
+
+
+class HeaderType312Sub(supermod.HeaderType312):
+    def __init__(self, NUMBER=None, Date=None, RequestFSM=None, Client=None, TerrOrganRAR=None, **kwargs_):
+        super(HeaderType312Sub, self).__init__(NUMBER, Date, RequestFSM, Client, TerrOrganRAR,  **kwargs_)
+supermod.HeaderType312.subclass = HeaderType312Sub
+# end class HeaderType312Sub
+
+
+class ContentType313Sub(supermod.ContentType313):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType313Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType313.subclass = ContentType313Sub
+# end class ContentType313Sub
+
+
+class HeaderType314Sub(supermod.HeaderType314):
+    def __init__(self, NUMBER=None, Date=None, Sender=None, Consignee=None, RequestFSM=None, ManufacturerShortName=None, ActualShipmentDate=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType314Sub, self).__init__(NUMBER, Date, Sender, Consignee, RequestFSM, ManufacturerShortName, ActualShipmentDate, TotalQuantity,  **kwargs_)
+supermod.HeaderType314.subclass = HeaderType314Sub
+# end class HeaderType314Sub
+
+
+class ContentType315Sub(supermod.ContentType315):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType315Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType315.subclass = ContentType315Sub
+# end class ContentType315Sub
+
+
+class HeaderType316Sub(supermod.HeaderType316):
+    def __init__(self, NUMBER=None, Date=None, Sender=None, Consignee=None, RequestFSM=None, ManufacturerShortName=None, ActualShipmentDate=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType316Sub, self).__init__(NUMBER, Date, Sender, Consignee, RequestFSM, ManufacturerShortName, ActualShipmentDate, TotalQuantity,  **kwargs_)
+supermod.HeaderType316.subclass = HeaderType316Sub
+# end class HeaderType316Sub
+
+
+class ContentType317Sub(supermod.ContentType317):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType317Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType317.subclass = ContentType317Sub
+# end class ContentType317Sub
+
+
+class HeaderType318Sub(supermod.HeaderType318):
+    def __init__(self, NUMBER=None, Date=None, RequestFSM=None, Declarer=None, **kwargs_):
+        super(HeaderType318Sub, self).__init__(NUMBER, Date, RequestFSM, Declarer,  **kwargs_)
+supermod.HeaderType318.subclass = HeaderType318Sub
+# end class HeaderType318Sub
+
+
+class ContentType319Sub(supermod.ContentType319):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType319Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType319.subclass = ContentType319Sub
+# end class ContentType319Sub
+
+
+class HeaderType320Sub(supermod.HeaderType320):
+    def __init__(self, NUMBER=None, Date=None, RequestNUMBER=None, RequestDate=None, RequestFSM=None, Declarer=None, ReasonReturn=None, **kwargs_):
+        super(HeaderType320Sub, self).__init__(NUMBER, Date, RequestNUMBER, RequestDate, RequestFSM, Declarer, ReasonReturn,  **kwargs_)
+supermod.HeaderType320.subclass = HeaderType320Sub
+# end class HeaderType320Sub
+
+
+class HeaderType321Sub(supermod.HeaderType321):
+    def __init__(self, NUMBER=None, Date=None, RequestNUMBER=None, RequestDate=None, RequestFSM=None, Declarer=None, Comment=None, **kwargs_):
+        super(HeaderType321Sub, self).__init__(NUMBER, Date, RequestNUMBER, RequestDate, RequestFSM, Declarer, Comment,  **kwargs_)
+supermod.HeaderType321.subclass = HeaderType321Sub
+# end class HeaderType321Sub
+
+
+class ClientsType322Sub(supermod.ClientsType322):
+    def __init__(self, Client=None, **kwargs_):
+        super(ClientsType322Sub, self).__init__(Client,  **kwargs_)
+supermod.ClientsType322.subclass = ClientsType322Sub
+# end class ClientsType322Sub
+
+
+class HeaderType323Sub(supermod.HeaderType323):
+    def __init__(self, NUMBER=None, Date=None, Importer=None, CustomsDepartment=None, RequestAM=None, ActualShipmentDate=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType323Sub, self).__init__(NUMBER, Date, Importer, CustomsDepartment, RequestAM, ActualShipmentDate, TotalQuantity,  **kwargs_)
+supermod.HeaderType323.subclass = HeaderType323Sub
+# end class HeaderType323Sub
+
+
+class ContentType324Sub(supermod.ContentType324):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType324Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType324.subclass = ContentType324Sub
+# end class ContentType324Sub
+
+
+class HeaderType325Sub(supermod.HeaderType325):
+    def __init__(self, NUMBER=None, Date=None, Importer=None, TerrOrganRAR=None, RequestFSM=None, ActualShipmentDate=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType325Sub, self).__init__(NUMBER, Date, Importer, TerrOrganRAR, RequestFSM, ActualShipmentDate, TotalQuantity,  **kwargs_)
+supermod.HeaderType325.subclass = HeaderType325Sub
+# end class HeaderType325Sub
+
+
+class ContentType326Sub(supermod.ContentType326):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType326Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType326.subclass = ContentType326Sub
+# end class ContentType326Sub
+
+
+class HeaderType327Sub(supermod.HeaderType327):
+    def __init__(self, NUMBER=None, Date=None, Importer=None, CustomsDepartment=None, Product=None, TotalQuantity=None, TotalQuantityDal=None, **kwargs_):
+        super(HeaderType327Sub, self).__init__(NUMBER, Date, Importer, CustomsDepartment, Product, TotalQuantity, TotalQuantityDal,  **kwargs_)
+supermod.HeaderType327.subclass = HeaderType327Sub
+# end class HeaderType327Sub
+
+
+class ContentType328Sub(supermod.ContentType328):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType328Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType328.subclass = ContentType328Sub
+# end class ContentType328Sub
+
+
+class HeaderType329Sub(supermod.HeaderType329):
+    def __init__(self, NUMBER=None, Date=None, LicenseRegNumber=None, Notifier=None, Producer=None, FullName=None, FullNameManufacturerLanguage=None, AlcVolumeMin=None, AlcVolumeMax=None, AlcVolume=None, UnitType=None, PackageType=None, Capacity=None, DistinctiveCharacteristics=None, ShelfLife=None, StorageTemperatureMin=None, StorageTemperatureMax=None, StorageHumidityMin=None, StorageHumidityMax=None, OtherStorageCharacteristics=None, CodAP231=None, CodOKPD2=None, CodTNVEDTS=None, VidAP171FZ=None, DateFirstDelivery=None, TrademarkDetails=None, Note=None, TermsTransportation=None, TermsSale=None, TermsDisposal=None, LabelFoto=None, **kwargs_):
+        super(HeaderType329Sub, self).__init__(NUMBER, Date, LicenseRegNumber, Notifier, Producer, FullName, FullNameManufacturerLanguage, AlcVolumeMin, AlcVolumeMax, AlcVolume, UnitType, PackageType, Capacity, DistinctiveCharacteristics, ShelfLife, StorageTemperatureMin, StorageTemperatureMax, StorageHumidityMin, StorageHumidityMax, OtherStorageCharacteristics, CodAP231, CodOKPD2, CodTNVEDTS, VidAP171FZ, DateFirstDelivery, TrademarkDetails, Note, TermsTransportation, TermsSale, TermsDisposal, LabelFoto,  **kwargs_)
+supermod.HeaderType329.subclass = HeaderType329Sub
+# end class HeaderType329Sub
+
+
+class CompositionProductsTypeSub(supermod.CompositionProductsType):
+    def __init__(self, Position=None, **kwargs_):
+        super(CompositionProductsTypeSub, self).__init__(Position,  **kwargs_)
+supermod.CompositionProductsType.subclass = CompositionProductsTypeSub
+# end class CompositionProductsTypeSub
+
+
+class IdentifyingDocumentsTypeSub(supermod.IdentifyingDocumentsType):
+    def __init__(self, Position=None, **kwargs_):
+        super(IdentifyingDocumentsTypeSub, self).__init__(Position,  **kwargs_)
+supermod.IdentifyingDocumentsType.subclass = IdentifyingDocumentsTypeSub
+# end class IdentifyingDocumentsTypeSub
+
+
+class DeclarationTypeSub(supermod.DeclarationType):
+    def __init__(self, Position=None, **kwargs_):
+        super(DeclarationTypeSub, self).__init__(Position,  **kwargs_)
+supermod.DeclarationType.subclass = DeclarationTypeSub
+# end class DeclarationTypeSub
+
+
+class ContentType332Sub(supermod.ContentType332):
+    def __init__(self, Bottle=None, Nomark=None, **kwargs_):
+        super(ContentType332Sub, self).__init__(Bottle, Nomark,  **kwargs_)
+supermod.ContentType332.subclass = ContentType332Sub
+# end class ContentType332Sub
+
+
+class HeaderType333Sub(supermod.HeaderType333):
+    def __init__(self, Type='OperProduction', NUMBER=None, Date=None, ProducedDate=None, Producer=None, Note=None, **kwargs_):
+        super(HeaderType333Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
+supermod.HeaderType333.subclass = HeaderType333Sub
+# end class HeaderType333Sub
+
+
+class ContentType335Sub(supermod.ContentType335):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType335Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType335.subclass = ContentType335Sub
+# end class ContentType335Sub
+
+
+class ContentResourceType336Sub(supermod.ContentResourceType336):
+    def __init__(self, Resource=None, **kwargs_):
+        super(ContentResourceType336Sub, self).__init__(Resource,  **kwargs_)
+supermod.ContentResourceType336.subclass = ContentResourceType336Sub
+# end class ContentResourceType336Sub
+
+
+class HeaderType340Sub(supermod.HeaderType340):
+    def __init__(self, NUMBER=None, Date=None, ImportedDate=None, Importer=None, Supplier=None, GTDNUMBER=None, GTDDate=None, ContractNUMBER=None, ContractDate=None, Country=None, Note=None, IDInvoicePlannedImport=None, **kwargs_):
+        super(HeaderType340Sub, self).__init__(NUMBER, Date, ImportedDate, Importer, Supplier, GTDNUMBER, GTDDate, ContractNUMBER, ContractDate, Country, Note, IDInvoicePlannedImport,  **kwargs_)
+supermod.HeaderType340.subclass = HeaderType340Sub
+# end class HeaderType340Sub
+
+
+class ContentType343Sub(supermod.ContentType343):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType343Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType343.subclass = ContentType343Sub
+# end class ContentType343Sub
+
+
+class HeaderType347Sub(supermod.HeaderType347):
+    def __init__(self, NUMBER=None, Date=None, Client=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType347Sub, self).__init__(NUMBER, Date, Client, TotalQuantity,  **kwargs_)
+supermod.HeaderType347.subclass = HeaderType347Sub
+# end class HeaderType347Sub
+
+
+class ContentType348Sub(supermod.ContentType348):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType348Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType348.subclass = ContentType348Sub
+# end class ContentType348Sub
+
+
+class HeaderType349Sub(supermod.HeaderType349):
+    def __init__(self, NUMBER=None, Date=None, Sender=None, Consignee=None, RequestFSM=None, ManufacturerShortName=None, ActualShipmentDate=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType349Sub, self).__init__(NUMBER, Date, Sender, Consignee, RequestFSM, ManufacturerShortName, ActualShipmentDate, TotalQuantity,  **kwargs_)
+supermod.HeaderType349.subclass = HeaderType349Sub
+# end class HeaderType349Sub
+
+
+class ContentType350Sub(supermod.ContentType350):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType350Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType350.subclass = ContentType350Sub
+# end class ContentType350Sub
+
+
+class HeaderType351Sub(supermod.HeaderType351):
+    def __init__(self, NUMBER=None, Date=None, Sender=None, Consignee=None, RequestFSM=None, ManufacturerShortName=None, ActualShipmentDate=None, TotalQuantity=None, **kwargs_):
+        super(HeaderType351Sub, self).__init__(NUMBER, Date, Sender, Consignee, RequestFSM, ManufacturerShortName, ActualShipmentDate, TotalQuantity,  **kwargs_)
+supermod.HeaderType351.subclass = HeaderType351Sub
+# end class HeaderType351Sub
+
+
+class ContentType352Sub(supermod.ContentType352):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType352Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType352.subclass = ContentType352Sub
+# end class ContentType352Sub
+
+
+class HeaderType353Sub(supermod.HeaderType353):
+    def __init__(self, ReferenceDate=None, RequestFSM=None, NUMBERIssueFSM=None, DateIssueFSM=None, TerrOrganRAR=None, Declarer=None, Comments=None, SignReference=None, SignCertificate=None, **kwargs_):
+        super(HeaderType353Sub, self).__init__(ReferenceDate, RequestFSM, NUMBERIssueFSM, DateIssueFSM, TerrOrganRAR, Declarer, Comments, SignReference, SignCertificate,  **kwargs_)
+supermod.HeaderType353.subclass = HeaderType353Sub
+# end class HeaderType353Sub
+
+
+class HeaderType354Sub(supermod.HeaderType354):
+    def __init__(self, NoticeNumber=None, NoticeDate=None, DecisionNumber=None, DecisionDate=None, RequestFSM=None, NUMBERIssueFSM=None, DateIssueFSM=None, TerrOrganRAR=None, Declarer=None, **kwargs_):
+        super(HeaderType354Sub, self).__init__(NoticeNumber, NoticeDate, DecisionNumber, DecisionDate, RequestFSM, NUMBERIssueFSM, DateIssueFSM, TerrOrganRAR, Declarer,  **kwargs_)
+supermod.HeaderType354.subclass = HeaderType354Sub
+# end class HeaderType354Sub
+
+
+class HeaderType355Sub(supermod.HeaderType355):
+    def __init__(self, Type='WBInvoiceFromMe', NUMBER=None, Date=None, ShippingDate=None, Transport=None, Shipper=None, Consignee=None, Base=None, Note=None, VarField1=None, VarField2=None, VarField3=None, **kwargs_):
+        super(HeaderType355Sub, self).__init__(Type, NUMBER, Date, ShippingDate, Transport, Shipper, Consignee, Base, Note, VarField1, VarField2, VarField3,  **kwargs_)
+supermod.HeaderType355.subclass = HeaderType355Sub
+# end class HeaderType355Sub
+
+
+class ContentType361Sub(supermod.ContentType361):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType361Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType361.subclass = ContentType361Sub
+# end class ContentType361Sub
+
+
+class boxInfoType363Sub(supermod.boxInfoType363):
+    def __init__(self, boxtree=None, **kwargs_):
+        super(boxInfoType363Sub, self).__init__(boxtree,  **kwargs_)
+supermod.boxInfoType363.subclass = boxInfoType363Sub
+# end class boxInfoType363Sub
+
+
+class HeaderType373Sub(supermod.HeaderType373):
+    def __init__(self, IsAccept=None, ACTNUMBER=None, ActDate=None, WBRegId=None, Note=None, **kwargs_):
+        super(HeaderType373Sub, self).__init__(IsAccept, ACTNUMBER, ActDate, WBRegId, Note,  **kwargs_)
+supermod.HeaderType373.subclass = HeaderType373Sub
+# end class HeaderType373Sub
+
+
+class ContentType375Sub(supermod.ContentType375):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType375Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType375.subclass = ContentType375Sub
+# end class ContentType375Sub
+
+
+class ParentRoutesTypeSub(supermod.ParentRoutesType):
+    def __init__(self, RouteId=None, **kwargs_):
+        super(ParentRoutesTypeSub, self).__init__(RouteId,  **kwargs_)
+supermod.ParentRoutesType.subclass = ParentRoutesTypeSub
+# end class ParentRoutesTypeSub
+
+
+class HeaderType377Sub(supermod.HeaderType377):
+    def __init__(self, NUMBER=None, Date=None, Client=None, Issuer=None, DateDebtAbsence=None, ClaimIssueFSMNumber=None, ClaimIssueFSMDate=None, **kwargs_):
+        super(HeaderType377Sub, self).__init__(NUMBER, Date, Client, Issuer, DateDebtAbsence, ClaimIssueFSMNumber, ClaimIssueFSMDate,  **kwargs_)
+supermod.HeaderType377.subclass = HeaderType377Sub
+# end class HeaderType377Sub
+
+
+class HeaderType381Sub(supermod.HeaderType381):
+    def __init__(self, Applicant=None, OnlineStoreId=None, DocID=None, CancelNumber=None, CancelDateTime=None, CauseCancel=None, **kwargs_):
+        super(HeaderType381Sub, self).__init__(Applicant, OnlineStoreId, DocID, CancelNumber, CancelDateTime, CauseCancel,  **kwargs_)
+supermod.HeaderType381.subclass = HeaderType381Sub
+# end class HeaderType381Sub
+
+
+class HeaderType382Sub(supermod.HeaderType382):
+    def __init__(self, Applicant=None, OnlineStoreId=None, DocID=None, ConfirmNumber=None, ConfirmDateTime=None, Note=None, **kwargs_):
+        super(HeaderType382Sub, self).__init__(Applicant, OnlineStoreId, DocID, ConfirmNumber, ConfirmDateTime, Note,  **kwargs_)
+supermod.HeaderType382.subclass = HeaderType382Sub
+# end class HeaderType382Sub
+
+
+class ContentType385Sub(supermod.ContentType385):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType385Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType385.subclass = ContentType385Sub
+# end class ContentType385Sub
+
+
+class F2DetailType386Sub(supermod.F2DetailType386):
+    def __init__(self, Form2=None, **kwargs_):
+        super(F2DetailType386Sub, self).__init__(Form2,  **kwargs_)
+supermod.F2DetailType386.subclass = F2DetailType386Sub
+# end class F2DetailType386Sub
+
+
+class HeaderType387Sub(supermod.HeaderType387):
+    def __init__(self, Applicant=None, OnlineStoreId=None, OrderNumber=None, OrderDateTime=None, Note=None, **kwargs_):
+        super(HeaderType387Sub, self).__init__(Applicant, OnlineStoreId, OrderNumber, OrderDateTime, Note,  **kwargs_)
+supermod.HeaderType387.subclass = HeaderType387Sub
+# end class HeaderType387Sub
+
+
+class ContentType390Sub(supermod.ContentType390):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType390Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType390.subclass = ContentType390Sub
+# end class ContentType390Sub
+
+
+class HeaderType391Sub(supermod.HeaderType391):
+    def __init__(self, RequestNumber=None, RequestDate=None, Sender=None, Recipient=None, **kwargs_):
+        super(HeaderType391Sub, self).__init__(RequestNumber, RequestDate, Sender, Recipient,  **kwargs_)
+supermod.HeaderType391.subclass = HeaderType391Sub
+# end class HeaderType391Sub
+
+
+class HeaderType392Sub(supermod.HeaderType392):
+    def __init__(self, NUMBER=None, Date=None, RequestFSM=None, Client=None, TerrOrganRAR=None, **kwargs_):
+        super(HeaderType392Sub, self).__init__(NUMBER, Date, RequestFSM, Client, TerrOrganRAR,  **kwargs_)
+supermod.HeaderType392.subclass = HeaderType392Sub
+# end class HeaderType392Sub
+
+
+class ContentType393Sub(supermod.ContentType393):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType393Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType393.subclass = ContentType393Sub
+# end class ContentType393Sub
+
+
+class HeaderType394Sub(supermod.HeaderType394):
+    def __init__(self, TicketDate=None, RequestFSM=None, CheckResult=None, Comments=None, **kwargs_):
+        super(HeaderType394Sub, self).__init__(TicketDate, RequestFSM, CheckResult, Comments,  **kwargs_)
+supermod.HeaderType394.subclass = HeaderType394Sub
+# end class HeaderType394Sub
+
+
+class HeaderType395Sub(supermod.HeaderType395):
+    def __init__(self, DocNumber=None, DocDate=None, Notifier=None, TypeOrg=None, Producer=None, VidAP=None, NameAP=None, FullNameManufacturerLanguage=None, Brend=None, CountryOrigin=None, AlcVolume=None, CapacityList=None, MarketSupply=None, CompositionProducts=None, TechReglStandard=None, AdditionalDocuments=None, DistinctiveCharacteristics=None, SugarContWine=None, SugarContSparkWine=None, MinAge=None, StorageTemperature=None, StorageHumidity=None, OtherStorageCharacteristics=None, CodOKPD2=None, CodTNVED=None, DeclarationCertificate=None, DateFirstDelivery=None, TrademarkDetails=None, TermsTransportation=None, TermsSale=None, TermsDisposal=None, Note=None, **kwargs_):
+        super(HeaderType395Sub, self).__init__(DocNumber, DocDate, Notifier, TypeOrg, Producer, VidAP, NameAP, FullNameManufacturerLanguage, Brend, CountryOrigin, AlcVolume, CapacityList, MarketSupply, CompositionProducts, TechReglStandard, AdditionalDocuments, DistinctiveCharacteristics, SugarContWine, SugarContSparkWine, MinAge, StorageTemperature, StorageHumidity, OtherStorageCharacteristics, CodOKPD2, CodTNVED, DeclarationCertificate, DateFirstDelivery, TrademarkDetails, TermsTransportation, TermsSale, TermsDisposal, Note,  **kwargs_)
+supermod.HeaderType395.subclass = HeaderType395Sub
+# end class HeaderType395Sub
+
+
+class NotifierTypeSub(supermod.NotifierType):
+    def __init__(self, ClientRegId=None, FullName=None, ShortName=None, UL=None, FL=None, **kwargs_):
+        super(NotifierTypeSub, self).__init__(ClientRegId, FullName, ShortName, UL, FL,  **kwargs_)
+supermod.NotifierType.subclass = NotifierTypeSub
+# end class NotifierTypeSub
+
+
+class ULType398Sub(supermod.ULType398):
+    def __init__(self, INN=None, KPP=None, address=None, **kwargs_):
+        super(ULType398Sub, self).__init__(INN, KPP, address,  **kwargs_)
+supermod.ULType398.subclass = ULType398Sub
+# end class ULType398Sub
+
+
+class addressType401Sub(supermod.addressType401):
+    def __init__(self, Country=None, RegionCode=None, Description=None, **kwargs_):
+        super(addressType401Sub, self).__init__(Country, RegionCode, Description,  **kwargs_)
+supermod.addressType401.subclass = addressType401Sub
+# end class addressType401Sub
+
+
+class FLType404Sub(supermod.FLType404):
+    def __init__(self, FullName=None, INN=None, address=None, **kwargs_):
+        super(FLType404Sub, self).__init__(FullName, INN, address,  **kwargs_)
+supermod.FLType404.subclass = FLType404Sub
+# end class FLType404Sub
+
+
+class addressType407Sub(supermod.addressType407):
+    def __init__(self, Country=None, RegionCode=None, Description=None, **kwargs_):
+        super(addressType407Sub, self).__init__(Country, RegionCode, Description,  **kwargs_)
+supermod.addressType407.subclass = addressType407Sub
+# end class addressType407Sub
+
+
+class ProducerTypeSub(supermod.ProducerType):
+    def __init__(self, ClientRegId=None, FullName=None, ShortName=None, UL=None, FL=None, FO=None, **kwargs_):
+        super(ProducerTypeSub, self).__init__(ClientRegId, FullName, ShortName, UL, FL, FO,  **kwargs_)
+supermod.ProducerType.subclass = ProducerTypeSub
+# end class ProducerTypeSub
+
+
+class ULType414Sub(supermod.ULType414):
+    def __init__(self, INN=None, KPP=None, address=None, **kwargs_):
+        super(ULType414Sub, self).__init__(INN, KPP, address,  **kwargs_)
+supermod.ULType414.subclass = ULType414Sub
+# end class ULType414Sub
+
+
+class addressType417Sub(supermod.addressType417):
+    def __init__(self, Country=None, RegionCode=None, Description=None, **kwargs_):
+        super(addressType417Sub, self).__init__(Country, RegionCode, Description,  **kwargs_)
+supermod.addressType417.subclass = addressType417Sub
+# end class addressType417Sub
+
+
+class FLType421Sub(supermod.FLType421):
+    def __init__(self, FullName=None, INN=None, address=None, **kwargs_):
+        super(FLType421Sub, self).__init__(FullName, INN, address,  **kwargs_)
+supermod.FLType421.subclass = FLType421Sub
+# end class FLType421Sub
+
+
+class addressType424Sub(supermod.addressType424):
+    def __init__(self, Country=None, RegionCode=None, Description=None, **kwargs_):
+        super(addressType424Sub, self).__init__(Country, RegionCode, Description,  **kwargs_)
+supermod.addressType424.subclass = addressType424Sub
+# end class addressType424Sub
+
+
+class FOType428Sub(supermod.FOType428):
+    def __init__(self, address=None, **kwargs_):
+        super(FOType428Sub, self).__init__(address,  **kwargs_)
+supermod.FOType428.subclass = FOType428Sub
+# end class FOType428Sub
+
+
+class addressType429Sub(supermod.addressType429):
+    def __init__(self, Country=None, Description=None, **kwargs_):
+        super(addressType429Sub, self).__init__(Country, Description,  **kwargs_)
+supermod.addressType429.subclass = addressType429Sub
+# end class addressType429Sub
+
+
+class AlcVolumeType433Sub(supermod.AlcVolumeType433):
+    def __init__(self, AlcVolumeMin=None, AlcVolumeMax=None, **kwargs_):
+        super(AlcVolumeType433Sub, self).__init__(AlcVolumeMin, AlcVolumeMax,  **kwargs_)
+supermod.AlcVolumeType433.subclass = AlcVolumeType433Sub
+# end class AlcVolumeType433Sub
+
+
+class CapacityListTypeSub(supermod.CapacityListType):
+    def __init__(self, CapacityDescr=None, **kwargs_):
+        super(CapacityListTypeSub, self).__init__(CapacityDescr,  **kwargs_)
+supermod.CapacityListType.subclass = CapacityListTypeSub
+# end class CapacityListTypeSub
+
+
+class CompositionProductsType437Sub(supermod.CompositionProductsType437):
+    def __init__(self, Position=None, **kwargs_):
+        super(CompositionProductsType437Sub, self).__init__(Position,  **kwargs_)
+supermod.CompositionProductsType437.subclass = CompositionProductsType437Sub
+# end class CompositionProductsType437Sub
+
+
+class TechReglStandardTypeSub(supermod.TechReglStandardType):
+    def __init__(self, TechRegl=None, TechStandard=None, **kwargs_):
+        super(TechReglStandardTypeSub, self).__init__(TechRegl, TechStandard,  **kwargs_)
+supermod.TechReglStandardType.subclass = TechReglStandardTypeSub
+# end class TechReglStandardTypeSub
+
+
+class TechReglTypeSub(supermod.TechReglType):
+    def __init__(self, TechReglNumber=None, TechReglName=None, **kwargs_):
+        super(TechReglTypeSub, self).__init__(TechReglNumber, TechReglName,  **kwargs_)
+supermod.TechReglType.subclass = TechReglTypeSub
+# end class TechReglTypeSub
+
+
+class TechStandardTypeSub(supermod.TechStandardType):
+    def __init__(self, StandardNumber=None, StandardName=None, **kwargs_):
+        super(TechStandardTypeSub, self).__init__(StandardNumber, StandardName,  **kwargs_)
+supermod.TechStandardType.subclass = TechStandardTypeSub
+# end class TechStandardTypeSub
+
+
+class AdditionalDocumentsType438Sub(supermod.AdditionalDocumentsType438):
+    def __init__(self, Position=None, **kwargs_):
+        super(AdditionalDocumentsType438Sub, self).__init__(Position,  **kwargs_)
+supermod.AdditionalDocumentsType438.subclass = AdditionalDocumentsType438Sub
+# end class AdditionalDocumentsType438Sub
+
+
+class StorageTemperatureTypeSub(supermod.StorageTemperatureType):
+    def __init__(self, StorageTemperatureMin=None, StorageTemperatureMax=None, **kwargs_):
+        super(StorageTemperatureTypeSub, self).__init__(StorageTemperatureMin, StorageTemperatureMax,  **kwargs_)
+supermod.StorageTemperatureType.subclass = StorageTemperatureTypeSub
+# end class StorageTemperatureTypeSub
+
+
+class StorageHumidityTypeSub(supermod.StorageHumidityType):
+    def __init__(self, StorageHumidityMin=None, StorageHumidityMax=None, **kwargs_):
+        super(StorageHumidityTypeSub, self).__init__(StorageHumidityMin, StorageHumidityMax,  **kwargs_)
+supermod.StorageHumidityType.subclass = StorageHumidityTypeSub
+# end class StorageHumidityTypeSub
+
+
+class CodTNVEDTypeSub(supermod.CodTNVEDType):
+    def __init__(self, CodTNVEDTS=None, **kwargs_):
+        super(CodTNVEDTypeSub, self).__init__(CodTNVEDTS,  **kwargs_)
+supermod.CodTNVEDType.subclass = CodTNVEDTypeSub
+# end class CodTNVEDTypeSub
+
+
+class DeclarationCertificateTypeSub(supermod.DeclarationCertificateType):
+    def __init__(self, Position=None, **kwargs_):
+        super(DeclarationCertificateTypeSub, self).__init__(Position,  **kwargs_)
+supermod.DeclarationCertificateType.subclass = DeclarationCertificateTypeSub
+# end class DeclarationCertificateTypeSub
+
+
+class AdditionalDocTypeSub(supermod.AdditionalDocType):
+    def __init__(self, TechnologicalInstruction=None, OrganizationStandard=None, InternationalStandardCountryOrigin=None, NationalStandardCountryOrigin=None, NationalRegulations=None, TechnicalDocumentation=None, RC=None, **kwargs_):
+        super(AdditionalDocTypeSub, self).__init__(TechnologicalInstruction, OrganizationStandard, InternationalStandardCountryOrigin, NationalStandardCountryOrigin, NationalRegulations, TechnicalDocumentation, RC,  **kwargs_)
+supermod.AdditionalDocType.subclass = AdditionalDocTypeSub
+# end class AdditionalDocTypeSub
+
+
+class TechnologicalInstructionTypeSub(supermod.TechnologicalInstructionType):
+    def __init__(self, TINumber=None, TIDate=None, TIName=None, TIElectronicView=None, **kwargs_):
+        super(TechnologicalInstructionTypeSub, self).__init__(TINumber, TIDate, TIName, TIElectronicView,  **kwargs_)
+supermod.TechnologicalInstructionType.subclass = TechnologicalInstructionTypeSub
+# end class TechnologicalInstructionTypeSub
+
+
+class OrganizationStandardTypeSub(supermod.OrganizationStandardType):
+    def __init__(self, OSNumber=None, OSDate=None, OSName=None, **kwargs_):
+        super(OrganizationStandardTypeSub, self).__init__(OSNumber, OSDate, OSName,  **kwargs_)
+supermod.OrganizationStandardType.subclass = OrganizationStandardTypeSub
+# end class OrganizationStandardTypeSub
+
+
+class InternationalStandardCountryOriginTypeSub(supermod.InternationalStandardCountryOriginType):
+    def __init__(self, ISCONumber=None, ISCOName=None, **kwargs_):
+        super(InternationalStandardCountryOriginTypeSub, self).__init__(ISCONumber, ISCOName,  **kwargs_)
+supermod.InternationalStandardCountryOriginType.subclass = InternationalStandardCountryOriginTypeSub
+# end class InternationalStandardCountryOriginTypeSub
+
+
+class NationalStandardCountryOriginTypeSub(supermod.NationalStandardCountryOriginType):
+    def __init__(self, NSCONumber=None, NSCOName=None, **kwargs_):
+        super(NationalStandardCountryOriginTypeSub, self).__init__(NSCONumber, NSCOName,  **kwargs_)
+supermod.NationalStandardCountryOriginType.subclass = NationalStandardCountryOriginTypeSub
+# end class NationalStandardCountryOriginTypeSub
+
+
+class NationalRegulationsTypeSub(supermod.NationalRegulationsType):
+    def __init__(self, NRNumber=None, NRName=None, **kwargs_):
+        super(NationalRegulationsTypeSub, self).__init__(NRNumber, NRName,  **kwargs_)
+supermod.NationalRegulationsType.subclass = NationalRegulationsTypeSub
+# end class NationalRegulationsTypeSub
+
+
+class TechnicalDocumentationTypeSub(supermod.TechnicalDocumentationType):
+    def __init__(self, TDNumber=None, TDDate=None, TDName=None, TDElectronicView=None, **kwargs_):
+        super(TechnicalDocumentationTypeSub, self).__init__(TDNumber, TDDate, TDName, TDElectronicView,  **kwargs_)
+supermod.TechnicalDocumentationType.subclass = TechnicalDocumentationTypeSub
+# end class TechnicalDocumentationTypeSub
+
+
+class RCTypeSub(supermod.RCType):
+    def __init__(self, RCNumber=None, RCDate=None, RCName=None, **kwargs_):
+        super(RCTypeSub, self).__init__(RCNumber, RCDate, RCName,  **kwargs_)
+supermod.RCType.subclass = RCTypeSub
+# end class RCTypeSub
+
+
+class DeclarCertifTypeSub(supermod.DeclarCertifType):
+    def __init__(self, Declaration=None, Certificate=None, **kwargs_):
+        super(DeclarCertifTypeSub, self).__init__(Declaration, Certificate,  **kwargs_)
+supermod.DeclarCertifType.subclass = DeclarCertifTypeSub
+# end class DeclarCertifTypeSub
+
+
+class DeclarationType443Sub(supermod.DeclarationType443):
+    def __init__(self, DeclarationNumber=None, DateValidity=None, DateExpiration=None, **kwargs_):
+        super(DeclarationType443Sub, self).__init__(DeclarationNumber, DateValidity, DateExpiration,  **kwargs_)
+supermod.DeclarationType443.subclass = DeclarationType443Sub
+# end class DeclarationType443Sub
+
+
+class CertificateTypeSub(supermod.CertificateType):
+    def __init__(self, CertificateNumber=None, DateValidity=None, DateExpiration=None, **kwargs_):
+        super(CertificateTypeSub, self).__init__(CertificateNumber, DateValidity, DateExpiration,  **kwargs_)
+supermod.CertificateType.subclass = CertificateTypeSub
+# end class CertificateTypeSub
+
+
+class LabelFotoAPTypeSub(supermod.LabelFotoAPType):
+    def __init__(self, LabelFoto=None, CapacityDescrVal=None, **kwargs_):
+        super(LabelFotoAPTypeSub, self).__init__(LabelFoto, CapacityDescrVal,  **kwargs_)
+supermod.LabelFotoAPType.subclass = LabelFotoAPTypeSub
+# end class LabelFotoAPTypeSub
+
+
+class HeaderType447Sub(supermod.HeaderType447):
+    def __init__(self, RegNumber=None, Producer=None, CapacityList=None, MarketSupply=None, CompositionProducts=None, TechReglStandard=None, AdditionalDocuments=None, DistinctiveCharacteristics=None, SugarContWine=None, SugarContSparkWine=None, MinAge=None, StorageTemperature=None, StorageHumidity=None, OtherStorageCharacteristics=None, DeclarationCertificate=None, TrademarkDetails=None, Note=None, TermsTransportation=None, TermsSale=None, TermsDisposal=None, **kwargs_):
+        super(HeaderType447Sub, self).__init__(RegNumber, Producer, CapacityList, MarketSupply, CompositionProducts, TechReglStandard, AdditionalDocuments, DistinctiveCharacteristics, SugarContWine, SugarContSparkWine, MinAge, StorageTemperature, StorageHumidity, OtherStorageCharacteristics, DeclarationCertificate, TrademarkDetails, Note, TermsTransportation, TermsSale, TermsDisposal,  **kwargs_)
+supermod.HeaderType447.subclass = HeaderType447Sub
+# end class HeaderType447Sub
+
+
+class ProducerType448Sub(supermod.ProducerType448):
+    def __init__(self, ClientRegId=None, FullName=None, ShortName=None, UL=None, FL=None, FO=None, **kwargs_):
+        super(ProducerType448Sub, self).__init__(ClientRegId, FullName, ShortName, UL, FL, FO,  **kwargs_)
+supermod.ProducerType448.subclass = ProducerType448Sub
+# end class ProducerType448Sub
+
+
+class ULType452Sub(supermod.ULType452):
+    def __init__(self, INN=None, KPP=None, address=None, **kwargs_):
+        super(ULType452Sub, self).__init__(INN, KPP, address,  **kwargs_)
+supermod.ULType452.subclass = ULType452Sub
+# end class ULType452Sub
+
+
+class addressType455Sub(supermod.addressType455):
+    def __init__(self, Country=None, RegionCode=None, Description=None, **kwargs_):
+        super(addressType455Sub, self).__init__(Country, RegionCode, Description,  **kwargs_)
+supermod.addressType455.subclass = addressType455Sub
+# end class addressType455Sub
+
+
+class FLType459Sub(supermod.FLType459):
+    def __init__(self, FullName=None, INN=None, address=None, **kwargs_):
+        super(FLType459Sub, self).__init__(FullName, INN, address,  **kwargs_)
+supermod.FLType459.subclass = FLType459Sub
+# end class FLType459Sub
+
+
+class addressType462Sub(supermod.addressType462):
+    def __init__(self, Country=None, RegionCode=None, Description=None, **kwargs_):
+        super(addressType462Sub, self).__init__(Country, RegionCode, Description,  **kwargs_)
+supermod.addressType462.subclass = addressType462Sub
+# end class addressType462Sub
+
+
+class FOType466Sub(supermod.FOType466):
+    def __init__(self, address=None, **kwargs_):
+        super(FOType466Sub, self).__init__(address,  **kwargs_)
+supermod.FOType466.subclass = FOType466Sub
+# end class FOType466Sub
+
+
+class addressType467Sub(supermod.addressType467):
+    def __init__(self, Country=None, Description=None, **kwargs_):
+        super(addressType467Sub, self).__init__(Country, Description,  **kwargs_)
+supermod.addressType467.subclass = addressType467Sub
+# end class addressType467Sub
+
+
+class CapacityListType470Sub(supermod.CapacityListType470):
+    def __init__(self, CapacityDescr=None, **kwargs_):
+        super(CapacityListType470Sub, self).__init__(CapacityDescr,  **kwargs_)
+supermod.CapacityListType470.subclass = CapacityListType470Sub
+# end class CapacityListType470Sub
+
+
+class CompositionProductsType472Sub(supermod.CompositionProductsType472):
+    def __init__(self, Position=None, **kwargs_):
+        super(CompositionProductsType472Sub, self).__init__(Position,  **kwargs_)
+supermod.CompositionProductsType472.subclass = CompositionProductsType472Sub
+# end class CompositionProductsType472Sub
+
+
+class TechReglStandardType473Sub(supermod.TechReglStandardType473):
+    def __init__(self, TechRegl=None, TechStandard=None, **kwargs_):
+        super(TechReglStandardType473Sub, self).__init__(TechRegl, TechStandard,  **kwargs_)
+supermod.TechReglStandardType473.subclass = TechReglStandardType473Sub
+# end class TechReglStandardType473Sub
+
+
+class TechReglType474Sub(supermod.TechReglType474):
+    def __init__(self, TechReglNumber=None, TechReglName=None, **kwargs_):
+        super(TechReglType474Sub, self).__init__(TechReglNumber, TechReglName,  **kwargs_)
+supermod.TechReglType474.subclass = TechReglType474Sub
+# end class TechReglType474Sub
+
+
+class TechStandardType477Sub(supermod.TechStandardType477):
+    def __init__(self, StandardNumber=None, StandardName=None, **kwargs_):
+        super(TechStandardType477Sub, self).__init__(StandardNumber, StandardName,  **kwargs_)
+supermod.TechStandardType477.subclass = TechStandardType477Sub
+# end class TechStandardType477Sub
+
+
+class AdditionalDocumentsType480Sub(supermod.AdditionalDocumentsType480):
+    def __init__(self, Position=None, **kwargs_):
+        super(AdditionalDocumentsType480Sub, self).__init__(Position,  **kwargs_)
+supermod.AdditionalDocumentsType480.subclass = AdditionalDocumentsType480Sub
+# end class AdditionalDocumentsType480Sub
+
+
+class StorageTemperatureType485Sub(supermod.StorageTemperatureType485):
+    def __init__(self, StorageTemperatureMin=None, StorageTemperatureMax=None, **kwargs_):
+        super(StorageTemperatureType485Sub, self).__init__(StorageTemperatureMin, StorageTemperatureMax,  **kwargs_)
+supermod.StorageTemperatureType485.subclass = StorageTemperatureType485Sub
+# end class StorageTemperatureType485Sub
+
+
+class StorageHumidityType486Sub(supermod.StorageHumidityType486):
+    def __init__(self, StorageHumidityMin=None, StorageHumidityMax=None, **kwargs_):
+        super(StorageHumidityType486Sub, self).__init__(StorageHumidityMin, StorageHumidityMax,  **kwargs_)
+supermod.StorageHumidityType486.subclass = StorageHumidityType486Sub
+# end class StorageHumidityType486Sub
+
+
+class DeclarationCertificateType488Sub(supermod.DeclarationCertificateType488):
+    def __init__(self, Position=None, **kwargs_):
+        super(DeclarationCertificateType488Sub, self).__init__(Position,  **kwargs_)
+supermod.DeclarationCertificateType488.subclass = DeclarationCertificateType488Sub
+# end class DeclarationCertificateType488Sub
+
+
+class LabelFotoAPType502Sub(supermod.LabelFotoAPType502):
+    def __init__(self, LabelFoto=None, CapacityDescrVal=None, **kwargs_):
+        super(LabelFotoAPType502Sub, self).__init__(LabelFoto, CapacityDescrVal,  **kwargs_)
+supermod.LabelFotoAPType502.subclass = LabelFotoAPType502Sub
+# end class LabelFotoAPType502Sub
+
+
+class AdditionalDocType508Sub(supermod.AdditionalDocType508):
+    def __init__(self, TechnologicalInstruction=None, OrganizationStandard=None, InternationalStandardCountryOrigin=None, NationalStandardCountryOrigin=None, NationalRegulations=None, TechnicalDocumentation=None, RC=None, **kwargs_):
+        super(AdditionalDocType508Sub, self).__init__(TechnologicalInstruction, OrganizationStandard, InternationalStandardCountryOrigin, NationalStandardCountryOrigin, NationalRegulations, TechnicalDocumentation, RC,  **kwargs_)
+supermod.AdditionalDocType508.subclass = AdditionalDocType508Sub
+# end class AdditionalDocType508Sub
+
+
+class TechnologicalInstructionType509Sub(supermod.TechnologicalInstructionType509):
+    def __init__(self, TINumber=None, TIDate=None, TIName=None, TIElectronicView=None, **kwargs_):
+        super(TechnologicalInstructionType509Sub, self).__init__(TINumber, TIDate, TIName, TIElectronicView,  **kwargs_)
+supermod.TechnologicalInstructionType509.subclass = TechnologicalInstructionType509Sub
+# end class TechnologicalInstructionType509Sub
+
+
+class OrganizationStandardType512Sub(supermod.OrganizationStandardType512):
+    def __init__(self, OSNumber=None, OSDate=None, OSName=None, **kwargs_):
+        super(OrganizationStandardType512Sub, self).__init__(OSNumber, OSDate, OSName,  **kwargs_)
+supermod.OrganizationStandardType512.subclass = OrganizationStandardType512Sub
+# end class OrganizationStandardType512Sub
+
+
+class InternationalStandardCountryOriginType515Sub(supermod.InternationalStandardCountryOriginType515):
+    def __init__(self, ISCONumber=None, ISCOName=None, **kwargs_):
+        super(InternationalStandardCountryOriginType515Sub, self).__init__(ISCONumber, ISCOName,  **kwargs_)
+supermod.InternationalStandardCountryOriginType515.subclass = InternationalStandardCountryOriginType515Sub
+# end class InternationalStandardCountryOriginType515Sub
+
+
+class NationalStandardCountryOriginType518Sub(supermod.NationalStandardCountryOriginType518):
+    def __init__(self, NSCONumber=None, NSCOName=None, **kwargs_):
+        super(NationalStandardCountryOriginType518Sub, self).__init__(NSCONumber, NSCOName,  **kwargs_)
+supermod.NationalStandardCountryOriginType518.subclass = NationalStandardCountryOriginType518Sub
+# end class NationalStandardCountryOriginType518Sub
+
+
+class NationalRegulationsType521Sub(supermod.NationalRegulationsType521):
+    def __init__(self, NRNumber=None, NRName=None, **kwargs_):
+        super(NationalRegulationsType521Sub, self).__init__(NRNumber, NRName,  **kwargs_)
+supermod.NationalRegulationsType521.subclass = NationalRegulationsType521Sub
+# end class NationalRegulationsType521Sub
+
+
+class TechnicalDocumentationType524Sub(supermod.TechnicalDocumentationType524):
+    def __init__(self, TDNumber=None, TDDate=None, TDName=None, TDElectronicView=None, **kwargs_):
+        super(TechnicalDocumentationType524Sub, self).__init__(TDNumber, TDDate, TDName, TDElectronicView,  **kwargs_)
+supermod.TechnicalDocumentationType524.subclass = TechnicalDocumentationType524Sub
+# end class TechnicalDocumentationType524Sub
+
+
+class RCType527Sub(supermod.RCType527):
+    def __init__(self, RCNumber=None, RCDate=None, RCName=None, **kwargs_):
+        super(RCType527Sub, self).__init__(RCNumber, RCDate, RCName,  **kwargs_)
+supermod.RCType527.subclass = RCType527Sub
+# end class RCType527Sub
+
+
+class DeclarCertifType531Sub(supermod.DeclarCertifType531):
+    def __init__(self, Declaration=None, Certificate=None, **kwargs_):
+        super(DeclarCertifType531Sub, self).__init__(Declaration, Certificate,  **kwargs_)
+supermod.DeclarCertifType531.subclass = DeclarCertifType531Sub
+# end class DeclarCertifType531Sub
+
+
+class DeclarationType532Sub(supermod.DeclarationType532):
+    def __init__(self, DeclarationNumber=None, DateValidity=None, DateExpiration=None, **kwargs_):
+        super(DeclarationType532Sub, self).__init__(DeclarationNumber, DateValidity, DateExpiration,  **kwargs_)
+supermod.DeclarationType532.subclass = DeclarationType532Sub
+# end class DeclarationType532Sub
+
+
+class CertificateType534Sub(supermod.CertificateType534):
+    def __init__(self, CertificateNumber=None, DateValidity=None, DateExpiration=None, **kwargs_):
+        super(CertificateType534Sub, self).__init__(CertificateNumber, DateValidity, DateExpiration,  **kwargs_)
+supermod.CertificateType534.subclass = CertificateType534Sub
+# end class CertificateType534Sub
+
+
+class ApplicationTypeSub(supermod.ApplicationType):
+    def __init__(self, ApplicationType_member=None, ActivityType=None, NameOrg=None, INN=None, OGRN=None, KPP=None, LicenseNumber=None, LicenseDate=None, LicenseValidityTime=None, RegisteredAddress=None, GovernmentFeeList=None, DivisionList=None, **kwargs_):
+        super(ApplicationTypeSub, self).__init__(ApplicationType_member, ActivityType, NameOrg, INN, OGRN, KPP, LicenseNumber, LicenseDate, LicenseValidityTime, RegisteredAddress, GovernmentFeeList, DivisionList,  **kwargs_)
+supermod.ApplicationType.subclass = ApplicationTypeSub
+# end class ApplicationTypeSub
+
+
+class GovernmentFeeListTypeSub(supermod.GovernmentFeeListType):
+    def __init__(self, GovernmentFee=None, **kwargs_):
+        super(GovernmentFeeListTypeSub, self).__init__(GovernmentFee,  **kwargs_)
+supermod.GovernmentFeeListType.subclass = GovernmentFeeListTypeSub
+# end class GovernmentFeeListTypeSub
+
+
+class DivisionListTypeSub(supermod.DivisionListType):
+    def __init__(self, Division=None, **kwargs_):
+        super(DivisionListTypeSub, self).__init__(Division,  **kwargs_)
+supermod.DivisionListType.subclass = DivisionListTypeSub
+# end class DivisionListTypeSub
+
+
+class HeaderType536Sub(supermod.HeaderType536):
+    def __init__(self, Type='OperProduction', NUMBER=None, Date=None, ProducedDate=None, Producer=None, Note=None, **kwargs_):
+        super(HeaderType536Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
+supermod.HeaderType536.subclass = HeaderType536Sub
+# end class HeaderType536Sub
+
+
+class ContentType538Sub(supermod.ContentType538):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType538Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType538.subclass = ContentType538Sub
+# end class ContentType538Sub
+
+
+class ContentResourceType542Sub(supermod.ContentResourceType542):
+    def __init__(self, Resource=None, **kwargs_):
+        super(ContentResourceType542Sub, self).__init__(Resource,  **kwargs_)
+supermod.ContentResourceType542.subclass = ContentResourceType542Sub
+# end class ContentResourceType542Sub
+
+
+class HeaderType543Sub(supermod.HeaderType543):
+    def __init__(self, NUMBER=None, Date=None, RequestNUMBER=None, RequestDate=None, RequestFSM=None, Declarer=None, Comment=None, **kwargs_):
+        super(HeaderType543Sub, self).__init__(NUMBER, Date, RequestNUMBER, RequestDate, RequestFSM, Declarer, Comment,  **kwargs_)
+supermod.HeaderType543.subclass = HeaderType543Sub
+# end class HeaderType543Sub
+
+
+class HeaderType544Sub(supermod.HeaderType544):
+    def __init__(self, NUMBER=None, Date=None, Sender=None, Consignee=None, **kwargs_):
+        super(HeaderType544Sub, self).__init__(NUMBER, Date, Sender, Consignee,  **kwargs_)
+supermod.HeaderType544.subclass = HeaderType544Sub
+# end class HeaderType544Sub
+
+
+class HeaderType545Sub(supermod.HeaderType545):
+    def __init__(self, ActNumber=None, ActDate=None, TypeWriteOff=None, Note=None, **kwargs_):
+        super(HeaderType545Sub, self).__init__(ActNumber, ActDate, TypeWriteOff, Note,  **kwargs_)
+supermod.HeaderType545.subclass = HeaderType545Sub
+# end class HeaderType545Sub
+
+
+class ContentType547Sub(supermod.ContentType547):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType547Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType547.subclass = ContentType547Sub
+# end class ContentType547Sub
+
+
+class writeoffvolumeTypeSub(supermod.writeoffvolumeType):
+    def __init__(self, Quantity=None, volume=None, **kwargs_):
+        super(writeoffvolumeTypeSub, self).__init__(Quantity, volume,  **kwargs_)
+supermod.writeoffvolumeType.subclass = writeoffvolumeTypeSub
+# end class writeoffvolumeTypeSub
+
+
+class ContentType548Sub(supermod.ContentType548):
+    def __init__(self, Bottle=None, Nomark=None, Catering=None, **kwargs_):
+        super(ContentType548Sub, self).__init__(Bottle, Nomark, Catering,  **kwargs_)
+supermod.ContentType548.subclass = ContentType548Sub
+# end class ContentType548Sub
+
+
+class HeaderType549Sub(supermod.HeaderType549):
+    def __init__(self, Type='OperProduction', NUMBER=None, Date=None, ProducedDate=None, Producer=None, Note=None, **kwargs_):
+        super(HeaderType549Sub, self).__init__(Type, NUMBER, Date, ProducedDate, Producer, Note,  **kwargs_)
+supermod.HeaderType549.subclass = HeaderType549Sub
+# end class HeaderType549Sub
+
+
+class ContentType551Sub(supermod.ContentType551):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType551Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType551.subclass = ContentType551Sub
+# end class ContentType551Sub
+
+
+class ContentResourceType555Sub(supermod.ContentResourceType555):
+    def __init__(self, Resource=None, GRAPERESOURCE=None, **kwargs_):
+        super(ContentResourceType555Sub, self).__init__(Resource, GRAPERESOURCE,  **kwargs_)
+supermod.ContentResourceType555.subclass = ContentResourceType555Sub
+# end class ContentResourceType555Sub
+
+
+class HeaderType556Sub(supermod.HeaderType556):
+    def __init__(self, NUMBER=None, Date=None, ImportedDate=None, Importer=None, Supplier=None, GTDNUMBER=None, GTDDate=None, ContractNUMBER=None, ContractDate=None, Country=None, Note=None, IDInvoicePlannedImport=None, **kwargs_):
+        super(HeaderType556Sub, self).__init__(NUMBER, Date, ImportedDate, Importer, Supplier, GTDNUMBER, GTDDate, ContractNUMBER, ContractDate, Country, Note, IDInvoicePlannedImport,  **kwargs_)
+supermod.HeaderType556.subclass = HeaderType556Sub
+# end class HeaderType556Sub
+
+
+class ContentType559Sub(supermod.ContentType559):
+    def __init__(self, Position=None, **kwargs_):
+        super(ContentType559Sub, self).__init__(Position,  **kwargs_)
+supermod.ContentType559.subclass = ContentType559Sub
+# end class ContentType559Sub
 
 
 def get_root_tag(node):

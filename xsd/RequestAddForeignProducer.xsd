@@ -15,7 +15,7 @@
 
   <xs:complexType name="RequestAddFProducer">
     <xs:annotation>
-      <xs:documentation>Запрос на добавление в справочник продукции</xs:documentation>
+      <xs:documentation>Запрос на добавление в справочник иностранного производителя/поставщика продукции</xs:documentation>
     </xs:annotation>
     <xs:all>
       <xs:element name="ClientId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
